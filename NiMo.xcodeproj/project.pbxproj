@@ -18,7 +18,8 @@
 		C00B1D0A1EA9F6DA0033D9BA /* TopRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = C00B1D091EA9F6DA0033D9BA /* TopRoute.m */; };
 		C00B1D1A1EA9F9AD0033D9BA /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C00B1D191EA9F9AD0033D9BA /* LeftViewController.m */; };
 		C00B1D1E1EA9F9D10033D9BA /* RightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C00B1D1D1EA9F9D10033D9BA /* RightViewController.m */; };
-		C00B1D251EA9FB0C0033D9BA /* CenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C00B1D241EA9FB0C0033D9BA /* CenterViewController.m */; };
+		C0D38BEC1EAA0E4C002908A9 /* CenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D38BEB1EAA0E4C002908A9 /* CenterViewController.m */; };
+		C0D38BF01EAA0E7D002908A9 /* CenterNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D38BEF1EAA0E7D002908A9 /* CenterNavigationViewController.m */; };
 		EADB6561A5CD4F04B1057F82 /* libPods-NiMoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A61828D8A39CD2C77A5766E /* libPods-NiMoTests.a */; };
 /* End PBXBuildFile section */
 
@@ -67,8 +68,10 @@
 		C00B1D191EA9F9AD0033D9BA /* LeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftViewController.m; sourceTree = "<group>"; };
 		C00B1D1C1EA9F9D10033D9BA /* RightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightViewController.h; sourceTree = "<group>"; };
 		C00B1D1D1EA9F9D10033D9BA /* RightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightViewController.m; sourceTree = "<group>"; };
-		C00B1D231EA9FB0C0033D9BA /* CenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CenterViewController.h; sourceTree = "<group>"; };
-		C00B1D241EA9FB0C0033D9BA /* CenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CenterViewController.m; sourceTree = "<group>"; };
+		C0D38BEA1EAA0E4C002908A9 /* CenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CenterViewController.h; sourceTree = "<group>"; };
+		C0D38BEB1EAA0E4C002908A9 /* CenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CenterViewController.m; sourceTree = "<group>"; };
+		C0D38BEE1EAA0E7D002908A9 /* CenterNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CenterNavigationViewController.h; sourceTree = "<group>"; };
+		C0D38BEF1EAA0E7D002908A9 /* CenterNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CenterNavigationViewController.m; sourceTree = "<group>"; };
 		CA710FE7514CC04EBF2E622E /* Pods-NiMoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NiMoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NiMoTests/Pods-NiMoTests.release.xcconfig"; sourceTree = "<group>"; };
 		E4A53F9AAEDBCD22EFB84DD6 /* Pods-NiMoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NiMoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NiMoTests/Pods-NiMoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F6AA69ECD975FADC878E0AD4 /* Pods-NiMoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NiMoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NiMoUITests/Pods-NiMoUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -231,6 +234,7 @@
 		C00B1D0F1EA9F8B80033D9BA /* Center */ = {
 			isa = PBXGroup;
 			children = (
+				C0D38BED1EAA0E54002908A9 /* CenterNavigationController */,
 				C00B1D1F1EA9F9D90033D9BA /* CenterViewController */,
 			);
 			path = Center;
@@ -265,10 +269,19 @@
 		C00B1D1F1EA9F9D90033D9BA /* CenterViewController */ = {
 			isa = PBXGroup;
 			children = (
-				C00B1D231EA9FB0C0033D9BA /* CenterViewController.h */,
-				C00B1D241EA9FB0C0033D9BA /* CenterViewController.m */,
+				C0D38BEA1EAA0E4C002908A9 /* CenterViewController.h */,
+				C0D38BEB1EAA0E4C002908A9 /* CenterViewController.m */,
 			);
 			path = CenterViewController;
+			sourceTree = "<group>";
+		};
+		C0D38BED1EAA0E54002908A9 /* CenterNavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				C0D38BEE1EAA0E7D002908A9 /* CenterNavigationViewController.h */,
+				C0D38BEF1EAA0E7D002908A9 /* CenterNavigationViewController.m */,
+			);
+			path = CenterNavigationController;
 			sourceTree = "<group>";
 		};
 		FA8F77138E41D7F104F9AD6F /* Pods */ = {
@@ -568,7 +581,8 @@
 				C00B1D071EA9F6CD0033D9BA /* TopViewController.m in Sources */,
 				C00B1D0A1EA9F6DA0033D9BA /* TopRoute.m in Sources */,
 				C00B1D1E1EA9F9D10033D9BA /* RightViewController.m in Sources */,
-				C00B1D251EA9FB0C0033D9BA /* CenterViewController.m in Sources */,
+				C0D38BF01EAA0E7D002908A9 /* CenterNavigationViewController.m in Sources */,
+				C0D38BEC1EAA0E4C002908A9 /* CenterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

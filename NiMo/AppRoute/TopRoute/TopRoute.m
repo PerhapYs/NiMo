@@ -27,11 +27,13 @@
     LeftViewController *leftVC = [[LeftViewController alloc] init];
     
     CenterViewController *centerVC = [[CenterViewController alloc] init];
+    CenterNavigationViewController *centerNC = [[CenterNavigationViewController alloc] initWithRootViewController:centerVC];
     
     RightViewController *rightVC = [[RightViewController alloc] init];
 
-    MMDrawerController *mmVc = [[MMDrawerController alloc] initWithCenterViewController:centerVC leftDrawerViewController:leftVC rightDrawerViewController:rightVC];
+    MMDrawerController *mmVc = [[MMDrawerController alloc] initWithCenterViewController:centerNC leftDrawerViewController:leftVC rightDrawerViewController:rightVC];
     mmVc.maximumLeftDrawerWidth = 100;
+    mmVc.maximumRightDrawerWidth = 200;
     
     _MMDrawerC = mmVc;
 
