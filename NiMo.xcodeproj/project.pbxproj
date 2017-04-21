@@ -7,14 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38807376C3F5C00B566E8530 /* libPods-NiMoUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B88A6F0FE3BA313E486598E7 /* libPods-NiMoUITests.a */; };
+		B1C2B6CA04D8A7BE45FD4B74 /* libPods-NiMo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 494222C05E04905E1039ED68 /* libPods-NiMo.a */; };
 		C00B1CD11EA9F6350033D9BA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C00B1CD01EA9F6350033D9BA /* main.m */; };
 		C00B1CD41EA9F6350033D9BA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C00B1CD31EA9F6350033D9BA /* AppDelegate.m */; };
-		C00B1CD71EA9F6350033D9BA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C00B1CD61EA9F6350033D9BA /* ViewController.m */; };
-		C00B1CDA1EA9F6350033D9BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C00B1CD81EA9F6350033D9BA /* Main.storyboard */; };
 		C00B1CDC1EA9F6350033D9BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C00B1CDB1EA9F6350033D9BA /* Assets.xcassets */; };
-		C00B1CDF1EA9F6350033D9BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C00B1CDD1EA9F6350033D9BA /* LaunchScreen.storyboard */; };
 		C00B1CEA1EA9F6350033D9BA /* NiMoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C00B1CE91EA9F6350033D9BA /* NiMoTests.m */; };
 		C00B1CF51EA9F6350033D9BA /* NiMoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C00B1CF41EA9F6350033D9BA /* NiMoUITests.m */; };
+		C00B1D071EA9F6CD0033D9BA /* TopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C00B1D061EA9F6CD0033D9BA /* TopViewController.m */; };
+		C00B1D0A1EA9F6DA0033D9BA /* TopRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = C00B1D091EA9F6DA0033D9BA /* TopRoute.m */; };
+		C00B1D1A1EA9F9AD0033D9BA /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C00B1D191EA9F9AD0033D9BA /* LeftViewController.m */; };
+		C00B1D1E1EA9F9D10033D9BA /* RightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C00B1D1D1EA9F9D10033D9BA /* RightViewController.m */; };
+		C00B1D251EA9FB0C0033D9BA /* CenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C00B1D241EA9FB0C0033D9BA /* CenterViewController.m */; };
+		EADB6561A5CD4F04B1057F82 /* libPods-NiMoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A61828D8A39CD2C77A5766E /* libPods-NiMoTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,15 +40,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C2F743D5841A7946C033441 /* Pods-NiMoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NiMoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NiMoUITests/Pods-NiMoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		2AFE1D4E17D9751B47BA1D4D /* Pods-NiMo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NiMo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NiMo/Pods-NiMo.debug.xcconfig"; sourceTree = "<group>"; };
+		31D93AE72324C8FE34285A27 /* Pods-NiMo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NiMo.release.xcconfig"; path = "Pods/Target Support Files/Pods-NiMo/Pods-NiMo.release.xcconfig"; sourceTree = "<group>"; };
+		494222C05E04905E1039ED68 /* libPods-NiMo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NiMo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A61828D8A39CD2C77A5766E /* libPods-NiMoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NiMoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B88A6F0FE3BA313E486598E7 /* libPods-NiMoUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NiMoUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C00B1CCC1EA9F6350033D9BA /* NiMo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NiMo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C00B1CD01EA9F6350033D9BA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C00B1CD21EA9F6350033D9BA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C00B1CD31EA9F6350033D9BA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C00B1CD51EA9F6350033D9BA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		C00B1CD61EA9F6350033D9BA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		C00B1CD91EA9F6350033D9BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C00B1CDB1EA9F6350033D9BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C00B1CDE1EA9F6350033D9BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C00B1CE01EA9F6350033D9BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C00B1CE51EA9F6350033D9BA /* NiMoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NiMoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C00B1CE91EA9F6350033D9BA /* NiMoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NiMoTests.m; sourceTree = "<group>"; };
@@ -51,6 +58,20 @@
 		C00B1CF01EA9F6350033D9BA /* NiMoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NiMoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C00B1CF41EA9F6350033D9BA /* NiMoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NiMoUITests.m; sourceTree = "<group>"; };
 		C00B1CF61EA9F6350033D9BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C00B1D051EA9F6CD0033D9BA /* TopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopViewController.h; sourceTree = "<group>"; };
+		C00B1D061EA9F6CD0033D9BA /* TopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopViewController.m; sourceTree = "<group>"; };
+		C00B1D081EA9F6DA0033D9BA /* TopRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopRoute.h; sourceTree = "<group>"; };
+		C00B1D091EA9F6DA0033D9BA /* TopRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopRoute.m; sourceTree = "<group>"; };
+		C00B1D0D1EA9F7980033D9BA /* nimo.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = nimo.pch; sourceTree = "<group>"; };
+		C00B1D181EA9F9AD0033D9BA /* LeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftViewController.h; sourceTree = "<group>"; };
+		C00B1D191EA9F9AD0033D9BA /* LeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftViewController.m; sourceTree = "<group>"; };
+		C00B1D1C1EA9F9D10033D9BA /* RightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightViewController.h; sourceTree = "<group>"; };
+		C00B1D1D1EA9F9D10033D9BA /* RightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightViewController.m; sourceTree = "<group>"; };
+		C00B1D231EA9FB0C0033D9BA /* CenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CenterViewController.h; sourceTree = "<group>"; };
+		C00B1D241EA9FB0C0033D9BA /* CenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CenterViewController.m; sourceTree = "<group>"; };
+		CA710FE7514CC04EBF2E622E /* Pods-NiMoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NiMoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NiMoTests/Pods-NiMoTests.release.xcconfig"; sourceTree = "<group>"; };
+		E4A53F9AAEDBCD22EFB84DD6 /* Pods-NiMoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NiMoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NiMoTests/Pods-NiMoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F6AA69ECD975FADC878E0AD4 /* Pods-NiMoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NiMoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NiMoUITests/Pods-NiMoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1C2B6CA04D8A7BE45FD4B74 /* libPods-NiMo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EADB6561A5CD4F04B1057F82 /* libPods-NiMoTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +95,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38807376C3F5C00B566E8530 /* libPods-NiMoUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		135BEFE02C58B64AF6A572D1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				494222C05E04905E1039ED68 /* libPods-NiMo.a */,
+				4A61828D8A39CD2C77A5766E /* libPods-NiMoTests.a */,
+				B88A6F0FE3BA313E486598E7 /* libPods-NiMoUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C00B1CC31EA9F6350033D9BA = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +119,8 @@
 				C00B1CE81EA9F6350033D9BA /* NiMoTests */,
 				C00B1CF31EA9F6350033D9BA /* NiMoUITests */,
 				C00B1CCD1EA9F6350033D9BA /* Products */,
+				FA8F77138E41D7F104F9AD6F /* Pods */,
+				135BEFE02C58B64AF6A572D1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,13 +137,14 @@
 		C00B1CCE1EA9F6350033D9BA /* NiMo */ = {
 			isa = PBXGroup;
 			children = (
+				C00B1D101EA9F8CC0033D9BA /* Left */,
+				C00B1D0F1EA9F8B80033D9BA /* Center */,
+				C00B1D0E1EA9F8A60033D9BA /* Right */,
+				C00B1D0B1EA9F72E0033D9BA /* Other */,
+				C00B1D021EA9F6690033D9BA /* AppRoute */,
 				C00B1CD21EA9F6350033D9BA /* AppDelegate.h */,
 				C00B1CD31EA9F6350033D9BA /* AppDelegate.m */,
-				C00B1CD51EA9F6350033D9BA /* ViewController.h */,
-				C00B1CD61EA9F6350033D9BA /* ViewController.m */,
-				C00B1CD81EA9F6350033D9BA /* Main.storyboard */,
 				C00B1CDB1EA9F6350033D9BA /* Assets.xcassets */,
-				C00B1CDD1EA9F6350033D9BA /* LaunchScreen.storyboard */,
 				C00B1CE01EA9F6350033D9BA /* Info.plist */,
 				C00B1CCF1EA9F6350033D9BA /* Supporting Files */,
 			);
@@ -140,6 +177,113 @@
 			path = NiMoUITests;
 			sourceTree = "<group>";
 		};
+		C00B1D021EA9F6690033D9BA /* AppRoute */ = {
+			isa = PBXGroup;
+			children = (
+				C00B1D041EA9F6B40033D9BA /* TopViewController */,
+				C00B1D031EA9F6980033D9BA /* TopRoute */,
+			);
+			path = AppRoute;
+			sourceTree = "<group>";
+		};
+		C00B1D031EA9F6980033D9BA /* TopRoute */ = {
+			isa = PBXGroup;
+			children = (
+				C00B1D081EA9F6DA0033D9BA /* TopRoute.h */,
+				C00B1D091EA9F6DA0033D9BA /* TopRoute.m */,
+			);
+			path = TopRoute;
+			sourceTree = "<group>";
+		};
+		C00B1D041EA9F6B40033D9BA /* TopViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C00B1D051EA9F6CD0033D9BA /* TopViewController.h */,
+				C00B1D061EA9F6CD0033D9BA /* TopViewController.m */,
+			);
+			path = TopViewController;
+			sourceTree = "<group>";
+		};
+		C00B1D0B1EA9F72E0033D9BA /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				C00B1D0C1EA9F7720033D9BA /* PCH */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		C00B1D0C1EA9F7720033D9BA /* PCH */ = {
+			isa = PBXGroup;
+			children = (
+				C00B1D0D1EA9F7980033D9BA /* nimo.pch */,
+			);
+			path = PCH;
+			sourceTree = "<group>";
+		};
+		C00B1D0E1EA9F8A60033D9BA /* Right */ = {
+			isa = PBXGroup;
+			children = (
+				C00B1D1B1EA9F9B90033D9BA /* RightViewController */,
+			);
+			path = Right;
+			sourceTree = "<group>";
+		};
+		C00B1D0F1EA9F8B80033D9BA /* Center */ = {
+			isa = PBXGroup;
+			children = (
+				C00B1D1F1EA9F9D90033D9BA /* CenterViewController */,
+			);
+			path = Center;
+			sourceTree = "<group>";
+		};
+		C00B1D101EA9F8CC0033D9BA /* Left */ = {
+			isa = PBXGroup;
+			children = (
+				C00B1D171EA9F9950033D9BA /* LeftViewController */,
+			);
+			path = Left;
+			sourceTree = "<group>";
+		};
+		C00B1D171EA9F9950033D9BA /* LeftViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C00B1D181EA9F9AD0033D9BA /* LeftViewController.h */,
+				C00B1D191EA9F9AD0033D9BA /* LeftViewController.m */,
+			);
+			path = LeftViewController;
+			sourceTree = "<group>";
+		};
+		C00B1D1B1EA9F9B90033D9BA /* RightViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C00B1D1C1EA9F9D10033D9BA /* RightViewController.h */,
+				C00B1D1D1EA9F9D10033D9BA /* RightViewController.m */,
+			);
+			path = RightViewController;
+			sourceTree = "<group>";
+		};
+		C00B1D1F1EA9F9D90033D9BA /* CenterViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C00B1D231EA9FB0C0033D9BA /* CenterViewController.h */,
+				C00B1D241EA9FB0C0033D9BA /* CenterViewController.m */,
+			);
+			path = CenterViewController;
+			sourceTree = "<group>";
+		};
+		FA8F77138E41D7F104F9AD6F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2AFE1D4E17D9751B47BA1D4D /* Pods-NiMo.debug.xcconfig */,
+				31D93AE72324C8FE34285A27 /* Pods-NiMo.release.xcconfig */,
+				E4A53F9AAEDBCD22EFB84DD6 /* Pods-NiMoTests.debug.xcconfig */,
+				CA710FE7514CC04EBF2E622E /* Pods-NiMoTests.release.xcconfig */,
+				F6AA69ECD975FADC878E0AD4 /* Pods-NiMoUITests.debug.xcconfig */,
+				1C2F743D5841A7946C033441 /* Pods-NiMoUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +291,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C00B1CF91EA9F6350033D9BA /* Build configuration list for PBXNativeTarget "NiMo" */;
 			buildPhases = (
+				926FB40E395A0BF894F5B2BC /* [CP] Check Pods Manifest.lock */,
 				C00B1CC81EA9F6350033D9BA /* Sources */,
 				C00B1CC91EA9F6350033D9BA /* Frameworks */,
 				C00B1CCA1EA9F6350033D9BA /* Resources */,
+				99F2C5944714AC9C1804D963 /* [CP] Embed Pods Frameworks */,
+				5DB0F8828DA8337895518913 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -164,9 +311,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C00B1CFC1EA9F6350033D9BA /* Build configuration list for PBXNativeTarget "NiMoTests" */;
 			buildPhases = (
+				2D7B2792D8BA3B76CF7FB4D2 /* [CP] Check Pods Manifest.lock */,
 				C00B1CE11EA9F6350033D9BA /* Sources */,
 				C00B1CE21EA9F6350033D9BA /* Frameworks */,
 				C00B1CE31EA9F6350033D9BA /* Resources */,
+				3369D71A0D06C0AE6DFA6D43 /* [CP] Embed Pods Frameworks */,
+				2DEDFAC1AEBE372CD24EDD0D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -182,9 +332,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C00B1CFF1EA9F6350033D9BA /* Build configuration list for PBXNativeTarget "NiMoUITests" */;
 			buildPhases = (
+				D95851E52BAF795703E9BFFE /* [CP] Check Pods Manifest.lock */,
 				C00B1CEC1EA9F6350033D9BA /* Sources */,
 				C00B1CED1EA9F6350033D9BA /* Frameworks */,
 				C00B1CEE1EA9F6350033D9BA /* Resources */,
+				57BEA857E186411FF80C1AF8 /* [CP] Embed Pods Frameworks */,
+				2A82AA8F03007F0DD4DEAE25 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -246,9 +399,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C00B1CDF1EA9F6350033D9BA /* LaunchScreen.storyboard in Resources */,
 				C00B1CDC1EA9F6350033D9BA /* Assets.xcassets in Resources */,
-				C00B1CDA1EA9F6350033D9BA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,14 +419,156 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2A82AA8F03007F0DD4DEAE25 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NiMoUITests/Pods-NiMoUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2D7B2792D8BA3B76CF7FB4D2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		2DEDFAC1AEBE372CD24EDD0D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NiMoTests/Pods-NiMoTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3369D71A0D06C0AE6DFA6D43 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NiMoTests/Pods-NiMoTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		57BEA857E186411FF80C1AF8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NiMoUITests/Pods-NiMoUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5DB0F8828DA8337895518913 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NiMo/Pods-NiMo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		926FB40E395A0BF894F5B2BC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		99F2C5944714AC9C1804D963 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NiMo/Pods-NiMo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D95851E52BAF795703E9BFFE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C00B1CC81EA9F6350033D9BA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C00B1CD71EA9F6350033D9BA /* ViewController.m in Sources */,
 				C00B1CD41EA9F6350033D9BA /* AppDelegate.m in Sources */,
 				C00B1CD11EA9F6350033D9BA /* main.m in Sources */,
+				C00B1D1A1EA9F9AD0033D9BA /* LeftViewController.m in Sources */,
+				C00B1D071EA9F6CD0033D9BA /* TopViewController.m in Sources */,
+				C00B1D0A1EA9F6DA0033D9BA /* TopRoute.m in Sources */,
+				C00B1D1E1EA9F9D10033D9BA /* RightViewController.m in Sources */,
+				C00B1D251EA9FB0C0033D9BA /* CenterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,25 +602,6 @@
 			targetProxy = C00B1CF11EA9F6350033D9BA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		C00B1CD81EA9F6350033D9BA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C00B1CD91EA9F6350033D9BA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		C00B1CDD1EA9F6350033D9BA /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C00B1CDE1EA9F6350033D9BA /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		C00B1CF71EA9F6350033D9BA /* Debug */ = {
@@ -420,28 +694,35 @@
 		};
 		C00B1CFA1EA9F6350033D9BA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2AFE1D4E17D9751B47BA1D4D /* Pods-NiMo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/NiMo/Other/PCH/nimo.pch";
 				INFOPLIST_FILE = NiMo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = PerhapYs.NiMo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nimo.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
 		C00B1CFB1EA9F6350033D9BA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 31D93AE72324C8FE34285A27 /* Pods-NiMo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/NiMo/Other/PCH/nimo.pch";
 				INFOPLIST_FILE = NiMo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = PerhapYs.NiMo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nimo.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
 		C00B1CFD1EA9F6350033D9BA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4A53F9AAEDBCD22EFB84DD6 /* Pods-NiMoTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = NiMoTests/Info.plist;
@@ -454,6 +735,7 @@
 		};
 		C00B1CFE1EA9F6350033D9BA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA710FE7514CC04EBF2E622E /* Pods-NiMoTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = NiMoTests/Info.plist;
@@ -466,6 +748,7 @@
 		};
 		C00B1D001EA9F6350033D9BA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F6AA69ECD975FADC878E0AD4 /* Pods-NiMoUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = NiMoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -477,6 +760,7 @@
 		};
 		C00B1D011EA9F6350033D9BA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C2F743D5841A7946C033441 /* Pods-NiMoUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = NiMoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -505,6 +789,7 @@
 				C00B1CFB1EA9F6350033D9BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C00B1CFC1EA9F6350033D9BA /* Build configuration list for PBXNativeTarget "NiMoTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +798,7 @@
 				C00B1CFE1EA9F6350033D9BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C00B1CFF1EA9F6350033D9BA /* Build configuration list for PBXNativeTarget "NiMoUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +807,7 @@
 				C00B1D011EA9F6350033D9BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
