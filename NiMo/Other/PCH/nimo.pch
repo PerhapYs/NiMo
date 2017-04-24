@@ -13,8 +13,16 @@
 
 #import "TopRoute.h"
 
+#import <DKNightVersion/DKNightVersion.h>
+
+#import <DKNightVersionManager.h>
+
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 
 #define SCREEN_HTIGHT [UIScreen mainScreen].bounds.size.height
+
+#define SET_HEIGHT_(y) ((y * SCREEN_HTIGHT) /  667)
+
+#define SET_WIDTH_(x) ((x * SCREEN_WIDTH) / 375)
 
 #endif /* nimo_pch */

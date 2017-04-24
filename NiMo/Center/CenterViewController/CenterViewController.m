@@ -8,7 +8,11 @@
 
 #import "CenterViewController.h"
 #import "UIImage+PerhapYs.h"
+
+
 @interface CenterViewController ()
+
+@property (nonatomic , strong) UICollectionView *booksCV;
 
 @end
 
@@ -27,28 +31,55 @@
 
 -(void)initializeInterface{
     
-    UIBarButtonItem *leftbutton = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"defaultI_icon.jpg"] reSizeImagetoSize:CGSizeMake(40, 40)] style:UIBarButtonItemStyleDone target:self action:@selector(openLeft)];
-    self.navigationItem.leftBarButtonItem = leftbutton;
+    UIButton *leftImage = [UIButton buttonWithType:UIButtonTypeCustom];
+    [leftImage setImage:[UIImage imageNamed:@"defaultI_icon.jpg"] forState:UIControlStateNormal];
+    [leftImage setImage:[UIImage imageNamed:@"defaultI_icon.jpg"] forState:UIControlStateHighlighted];
+    [leftImage addTarget:self action:@selector(openLeft) forControlEvents:UIControlEventTouchUpInside];
+    leftImage.frame = CGRectMake(0, 0, SET_WIDTH_(40), SET_HEIGHT_(40));
     
-    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"打开右边" style:UIBarButtonItemStylePlain target:self action:@selector(openRight)];
+    UIBarButtonItem *leftbutton = [[UIBarButtonItem alloc] initWithCustomView:leftImage];
+
+    UIBarButtonItem *spaceItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    
+    spaceItem.width = -15;
+    self.navigationItem.leftBarButtonItems = @[spaceItem,leftbutton];
+    
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"navigation_listImage.jpg"] reSizeImagetoSize:CGSizeMake(40, 40)] style:UIBarButtonItemStyleDone target:self action:@selector(openRight)];
     self.navigationItem.rightBarButtonItem = rightButton;
     
+    self.view.dk_backgroundColorPicker = DKColorPickerWithKey(BAR);
 }
 
+
+#pragma mark -- getter
+
+-(UICollectionView *)booksCV{
+    if (!_booksCV) {
+        _booksCV = ({
+            
+            UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+            layout.itemSize = CGSizeMake(50, 100);
+            
+            UICollectionView *view = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, 0, 0) collectionViewLayout:layout];
+            
+            view;
+        });
+    }
+    return _booksCV;
+}
 #pragma mark -- barButton Event
 
 -(void)openLeft{
-    
-    
+   
     [[TopRoute shareRoute].MMDrawerC toggleDrawerSide:MMDrawerSideLeft animated:YES completion:^(BOOL finished) {
-        NSLog(@"🌹");
+       
     }];
 }
 
 -(void)openRight{
     
     [[TopRoute shareRoute].MMDrawerC toggleDrawerSide:MMDrawerSideRight animated:YES completion:^(BOOL finished) {
-        NSLog(@"🌹");
+        
     }];
 }
 @end
