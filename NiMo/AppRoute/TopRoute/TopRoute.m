@@ -32,7 +32,7 @@
     RightViewController *rightVC = [[RightViewController alloc] init];
 
     MMDrawerController *mmVc = [[MMDrawerController alloc] initWithCenterViewController:centerNC leftDrawerViewController:leftVC rightDrawerViewController:rightVC];
-    mmVc.maximumLeftDrawerWidth = 100;
+    mmVc.maximumLeftDrawerWidth = SET_WIDTH_(240);
     mmVc.maximumRightDrawerWidth = 200;
    
     _MMDrawerC = mmVc;

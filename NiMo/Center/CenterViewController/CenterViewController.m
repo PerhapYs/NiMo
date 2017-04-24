@@ -9,8 +9,8 @@
 #import "CenterViewController.h"
 #import "UIImage+PerhapYs.h"
 
-
-@interface CenterViewController ()
+#import "BooksCollectionViewCell.h"
+@interface CenterViewController ()<UICollectionViewDataSource>
 
 @property (nonatomic , strong) UICollectionView *booksCV;
 
@@ -22,8 +22,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.view.backgroundColor = [UIColor greenColor];
     self.title = @"霓墨";
+     self.view.dk_backgroundColorPicker = DKColorPickerWithKey(BAR);
     
     [self initializeInterface];
 }
@@ -47,7 +47,13 @@
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"navigation_listImage.jpg"] reSizeImagetoSize:CGSizeMake(40, 40)] style:UIBarButtonItemStyleDone target:self action:@selector(openRight)];
     self.navigationItem.rightBarButtonItem = rightButton;
     
-    self.view.dk_backgroundColorPicker = DKColorPickerWithKey(BAR);
+    [self.view addSubview:self.booksCV];
+    [self.booksCV mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.view.mas_top).offset(SET_HEIGHT_(20));
+        make.bottom.equalTo(self.view.mas_bottom);
+        make.left.equalTo(self.view.mas_left).offset(SET_WIDTH_(20));
+        make.right.equalTo(self.view.mas_right).offset(-SET_WIDTH_(20));
+    }];
 }
 
 
@@ -58,14 +64,32 @@
         _booksCV = ({
             
             UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-            layout.itemSize = CGSizeMake(50, 100);
+            layout.itemSize = CGSizeMake(SET_WIDTH_(100), SET_HEIGHT_(150));
             
             UICollectionView *view = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, 0, 0) collectionViewLayout:layout];
+            view.backgroundColor = [UIColor clearColor];
+            view.dataSource = self;
+            view.showsVerticalScrollIndicator = NO;
+            view.decelerationRate = 0;
+            [view registerClass:[BooksCollectionViewCell class] forCellWithReuseIdentifier:@"booksCell"];
             
             view;
         });
     }
     return _booksCV;
+}
+
+#pragma mark -- CollectionView dataSource
+
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    return 100;
+}
+
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    BooksCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"booksCell" forIndexPath:indexPath];
+    [cell placeCellDataWithDic:nil];
+    return cell;
 }
 #pragma mark -- barButton Event
 

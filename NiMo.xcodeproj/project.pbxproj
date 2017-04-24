@@ -21,6 +21,7 @@
 		C0D38BEC1EAA0E4C002908A9 /* CenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D38BEB1EAA0E4C002908A9 /* CenterViewController.m */; };
 		C0D38BF01EAA0E7D002908A9 /* CenterNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D38BEF1EAA0E7D002908A9 /* CenterNavigationViewController.m */; };
 		C0E900FF1EAD98C600816AEA /* UIImage+PerhapYs.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E900FE1EAD98C600816AEA /* UIImage+PerhapYs.m */; };
+		C0EE856E1EADFD6900B16C5B /* BooksCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0EE856D1EADFD6900B16C5B /* BooksCollectionViewCell.m */; };
 		EADB6561A5CD4F04B1057F82 /* libPods-NiMoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A61828D8A39CD2C77A5766E /* libPods-NiMoTests.a */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +76,8 @@
 		C0D38BEF1EAA0E7D002908A9 /* CenterNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CenterNavigationViewController.m; sourceTree = "<group>"; };
 		C0E900FD1EAD98C600816AEA /* UIImage+PerhapYs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+PerhapYs.h"; sourceTree = "<group>"; };
 		C0E900FE1EAD98C600816AEA /* UIImage+PerhapYs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+PerhapYs.m"; sourceTree = "<group>"; };
+		C0EE856C1EADFD6900B16C5B /* BooksCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BooksCollectionViewCell.h; sourceTree = "<group>"; };
+		C0EE856D1EADFD6900B16C5B /* BooksCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BooksCollectionViewCell.m; sourceTree = "<group>"; };
 		CA710FE7514CC04EBF2E622E /* Pods-NiMoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NiMoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NiMoTests/Pods-NiMoTests.release.xcconfig"; sourceTree = "<group>"; };
 		E4A53F9AAEDBCD22EFB84DD6 /* Pods-NiMoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NiMoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NiMoTests/Pods-NiMoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F6AA69ECD975FADC878E0AD4 /* Pods-NiMoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NiMoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NiMoUITests/Pods-NiMoUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -275,6 +278,7 @@
 		C00B1D1F1EA9F9D90033D9BA /* CenterViewController */ = {
 			isa = PBXGroup;
 			children = (
+				C0EE856B1EADFD3700B16C5B /* BooksCollectionViewCell */,
 				C0D38BEA1EAA0E4C002908A9 /* CenterViewController.h */,
 				C0D38BEB1EAA0E4C002908A9 /* CenterViewController.m */,
 			);
@@ -319,6 +323,15 @@
 				C0E900FE1EAD98C600816AEA /* UIImage+PerhapYs.m */,
 			);
 			path = "UIImage+";
+			sourceTree = "<group>";
+		};
+		C0EE856B1EADFD3700B16C5B /* BooksCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				C0EE856C1EADFD6900B16C5B /* BooksCollectionViewCell.h */,
+				C0EE856D1EADFD6900B16C5B /* BooksCollectionViewCell.m */,
+			);
+			path = BooksCollectionViewCell;
 			sourceTree = "<group>";
 		};
 		FA8F77138E41D7F104F9AD6F /* Pods */ = {
@@ -618,6 +631,7 @@
 				C00B1D1A1EA9F9AD0033D9BA /* LeftViewController.m in Sources */,
 				C00B1D071EA9F6CD0033D9BA /* TopViewController.m in Sources */,
 				C0E900FF1EAD98C600816AEA /* UIImage+PerhapYs.m in Sources */,
+				C0EE856E1EADFD6900B16C5B /* BooksCollectionViewCell.m in Sources */,
 				C00B1D0A1EA9F6DA0033D9BA /* TopRoute.m in Sources */,
 				C00B1D1E1EA9F9D10033D9BA /* RightViewController.m in Sources */,
 				C0D38BF01EAA0E7D002908A9 /* CenterNavigationViewController.m in Sources */,
