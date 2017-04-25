@@ -10,7 +10,9 @@
 #import "UIImage+PerhapYs.h"
 
 #import "BooksCollectionViewCell.h"
-@interface CenterViewController ()<UICollectionViewDataSource>
+
+#import "ReadBookViewController.h"
+@interface CenterViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
 
 @property (nonatomic , strong) UICollectionView *booksCV;
 
@@ -69,6 +71,7 @@
             UICollectionView *view = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, 0, 0) collectionViewLayout:layout];
             view.backgroundColor = [UIColor clearColor];
             view.dataSource = self;
+            view.delegate = self;
             view.showsVerticalScrollIndicator = NO;
             view.decelerationRate = 0;
             [view registerClass:[BooksCollectionViewCell class] forCellWithReuseIdentifier:@"booksCell"];
@@ -90,6 +93,17 @@
     BooksCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"booksCell" forIndexPath:indexPath];
     [cell placeCellDataWithDic:nil];
     return cell;
+}
+
+#pragma mark - collectionView delegate
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    ReadBookViewController *readBookVC  = [[ReadBookViewController alloc] init];
+    readBookVC.title = @"大主宰";
+    [self presentViewController:readBookVC animated:YES completion:^{
+        
+    }];
 }
 #pragma mark -- barButton Event
 
