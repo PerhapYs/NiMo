@@ -18,11 +18,10 @@
 		C00B1D0A1EA9F6DA0033D9BA /* TopRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = C00B1D091EA9F6DA0033D9BA /* TopRoute.m */; };
 		C00B1D1A1EA9F9AD0033D9BA /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C00B1D191EA9F9AD0033D9BA /* LeftViewController.m */; };
 		C00B1D1E1EA9F9D10033D9BA /* RightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C00B1D1D1EA9F9D10033D9BA /* RightViewController.m */; };
-		C0B6BCB21EAEDFBB00ACAD2F /* ReadBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B6BCB11EAEDFBB00ACAD2F /* ReadBookViewController.m */; };
-		C0B6BCB61EAEF74700ACAD2F /* UITextView+PerhapYs.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B6BCB51EAEF74700ACAD2F /* UITextView+PerhapYs.m */; };
 		C0B6BCBF1EAF2FAB00ACAD2F /* 大主宰.txt in Resources */ = {isa = PBXBuildFile; fileRef = C0B6BCBE1EAF2FAB00ACAD2F /* 大主宰.txt */; };
 		C0B6BCC31EAF304C00ACAD2F /* NSString+PerhapYs.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B6BCC21EAF304C00ACAD2F /* NSString+PerhapYs.m */; };
 		C0B6BCC71EAF33A300ACAD2F /* NSArray+PerhapYs.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B6BCC61EAF33A300ACAD2F /* NSArray+PerhapYs.m */; };
+		C0D0824D1EB0394E00F314B7 /* BookManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D0824C1EB0394E00F314B7 /* BookManager.m */; };
 		C0D38BEC1EAA0E4C002908A9 /* CenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D38BEB1EAA0E4C002908A9 /* CenterViewController.m */; };
 		C0D38BF01EAA0E7D002908A9 /* CenterNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D38BEF1EAA0E7D002908A9 /* CenterNavigationViewController.m */; };
 		C0E900FF1EAD98C600816AEA /* UIImage+PerhapYs.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E900FE1EAD98C600816AEA /* UIImage+PerhapYs.m */; };
@@ -75,15 +74,13 @@
 		C00B1D191EA9F9AD0033D9BA /* LeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftViewController.m; sourceTree = "<group>"; };
 		C00B1D1C1EA9F9D10033D9BA /* RightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightViewController.h; sourceTree = "<group>"; };
 		C00B1D1D1EA9F9D10033D9BA /* RightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightViewController.m; sourceTree = "<group>"; };
-		C0B6BCB01EAEDFBB00ACAD2F /* ReadBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadBookViewController.h; sourceTree = "<group>"; };
-		C0B6BCB11EAEDFBB00ACAD2F /* ReadBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadBookViewController.m; sourceTree = "<group>"; };
-		C0B6BCB41EAEF74700ACAD2F /* UITextView+PerhapYs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+PerhapYs.h"; sourceTree = "<group>"; };
-		C0B6BCB51EAEF74700ACAD2F /* UITextView+PerhapYs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+PerhapYs.m"; sourceTree = "<group>"; };
 		C0B6BCBE1EAF2FAB00ACAD2F /* 大主宰.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "大主宰.txt"; sourceTree = "<group>"; };
 		C0B6BCC11EAF304C00ACAD2F /* NSString+PerhapYs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PerhapYs.h"; sourceTree = "<group>"; };
 		C0B6BCC21EAF304C00ACAD2F /* NSString+PerhapYs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+PerhapYs.m"; sourceTree = "<group>"; };
 		C0B6BCC51EAF33A300ACAD2F /* NSArray+PerhapYs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+PerhapYs.h"; sourceTree = "<group>"; };
 		C0B6BCC61EAF33A300ACAD2F /* NSArray+PerhapYs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+PerhapYs.m"; sourceTree = "<group>"; };
+		C0D0824B1EB0394E00F314B7 /* BookManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookManager.h; sourceTree = "<group>"; };
+		C0D0824C1EB0394E00F314B7 /* BookManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookManager.m; sourceTree = "<group>"; };
 		C0D38BEA1EAA0E4C002908A9 /* CenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CenterViewController.h; sourceTree = "<group>"; };
 		C0D38BEB1EAA0E4C002908A9 /* CenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CenterViewController.m; sourceTree = "<group>"; };
 		C0D38BEE1EAA0E7D002908A9 /* CenterNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CenterNavigationViewController.h; sourceTree = "<group>"; };
@@ -304,24 +301,14 @@
 		C0B6BCAF1EAEDF8F00ACAD2F /* ReadBook */ = {
 			isa = PBXGroup;
 			children = (
-				C0B6BCB01EAEDFBB00ACAD2F /* ReadBookViewController.h */,
-				C0B6BCB11EAEDFBB00ACAD2F /* ReadBookViewController.m */,
 			);
 			path = ReadBook;
-			sourceTree = "<group>";
-		};
-		C0B6BCB31EAEF71700ACAD2F /* UITextView+ */ = {
-			isa = PBXGroup;
-			children = (
-				C0B6BCB41EAEF74700ACAD2F /* UITextView+PerhapYs.h */,
-				C0B6BCB51EAEF74700ACAD2F /* UITextView+PerhapYs.m */,
-			);
-			path = "UITextView+";
 			sourceTree = "<group>";
 		};
 		C0B6BCB71EAEFC4900ACAD2F /* Book */ = {
 			isa = PBXGroup;
 			children = (
+				C0D0824A1EB0390700F314B7 /* BookSetting */,
 				C0B6BCBE1EAF2FAB00ACAD2F /* 大主宰.txt */,
 			);
 			path = Book;
@@ -345,6 +332,15 @@
 			path = "NSArray+";
 			sourceTree = "<group>";
 		};
+		C0D0824A1EB0390700F314B7 /* BookSetting */ = {
+			isa = PBXGroup;
+			children = (
+				C0D0824B1EB0394E00F314B7 /* BookManager.h */,
+				C0D0824C1EB0394E00F314B7 /* BookManager.m */,
+			);
+			path = BookSetting;
+			sourceTree = "<group>";
+		};
 		C0D38BED1EAA0E54002908A9 /* CenterNavigationController */ = {
 			isa = PBXGroup;
 			children = (
@@ -359,7 +355,6 @@
 			children = (
 				C0B6BCC41EAF338600ACAD2F /* NSArray+ */,
 				C0B6BCC01EAF301E00ACAD2F /* NSString+ */,
-				C0B6BCB31EAEF71700ACAD2F /* UITextView+ */,
 				C0E900FC1EAD984600816AEA /* UIImage+ */,
 			);
 			path = category;
@@ -690,6 +685,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0D0824D1EB0394E00F314B7 /* BookManager.m in Sources */,
 				C00B1CD41EA9F6350033D9BA /* AppDelegate.m in Sources */,
 				C0B6BCC31EAF304C00ACAD2F /* NSString+PerhapYs.m in Sources */,
 				C00B1CD11EA9F6350033D9BA /* main.m in Sources */,
@@ -697,9 +693,7 @@
 				C00B1D071EA9F6CD0033D9BA /* TopViewController.m in Sources */,
 				C0E900FF1EAD98C600816AEA /* UIImage+PerhapYs.m in Sources */,
 				C0B6BCC71EAF33A300ACAD2F /* NSArray+PerhapYs.m in Sources */,
-				C0B6BCB61EAEF74700ACAD2F /* UITextView+PerhapYs.m in Sources */,
 				C0EE856E1EADFD6900B16C5B /* BooksCollectionViewCell.m in Sources */,
-				C0B6BCB21EAEDFBB00ACAD2F /* ReadBookViewController.m in Sources */,
 				C00B1D0A1EA9F6DA0033D9BA /* TopRoute.m in Sources */,
 				C00B1D1E1EA9F9D10033D9BA /* RightViewController.m in Sources */,
 				C0D38BF01EAA0E7D002908A9 /* CenterNavigationViewController.m in Sources */,

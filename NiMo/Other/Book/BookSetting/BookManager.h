@@ -1,14 +1,16 @@
 //
-//  NSArray+PerhapYs.h
+//  BookManager.h
 //  NiMo
 //
-//  Created by PerhapYs on 17/4/25.
+//  Created by PerhapYs on 17/4/26.
 //  Copyright © 2017年 PerhapYs. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-@interface NSArray (PerhapYs)
+@interface BookManager : NSObject
 
++ (instancetype)shareBook;
 
 @end
+

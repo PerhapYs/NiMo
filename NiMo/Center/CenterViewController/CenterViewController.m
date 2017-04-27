@@ -11,7 +11,6 @@
 
 #import "BooksCollectionViewCell.h"
 
-#import "ReadBookViewController.h"
 @interface CenterViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
 
 @property (nonatomic , strong) UICollectionView *booksCV;
@@ -99,11 +98,6 @@
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    ReadBookViewController *readBookVC  = [[ReadBookViewController alloc] init];
-    readBookVC.title = @"大主宰";
-    [self presentViewController:readBookVC animated:YES completion:^{
-        
-    }];
 }
 #pragma mark -- barButton Event
 
