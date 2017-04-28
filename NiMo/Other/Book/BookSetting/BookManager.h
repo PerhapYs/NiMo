@@ -12,5 +12,6 @@
 
 + (instancetype)shareBook;
 
++(NSInteger)BookTransitionStyle;
 @end
 

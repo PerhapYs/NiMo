@@ -22,7 +22,14 @@
 }
 
 
-
++(NSInteger)BookTransitionStyle{
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    NSNumber *bookStyel =  [userDefault objectForKey:@"bookTransitionStyle"];
+    if (!bookStyel) {
+        return 0;
+    }
+    return [bookStyel integerValue];
+}
 
 
 

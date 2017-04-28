@@ -11,6 +11,8 @@
 
 #import "BooksCollectionViewCell.h"
 
+#import "BookBasicViewController.h"
+
 @interface CenterViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
 
 @property (nonatomic , strong) UICollectionView *booksCV;
@@ -98,6 +100,9 @@
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
+    BookBasicViewController *basicVC = [[BookBasicViewController alloc] init];
+    
+    [self.navigationController pushViewController:basicVC animated:YES];
 }
 #pragma mark -- barButton Event
 

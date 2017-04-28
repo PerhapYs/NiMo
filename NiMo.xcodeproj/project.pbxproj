@@ -18,6 +18,8 @@
 		C00B1D0A1EA9F6DA0033D9BA /* TopRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = C00B1D091EA9F6DA0033D9BA /* TopRoute.m */; };
 		C00B1D1A1EA9F9AD0033D9BA /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C00B1D191EA9F9AD0033D9BA /* LeftViewController.m */; };
 		C00B1D1E1EA9F9D10033D9BA /* RightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C00B1D1D1EA9F9D10033D9BA /* RightViewController.m */; };
+		C046AA011EB1D46400376087 /* BookBasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C046AA001EB1D46400376087 /* BookBasicViewController.m */; };
+		C046AA0A1EB1DD3B00376087 /* TextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C046AA091EB1DD3B00376087 /* TextViewController.m */; };
 		C0B6BCBF1EAF2FAB00ACAD2F /* 大主宰.txt in Resources */ = {isa = PBXBuildFile; fileRef = C0B6BCBE1EAF2FAB00ACAD2F /* 大主宰.txt */; };
 		C0B6BCC31EAF304C00ACAD2F /* NSString+PerhapYs.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B6BCC21EAF304C00ACAD2F /* NSString+PerhapYs.m */; };
 		C0B6BCC71EAF33A300ACAD2F /* NSArray+PerhapYs.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B6BCC61EAF33A300ACAD2F /* NSArray+PerhapYs.m */; };
@@ -74,6 +76,10 @@
 		C00B1D191EA9F9AD0033D9BA /* LeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftViewController.m; sourceTree = "<group>"; };
 		C00B1D1C1EA9F9D10033D9BA /* RightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightViewController.h; sourceTree = "<group>"; };
 		C00B1D1D1EA9F9D10033D9BA /* RightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightViewController.m; sourceTree = "<group>"; };
+		C046A9FF1EB1D46400376087 /* BookBasicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookBasicViewController.h; sourceTree = "<group>"; };
+		C046AA001EB1D46400376087 /* BookBasicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookBasicViewController.m; sourceTree = "<group>"; };
+		C046AA081EB1DD3B00376087 /* TextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewController.h; sourceTree = "<group>"; };
+		C046AA091EB1DD3B00376087 /* TextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewController.m; sourceTree = "<group>"; };
 		C0B6BCBE1EAF2FAB00ACAD2F /* 大主宰.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "大主宰.txt"; sourceTree = "<group>"; };
 		C0B6BCC11EAF304C00ACAD2F /* NSString+PerhapYs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PerhapYs.h"; sourceTree = "<group>"; };
 		C0B6BCC21EAF304C00ACAD2F /* NSString+PerhapYs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+PerhapYs.m"; sourceTree = "<group>"; };
@@ -298,9 +304,29 @@
 			path = CenterViewController;
 			sourceTree = "<group>";
 		};
+		C046A9FE1EB1D41D00376087 /* BookBasicViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C046A9FF1EB1D46400376087 /* BookBasicViewController.h */,
+				C046AA001EB1D46400376087 /* BookBasicViewController.m */,
+			);
+			path = BookBasicViewController;
+			sourceTree = "<group>";
+		};
+		C046AA071EB1DC8C00376087 /* TextViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C046AA081EB1DD3B00376087 /* TextViewController.h */,
+				C046AA091EB1DD3B00376087 /* TextViewController.m */,
+			);
+			path = TextViewController;
+			sourceTree = "<group>";
+		};
 		C0B6BCAF1EAEDF8F00ACAD2F /* ReadBook */ = {
 			isa = PBXGroup;
 			children = (
+				C046AA071EB1DC8C00376087 /* TextViewController */,
+				C046A9FE1EB1D41D00376087 /* BookBasicViewController */,
 			);
 			path = ReadBook;
 			sourceTree = "<group>";
@@ -685,6 +711,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C046AA0A1EB1DD3B00376087 /* TextViewController.m in Sources */,
+				C046AA011EB1D46400376087 /* BookBasicViewController.m in Sources */,
 				C0D0824D1EB0394E00F314B7 /* BookManager.m in Sources */,
 				C00B1CD41EA9F6350033D9BA /* AppDelegate.m in Sources */,
 				C0B6BCC31EAF304C00ACAD2F /* NSString+PerhapYs.m in Sources */,
