@@ -12,6 +12,8 @@
 
 + (instancetype)shareBook;
 
++ (NSUInteger)fontSize;
+
 +(NSInteger)BookTransitionStyle;
 @end
 

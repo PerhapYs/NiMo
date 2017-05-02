@@ -7,7 +7,9 @@
 //
 
 #import "BookManager.h"
+#define FONT_SIZE_KEY @"FONT_SIZE"
 
+#define FONT_SIZE 16
 
 @implementation BookManager
 + (instancetype)shareBook{
@@ -31,7 +33,14 @@
     return [bookStyel integerValue];
 }
 
-
++ (NSUInteger)fontSize
+{
+    NSUInteger fontSize = [[NSUserDefaults standardUserDefaults] integerForKey:FONT_SIZE_KEY];
+    if (fontSize == 0) {
+        fontSize = FONT_SIZE;
+    }
+    return fontSize;
+}
 
 
 @end

@@ -20,9 +20,13 @@
 		C00B1D1E1EA9F9D10033D9BA /* RightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C00B1D1D1EA9F9D10033D9BA /* RightViewController.m */; };
 		C046AA011EB1D46400376087 /* BookBasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C046AA001EB1D46400376087 /* BookBasicViewController.m */; };
 		C046AA0A1EB1DD3B00376087 /* TextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C046AA091EB1DD3B00376087 /* TextViewController.m */; };
+		C09589401EB34476007515B5 /* BookModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C095893F1EB34476007515B5 /* BookModel.m */; };
+		C09589441EB34550007515B5 /* BookChapter.m in Sources */ = {isa = PBXBuildFile; fileRef = C09589431EB34550007515B5 /* BookChapter.m */; };
+		C09589481EB34827007515B5 /* BookPage.m in Sources */ = {isa = PBXBuildFile; fileRef = C09589471EB34827007515B5 /* BookPage.m */; };
 		C0B6BCBF1EAF2FAB00ACAD2F /* 大主宰.txt in Resources */ = {isa = PBXBuildFile; fileRef = C0B6BCBE1EAF2FAB00ACAD2F /* 大主宰.txt */; };
 		C0B6BCC31EAF304C00ACAD2F /* NSString+PerhapYs.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B6BCC21EAF304C00ACAD2F /* NSString+PerhapYs.m */; };
 		C0B6BCC71EAF33A300ACAD2F /* NSArray+PerhapYs.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B6BCC61EAF33A300ACAD2F /* NSArray+PerhapYs.m */; };
+		C0C5E3B01EB82B4F00F6B930 /* NSAttributedString+PerhapYs.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C5E3AF1EB82B4F00F6B930 /* NSAttributedString+PerhapYs.m */; };
 		C0D0824D1EB0394E00F314B7 /* BookManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D0824C1EB0394E00F314B7 /* BookManager.m */; };
 		C0D38BEC1EAA0E4C002908A9 /* CenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D38BEB1EAA0E4C002908A9 /* CenterViewController.m */; };
 		C0D38BF01EAA0E7D002908A9 /* CenterNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D38BEF1EAA0E7D002908A9 /* CenterNavigationViewController.m */; };
@@ -80,11 +84,19 @@
 		C046AA001EB1D46400376087 /* BookBasicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookBasicViewController.m; sourceTree = "<group>"; };
 		C046AA081EB1DD3B00376087 /* TextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewController.h; sourceTree = "<group>"; };
 		C046AA091EB1DD3B00376087 /* TextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewController.m; sourceTree = "<group>"; };
+		C095893E1EB34476007515B5 /* BookModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookModel.h; sourceTree = "<group>"; };
+		C095893F1EB34476007515B5 /* BookModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookModel.m; sourceTree = "<group>"; };
+		C09589421EB34550007515B5 /* BookChapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookChapter.h; sourceTree = "<group>"; };
+		C09589431EB34550007515B5 /* BookChapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookChapter.m; sourceTree = "<group>"; };
+		C09589461EB34827007515B5 /* BookPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookPage.h; sourceTree = "<group>"; };
+		C09589471EB34827007515B5 /* BookPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookPage.m; sourceTree = "<group>"; };
 		C0B6BCBE1EAF2FAB00ACAD2F /* 大主宰.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "大主宰.txt"; sourceTree = "<group>"; };
 		C0B6BCC11EAF304C00ACAD2F /* NSString+PerhapYs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PerhapYs.h"; sourceTree = "<group>"; };
 		C0B6BCC21EAF304C00ACAD2F /* NSString+PerhapYs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+PerhapYs.m"; sourceTree = "<group>"; };
 		C0B6BCC51EAF33A300ACAD2F /* NSArray+PerhapYs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+PerhapYs.h"; sourceTree = "<group>"; };
 		C0B6BCC61EAF33A300ACAD2F /* NSArray+PerhapYs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+PerhapYs.m"; sourceTree = "<group>"; };
+		C0C5E3AE1EB82B4F00F6B930 /* NSAttributedString+PerhapYs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+PerhapYs.h"; sourceTree = "<group>"; };
+		C0C5E3AF1EB82B4F00F6B930 /* NSAttributedString+PerhapYs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+PerhapYs.m"; sourceTree = "<group>"; };
 		C0D0824B1EB0394E00F314B7 /* BookManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookManager.h; sourceTree = "<group>"; };
 		C0D0824C1EB0394E00F314B7 /* BookManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookManager.m; sourceTree = "<group>"; };
 		C0D38BEA1EAA0E4C002908A9 /* CenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CenterViewController.h; sourceTree = "<group>"; };
@@ -322,9 +334,39 @@
 			path = TextViewController;
 			sourceTree = "<group>";
 		};
+		C095893D1EB34435007515B5 /* BookModel */ = {
+			isa = PBXGroup;
+			children = (
+				C095893E1EB34476007515B5 /* BookModel.h */,
+				C095893F1EB34476007515B5 /* BookModel.m */,
+			);
+			path = BookModel;
+			sourceTree = "<group>";
+		};
+		C09589411EB34518007515B5 /* BookChapter */ = {
+			isa = PBXGroup;
+			children = (
+				C09589421EB34550007515B5 /* BookChapter.h */,
+				C09589431EB34550007515B5 /* BookChapter.m */,
+			);
+			path = BookChapter;
+			sourceTree = "<group>";
+		};
+		C09589451EB34803007515B5 /* BookPage */ = {
+			isa = PBXGroup;
+			children = (
+				C09589461EB34827007515B5 /* BookPage.h */,
+				C09589471EB34827007515B5 /* BookPage.m */,
+			);
+			path = BookPage;
+			sourceTree = "<group>";
+		};
 		C0B6BCAF1EAEDF8F00ACAD2F /* ReadBook */ = {
 			isa = PBXGroup;
 			children = (
+				C09589451EB34803007515B5 /* BookPage */,
+				C09589411EB34518007515B5 /* BookChapter */,
+				C095893D1EB34435007515B5 /* BookModel */,
 				C046AA071EB1DC8C00376087 /* TextViewController */,
 				C046A9FE1EB1D41D00376087 /* BookBasicViewController */,
 			);
@@ -358,6 +400,15 @@
 			path = "NSArray+";
 			sourceTree = "<group>";
 		};
+		C0C5E3AA1EB82A9600F6B930 /* AttributeSting+ */ = {
+			isa = PBXGroup;
+			children = (
+				C0C5E3AE1EB82B4F00F6B930 /* NSAttributedString+PerhapYs.h */,
+				C0C5E3AF1EB82B4F00F6B930 /* NSAttributedString+PerhapYs.m */,
+			);
+			path = "AttributeSting+";
+			sourceTree = "<group>";
+		};
 		C0D0824A1EB0390700F314B7 /* BookSetting */ = {
 			isa = PBXGroup;
 			children = (
@@ -379,6 +430,7 @@
 		C0E900F91EAD979000816AEA /* category */ = {
 			isa = PBXGroup;
 			children = (
+				C0C5E3AA1EB82A9600F6B930 /* AttributeSting+ */,
 				C0B6BCC41EAF338600ACAD2F /* NSArray+ */,
 				C0B6BCC01EAF301E00ACAD2F /* NSString+ */,
 				C0E900FC1EAD984600816AEA /* UIImage+ */,
@@ -711,15 +763,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0C5E3B01EB82B4F00F6B930 /* NSAttributedString+PerhapYs.m in Sources */,
 				C046AA0A1EB1DD3B00376087 /* TextViewController.m in Sources */,
 				C046AA011EB1D46400376087 /* BookBasicViewController.m in Sources */,
+				C09589401EB34476007515B5 /* BookModel.m in Sources */,
 				C0D0824D1EB0394E00F314B7 /* BookManager.m in Sources */,
 				C00B1CD41EA9F6350033D9BA /* AppDelegate.m in Sources */,
 				C0B6BCC31EAF304C00ACAD2F /* NSString+PerhapYs.m in Sources */,
 				C00B1CD11EA9F6350033D9BA /* main.m in Sources */,
 				C00B1D1A1EA9F9AD0033D9BA /* LeftViewController.m in Sources */,
 				C00B1D071EA9F6CD0033D9BA /* TopViewController.m in Sources */,
+				C09589441EB34550007515B5 /* BookChapter.m in Sources */,
 				C0E900FF1EAD98C600816AEA /* UIImage+PerhapYs.m in Sources */,
+				C09589481EB34827007515B5 /* BookPage.m in Sources */,
 				C0B6BCC71EAF33A300ACAD2F /* NSArray+PerhapYs.m in Sources */,
 				C0EE856E1EADFD6900B16C5B /* BooksCollectionViewCell.m in Sources */,
 				C00B1D0A1EA9F6DA0033D9BA /* TopRoute.m in Sources */,

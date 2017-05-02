@@ -11,7 +11,7 @@
 #import "TextViewController.h"
 
 
-#define HEIGHT_TOPSETING SET_HEIGHT_(100)
+#define HEIGHT_TOPSETING SET_HEIGHT_(60)
 
 #define HEIGHT_BELOWSETTING SET_HEIGHT_(100)
 
@@ -21,6 +21,7 @@
 @interface BookBasicViewController ()<UIPageViewControllerDelegate,UIPageViewControllerDataSource>{
     
     BOOL _isShowSetting;
+    BOOL _isShowFont;
 }
 
 @property (nonatomic, strong) UIPageViewController * pageViewController;
@@ -39,6 +40,7 @@
     
     [self initializeData];
     [self intializeInterface];
+    [self addSingleTapGesture];
     [self showBookWithPage:0];  // 默认显示第一页数据
 }
 
@@ -59,13 +61,29 @@
 }
 - (void)singleTapAction:(UIGestureRecognizer *)gesture
 {
-   
+    if (_isShowFont) {
+        
+        return;
+    }
+    
+    if (_isShowSetting) {
+        [self hidenSettingBar];
+    }
+    else{
+        [self showSettingBar];
+    }
 }
 
 #pragma mark - 初始化数据
 -(void)initializeData{
     
+    _isShowFont = NO;
     _isShowSetting = NO;
+    [self getBookContent];
+}
+-(void)getBookContent{
+    
+    
 }
 #pragma mark -- 初始化界面
 
@@ -95,7 +113,15 @@
         _belowSettingView = ({
             UIView *view = [UIView new];
             
-            view.backgroundColor = [UIColor blueColor];
+            view.backgroundColor = [UIColor whiteColor];
+            
+            UIView *upLineView = [UIView new];
+            upLineView.backgroundColor = [UIColor blackColor];
+            [view addSubview:upLineView];
+            [upLineView mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.left.and.right.and.top.equalTo(view);
+                make.height.mas_equalTo(SET_HEIGHT_(1));
+            }];
             
             view;
         });
@@ -107,7 +133,25 @@
         _topSettingView = ({
             UIView *view = [UIView new];
             
-            view.backgroundColor = [UIColor redColor];
+            view.backgroundColor = [UIColor whiteColor];
+            
+            UIButton *goBackBtn = [UIButton buttonWithType:0];
+            [goBackBtn setImage:[UIImage imageNamed:@"btn_back_red"] forState:UIControlStateNormal];
+            [goBackBtn addTarget:self action:@selector(closeViewEvent) forControlEvents:UIControlEventTouchUpInside];
+            [view addSubview:goBackBtn];
+            [goBackBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.left.equalTo(view.mas_left).offset(SET_WIDTH_(10));
+                make.bottom.equalTo(view.mas_bottom);
+                make.size.mas_equalTo(CGSizeMake(SET_WIDTH_(40), SET_HEIGHT_(40)));
+            }];
+            
+            UIView *belowLineView = [UIView new];
+            belowLineView.backgroundColor = [UIColor blackColor];
+            [view addSubview:belowLineView];
+            [belowLineView mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.left.and.right.and.bottom.equalTo(view);
+                make.height.mas_equalTo(SET_HEIGHT_(1));
+            }];
             
             view;
         });
@@ -131,7 +175,7 @@
     return _pageViewController;
 }
 
-#pragma mark -- 设置显示/隐藏
+#pragma mark -- 设置显示/隐藏 设置
 // 显示
 -(void)showSettingBar{
     
@@ -147,6 +191,7 @@
         [self.view layoutIfNeeded];
         
     }];
+    _isShowSetting = YES;
 }
 // 隐藏
 -(void)hidenSettingBar{
@@ -163,13 +208,18 @@
         [self.view layoutIfNeeded];
         
     }];
+    _isShowSetting = NO;
 }
+
+#pragma mark -- 显示/隐藏 字体修改
+
+
 
 #pragma mark - 设置显示第几页
 
 -(void)showBookWithPage:(NSUInteger)page{
-    
-    [self.pageViewController setViewControllers:@[[[TextViewController alloc] init]]
+    TextViewController *textVC = [[TextViewController alloc] init];
+    [self.pageViewController setViewControllers:@[textVC]
                                  direction:UIPageViewControllerNavigationDirectionForward
                                   animated:NO
                                 completion:nil];
@@ -196,5 +246,10 @@
     
     TextViewController *textVc = [[TextViewController alloc] init];
     return textVc;
+}
+#pragma mark -- btn selected event
+-(void)closeViewEvent{
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 @end
