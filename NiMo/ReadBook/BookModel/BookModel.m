@@ -7,9 +7,9 @@
 //
 
 #import "BookModel.h"
-
+#import "BookManager.h"
+#import "NSString+PerhapYs.h"
 @implementation BookModel
-
 
 - (BOOL)havePreChapter
 {
@@ -30,30 +30,28 @@
     BookChapter *readerChapter = [[BookChapter alloc]init];
     readerChapter.chapterIndex = chapter;
     _curChpaterIndex = chapter;
-    NSError *error = nil;
-    NSString *chapter_num = [NSString stringWithFormat:@"Chapter%d",(int)chapter];
-    NSString *path1 = [[NSBundle mainBundle] pathForResource:chapter_num ofType:@"txt"];
-
-    NSString *content = [NSString stringWithContentsOfFile:path1 encoding:NSUTF8StringEncoding error:&error];
-
-    if (error) {
-        NSLog(@"UTF8 open book chapter error:%@",error);
-    }
-    else{
-        readerChapter.chapterContent = content;
-        return readerChapter;
-    }
     
-    NSError *errorAscall = nil;
-    NSString *contentAscall = [NSString stringWithContentsOfFile:path1 encoding:-2147482062 error:&errorAscall];
-    if (errorAscall) {
-        NSLog(@"ASCALL open book chapter error:%@",errorAscall);
+    if (!self.chapterArray){
+//        NSString *chapter_num = self.bookName;
+        
+//        NSString *path = [NSString getBookPathWithName:chapter_num type:@"txt"];
+        NSString *path = self.bookPath;
+        
+        NSString *bookContent = [NSString getNovelWithBookPath:path];
+        
+        if (bookContent) {
+            NSArray *chapterArray = [BookManager analyseTxtWithContent:bookContent maintainEmptyCharcter:YES];
+            self.chapterArray = [NSArray arrayWithArray:chapterArray];
+            self.totalChapter = chapterArray.count;
+        }
     }
-    else{
-        readerChapter.chapterContent = contentAscall;
-        return readerChapter;
+    // 防止取值超范围，（无内容，获取内容失败的情况）
+    if (self.chapterArray.count > 0 && chapter < self.chapterArray.count) {
+        BookChapter *newBook = (BookChapter *) self.chapterArray[chapter];
+        readerChapter.chapterContent = newBook.chapterContent;
+        readerChapter.chapterTitle = newBook.chapterTitle;
+        readerChapter.allContentRange = newBook.allContentRange;
     }
-    
     return readerChapter;
 }
 

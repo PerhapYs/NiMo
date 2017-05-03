@@ -12,11 +12,16 @@
 @interface BookChapter : NSObject
 
 @property (nonatomic, strong)  NSString *chapterContent; // 章节内容
+
 @property (nonatomic, strong)  NSString *chapterTitle;   // 章节标题
 @property (nonatomic, assign)  NSInteger chapterIndex;   // 章节下标
 @property (nonatomic, strong, readonly) NSArray *pageRangeArray; // 每页范围
 @property (nonatomic, assign, readonly) NSInteger totalPage;     // 总页数
 @property (nonatomic, assign, readonly) CGSize renderSize;       // 图文大小
+
+
+@property(nonatomic)NSRange contentRange ; //内容（包括title）
+@property(nonatomic)NSRange allContentRange;
 
 - (void)parseChapter;
 

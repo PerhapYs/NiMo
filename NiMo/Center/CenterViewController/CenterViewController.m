@@ -12,10 +12,13 @@
 #import "BooksCollectionViewCell.h"
 
 #import "BookBasicViewController.h"
+#import "NSArray+PerhapYs.h"
 
 @interface CenterViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
 
 @property (nonatomic , strong) UICollectionView *booksCV;
+
+@property (nonatomic , strong) NSMutableArray *dataSource;
 
 @end
 
@@ -27,11 +30,16 @@
     
     self.title = @"霓墨";
      self.view.dk_backgroundColorPicker = DKColorPickerWithKey(BAR);
-    
+    [self initializeData];
     [self initializeInterface];
 }
 #pragma mark -- interface
-
+-(void)initializeData{
+    
+    _dataSource = [[NSMutableArray alloc]initWithArray:[NSArray getNovalInformation]];
+    
+    [self.booksCV reloadData];
+}
 -(void)initializeInterface{
     
     UIButton *leftImage = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -86,13 +94,13 @@
 #pragma mark -- CollectionView dataSource
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 100;
+    return _dataSource.count;
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     BooksCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"booksCell" forIndexPath:indexPath];
-    [cell placeCellDataWithDic:nil];
+    [cell placeCellDataWithDic:_dataSource[indexPath.row]];
     return cell;
 }
 
@@ -101,6 +109,8 @@
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
     BookBasicViewController *basicVC = [[BookBasicViewController alloc] init];
+    
+    basicVC.readBook.bookPath = _dataSource[indexPath.row][@"novalPath"];
     
     [self.navigationController pushViewController:basicVC animated:YES];
 }

@@ -9,7 +9,7 @@
 #import "BookBasicViewController.h"
 #import "BookManager.h"
 #import "TextViewController.h"
-#import "BookModel.h"
+
 #import "BookChapter.h"
 
 #define HEIGHT_TOPSETING SET_HEIGHT_(60)
@@ -23,7 +23,7 @@
     
     BOOL _isShowSetting;
     BOOL _isShowFont;
-    BookModel *_readBook;
+    
     BookChapter *_chapter;
 }
 
@@ -91,14 +91,19 @@
      _renderSize = [TextViewController renderSizeWithFrame:self.view.frame];
     [self getBookContent];
 }
--(void)getBookContent{
+-(BookModel *)readBook{
     
     if (!_readBook) {
-        _readBook = [[BookModel alloc] init];
-        _readBook.bookId = 1;
-        _readBook.bookName = @"大主宰";
-        _readBook.totalChapter = 1;
+        _readBook = ({
+            BookModel *book = [[BookModel alloc] init];
+            
+            book;
+        });
     }
+    return _readBook;
+}
+-(void)getBookContent{
+
    _chapter = [self getBookChapter:1];
 }
 
@@ -268,6 +273,7 @@
 - (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed
 {
     NSLog(@"🌹");
+    [self hidenSettingBar];
 }
 
 #pragma mark -- UIPageViewControllerDataSource

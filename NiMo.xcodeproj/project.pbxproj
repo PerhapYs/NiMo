@@ -31,7 +31,6 @@
 		C0D38BF01EAA0E7D002908A9 /* CenterNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D38BEF1EAA0E7D002908A9 /* CenterNavigationViewController.m */; };
 		C0E900FF1EAD98C600816AEA /* UIImage+PerhapYs.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E900FE1EAD98C600816AEA /* UIImage+PerhapYs.m */; };
 		C0EE856E1EADFD6900B16C5B /* BooksCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0EE856D1EADFD6900B16C5B /* BooksCollectionViewCell.m */; };
-		C0FE4E471EB979E7002FAD8B /* Chapter1.txt in Resources */ = {isa = PBXBuildFile; fileRef = C0FE4E461EB979E7002FAD8B /* Chapter1.txt */; };
 		EADB6561A5CD4F04B1057F82 /* libPods-NiMoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A61828D8A39CD2C77A5766E /* libPods-NiMoTests.a */; };
 /* End PBXBuildFile section */
 
@@ -106,7 +105,6 @@
 		C0E900FE1EAD98C600816AEA /* UIImage+PerhapYs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+PerhapYs.m"; sourceTree = "<group>"; };
 		C0EE856C1EADFD6900B16C5B /* BooksCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BooksCollectionViewCell.h; sourceTree = "<group>"; };
 		C0EE856D1EADFD6900B16C5B /* BooksCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BooksCollectionViewCell.m; sourceTree = "<group>"; };
-		C0FE4E461EB979E7002FAD8B /* Chapter1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Chapter1.txt; sourceTree = "<group>"; };
 		CA710FE7514CC04EBF2E622E /* Pods-NiMoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NiMoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NiMoTests/Pods-NiMoTests.release.xcconfig"; sourceTree = "<group>"; };
 		E4A53F9AAEDBCD22EFB84DD6 /* Pods-NiMoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NiMoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NiMoTests/Pods-NiMoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F6AA69ECD975FADC878E0AD4 /* Pods-NiMoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NiMoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NiMoUITests/Pods-NiMoUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -376,7 +374,6 @@
 		C0B6BCB71EAEFC4900ACAD2F /* Book */ = {
 			isa = PBXGroup;
 			children = (
-				C0FE4E461EB979E7002FAD8B /* Chapter1.txt */,
 				C0D0824A1EB0390700F314B7 /* BookSetting */,
 			);
 			path = Book;
@@ -599,7 +596,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0FE4E471EB979E7002FAD8B /* Chapter1.txt in Resources */,
 				C00B1CDC1EA9F6350033D9BA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,6 +9,7 @@
 #import "TextViewController.h"
 #import <TYAttributedLabel.h>
 #import "BookPage.h"
+#import "BookChapter.h"
 
 #define kTextLabelHorEdge 15
 #define kTextLabelTopEdge 25
@@ -27,7 +28,6 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     [self intializeInterface];
-    
 }
 - (void)viewWillLayoutSubviews
 {

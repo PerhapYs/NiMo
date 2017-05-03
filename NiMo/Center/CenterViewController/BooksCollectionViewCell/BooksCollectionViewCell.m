@@ -45,6 +45,6 @@
 -(void)placeCellDataWithDic:(NSDictionary *)dic{
     
     [_bookImageView setImage:[UIImage imageNamed:@"bookImage.jpeg"]];
-    _bookNameLabel.text = @"大主宰";
+    _bookNameLabel.text = dic[@"novalTile"];
 }
 @end

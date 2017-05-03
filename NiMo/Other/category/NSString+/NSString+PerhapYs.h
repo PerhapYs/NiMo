@@ -12,8 +12,9 @@
 
 +(NSString *)getNovelWithBookPath:(NSString *)path;
 
--(int)getBookSizeUsingFilePath;
-
-
 +(NSString *)getBookPathWithName:(NSString *)name type:(NSString *)type;
+
+- (NSString *)yj_substringWithRange:(NSRange)range;
+
+- (NSString *)trimmed;
 @end

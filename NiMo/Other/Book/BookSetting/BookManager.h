@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BookChapter.h"
 
 @interface BookManager : NSObject
 
@@ -15,5 +16,13 @@
 + (NSUInteger)fontSize;
 
 +(NSInteger)BookTransitionStyle;
+
++ (void)extractNovelWithContent:(NSString *)content
+                          async:(BOOL)isAsync
+          maintainEmptyCharcter:(BOOL)isNeedMaintainEmptyCharcter
+                         result:(void(^)(NSArray<BookChapter *> *models))result;
+
++ (NSArray<BookChapter *> *)analyseTxtWithContent:(NSString *)content
+                            maintainEmptyCharcter:(BOOL)maintainEmptyCharcter;
 @end
 

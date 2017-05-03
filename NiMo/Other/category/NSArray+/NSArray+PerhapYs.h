@@ -10,5 +10,9 @@
 
 @interface NSArray (PerhapYs)
 
++(NSArray *)SearchLocalNovalPath;
 
++(NSArray *)getLocalTextTitle;
+
++(NSArray *)getNovalInformation;
 @end

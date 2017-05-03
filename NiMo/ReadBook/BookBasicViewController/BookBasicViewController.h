@@ -7,7 +7,9 @@
 //
 
 #import "TopViewController.h"
-
+#import "BookModel.h"
 @interface BookBasicViewController : TopViewController
+
+@property (nonatomic , strong) BookModel *readBook;
 
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "LeftViewController.h"
-
+#import "NSArray+PerhapYs.h"
 @interface LeftViewController ()
 
 @end
@@ -20,6 +20,20 @@
     
 //    self.view.backgroundColor = [UIColor greenColor];
     self.view.dk_backgroundColorPicker = DKColorPickerWithKey(BAR);
+    
+//    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+//    NSString *documentsPath = [paths objectAtIndex:0];
+//    
+//    NSLog(@"🌹 %@",documentsPath);
+//    
+//     NSString *filePath = [documentsPath stringByAppendingPathComponent:@"componentState.txt"];
+//    
+//    NSString *str = @"fdsfdsfds";
+//    NSError *error = nil;
+//    [str writeToFile:filePath atomically:YES encoding:NSUTF8StringEncoding error:&error];
+//    
+////    [dic writeToFile:filePath atomically:YES];
+    
 }
 
 @end

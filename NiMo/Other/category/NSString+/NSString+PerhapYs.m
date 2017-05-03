@@ -16,19 +16,23 @@
     
 //    ANSI编码
     NSString *ansiStr = [[NSString alloc] initWithContentsOfFile:path encoding:-2147482062 error:&error];
-    if (!error) {
-
+    if (error) {
+        NSLog(@"ASCALL open book chapter error:%@",error);
+    }
+    else {
         return ansiStr;
     }
-
+    
 //    UNICODE编码
-    NSString *unicodeStr = [[NSString alloc] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&error];
-    if (!error) {
-        
+    NSError *errorAscall = nil;
+    NSString *unicodeStr = [[NSString alloc] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&errorAscall];
+    if (errorAscall) {
+        NSLog(@"UTF8 open book chapter error :%@",errorAscall);
+    }
+    else{
         return unicodeStr;
     }
-    
-    return @"文本格式错误";
+    return nil;
 }
 +(NSString *)getBookPathWithName:(NSString *)name type:(NSString *)type{
     
@@ -36,19 +40,18 @@
     
     return filePath;
 }
--(int)getBookSizeUsingFilePath{
+
+//防止越界
+- (NSString *)yj_substringWithRange:(NSRange)range{
     
-    if (!self) {
-        return 1;
+    if (self.length >= range.location + range.length) {
+        return [self substringWithRange:range];
     }
+    return @"";
+}
 
-    long long size = 0;
-    NSFileManager *manage = [NSFileManager defaultManager];
-    NSDictionary *attriDict = [manage attributesOfItemAtPath:self error:nil];
-    size =  [attriDict[NSFileSize] longLongValue];
-
-    float bookSize = size / 1048576;
-    
-    return bookSize;
+- (NSString *)trimmed{
+    NSCharacterSet* whiteSpaceSet = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+    return [self stringByTrimmingCharactersInSet:whiteSpaceSet];
 }
 @end

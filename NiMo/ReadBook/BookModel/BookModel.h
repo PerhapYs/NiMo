@@ -16,6 +16,10 @@
 @property (nonatomic, assign) NSInteger totalChapter; // 书本章节
 @property (nonatomic, assign) NSInteger curChpaterIndex; // 当前章节
 
+@property (nonatomic , strong) NSArray *chapterArray;
+
+@property (nonatomic , strong) NSString *bookPath;
+
 // 是否有下章节
 - (BOOL)haveNextChapter;
 
