@@ -23,7 +23,6 @@
 		C09589401EB34476007515B5 /* BookModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C095893F1EB34476007515B5 /* BookModel.m */; };
 		C09589441EB34550007515B5 /* BookChapter.m in Sources */ = {isa = PBXBuildFile; fileRef = C09589431EB34550007515B5 /* BookChapter.m */; };
 		C09589481EB34827007515B5 /* BookPage.m in Sources */ = {isa = PBXBuildFile; fileRef = C09589471EB34827007515B5 /* BookPage.m */; };
-		C0B6BCBF1EAF2FAB00ACAD2F /* 大主宰.txt in Resources */ = {isa = PBXBuildFile; fileRef = C0B6BCBE1EAF2FAB00ACAD2F /* 大主宰.txt */; };
 		C0B6BCC31EAF304C00ACAD2F /* NSString+PerhapYs.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B6BCC21EAF304C00ACAD2F /* NSString+PerhapYs.m */; };
 		C0B6BCC71EAF33A300ACAD2F /* NSArray+PerhapYs.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B6BCC61EAF33A300ACAD2F /* NSArray+PerhapYs.m */; };
 		C0C5E3B01EB82B4F00F6B930 /* NSAttributedString+PerhapYs.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C5E3AF1EB82B4F00F6B930 /* NSAttributedString+PerhapYs.m */; };
@@ -32,6 +31,7 @@
 		C0D38BF01EAA0E7D002908A9 /* CenterNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D38BEF1EAA0E7D002908A9 /* CenterNavigationViewController.m */; };
 		C0E900FF1EAD98C600816AEA /* UIImage+PerhapYs.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E900FE1EAD98C600816AEA /* UIImage+PerhapYs.m */; };
 		C0EE856E1EADFD6900B16C5B /* BooksCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0EE856D1EADFD6900B16C5B /* BooksCollectionViewCell.m */; };
+		C0FE4E471EB979E7002FAD8B /* Chapter1.txt in Resources */ = {isa = PBXBuildFile; fileRef = C0FE4E461EB979E7002FAD8B /* Chapter1.txt */; };
 		EADB6561A5CD4F04B1057F82 /* libPods-NiMoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A61828D8A39CD2C77A5766E /* libPods-NiMoTests.a */; };
 /* End PBXBuildFile section */
 
@@ -90,7 +90,6 @@
 		C09589431EB34550007515B5 /* BookChapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookChapter.m; sourceTree = "<group>"; };
 		C09589461EB34827007515B5 /* BookPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookPage.h; sourceTree = "<group>"; };
 		C09589471EB34827007515B5 /* BookPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookPage.m; sourceTree = "<group>"; };
-		C0B6BCBE1EAF2FAB00ACAD2F /* 大主宰.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "大主宰.txt"; sourceTree = "<group>"; };
 		C0B6BCC11EAF304C00ACAD2F /* NSString+PerhapYs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PerhapYs.h"; sourceTree = "<group>"; };
 		C0B6BCC21EAF304C00ACAD2F /* NSString+PerhapYs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+PerhapYs.m"; sourceTree = "<group>"; };
 		C0B6BCC51EAF33A300ACAD2F /* NSArray+PerhapYs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+PerhapYs.h"; sourceTree = "<group>"; };
@@ -107,6 +106,7 @@
 		C0E900FE1EAD98C600816AEA /* UIImage+PerhapYs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+PerhapYs.m"; sourceTree = "<group>"; };
 		C0EE856C1EADFD6900B16C5B /* BooksCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BooksCollectionViewCell.h; sourceTree = "<group>"; };
 		C0EE856D1EADFD6900B16C5B /* BooksCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BooksCollectionViewCell.m; sourceTree = "<group>"; };
+		C0FE4E461EB979E7002FAD8B /* Chapter1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Chapter1.txt; sourceTree = "<group>"; };
 		CA710FE7514CC04EBF2E622E /* Pods-NiMoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NiMoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NiMoTests/Pods-NiMoTests.release.xcconfig"; sourceTree = "<group>"; };
 		E4A53F9AAEDBCD22EFB84DD6 /* Pods-NiMoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NiMoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NiMoTests/Pods-NiMoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F6AA69ECD975FADC878E0AD4 /* Pods-NiMoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NiMoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NiMoUITests/Pods-NiMoUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -376,8 +376,8 @@
 		C0B6BCB71EAEFC4900ACAD2F /* Book */ = {
 			isa = PBXGroup;
 			children = (
+				C0FE4E461EB979E7002FAD8B /* Chapter1.txt */,
 				C0D0824A1EB0390700F314B7 /* BookSetting */,
-				C0B6BCBE1EAF2FAB00ACAD2F /* 大主宰.txt */,
 			);
 			path = Book;
 			sourceTree = "<group>";
@@ -599,8 +599,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0FE4E471EB979E7002FAD8B /* Chapter1.txt in Resources */,
 				C00B1CDC1EA9F6350033D9BA /* Assets.xcassets in Resources */,
-				C0B6BCBF1EAF2FAB00ACAD2F /* 大主宰.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -915,7 +915,7 @@
 				INFOPLIST_FILE = NiMo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.nimo.www;
+				PRODUCT_BUNDLE_IDENTIFIER = com.perhapys.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -930,7 +930,7 @@
 				INFOPLIST_FILE = NiMo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.nimo.www;
+				PRODUCT_BUNDLE_IDENTIFIER = com.perhapys.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

@@ -7,8 +7,16 @@
 //
 
 #import "TextViewController.h"
+#import <TYAttributedLabel.h>
+#import "BookPage.h"
+
+#define kTextLabelHorEdge 15
+#define kTextLabelTopEdge 25
+#define kTextLabelBottomEdge 10
 
 @interface TextViewController ()
+
+@property (nonatomic, weak) TYAttributedLabel *showChapterLabel;
 
 @end
 
@@ -16,11 +24,37 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
     self.view.backgroundColor = [UIColor whiteColor];
+    [self intializeInterface];
+    
+}
+- (void)viewWillLayoutSubviews
+{
+    _showChapterLabel.frame = [[self class]renderFrameWithFrame:self.view.frame];
 }
 
+-(void)intializeInterface{
+    
+    TYAttributedLabel *label = [[TYAttributedLabel alloc]init];
+    label.backgroundColor = [UIColor clearColor];
+    label.attributedText = _readerPager.attString;
+    [self.view addSubview:label];
+    _showChapterLabel = label;
+}
+
+
+#pragma mark - renderSize
+
++ (CGRect)renderFrameWithFrame:(CGRect)frame
+{
+    return CGRectMake(kTextLabelHorEdge, kTextLabelTopEdge, CGRectGetWidth(frame)-2*kTextLabelHorEdge, CGRectGetHeight(frame)-kTextLabelTopEdge-kTextLabelBottomEdge);
+}
+
++ (CGSize)renderSizeWithFrame:(CGRect)frame
+{
+    return [self renderFrameWithFrame:frame].size;
+}
 
 
 @end

@@ -17,7 +17,7 @@
     CGRect rect = CGRectMake(0, 0, size.width, size.height);
     
     //    以下方法耗时 基本再 0.5s 以内
-    // NSDate * date = [NSDate date];
+     NSDate * date = [NSDate date];
     NSInteger rangeIndex = 0;
     do {
         NSUInteger length = MIN(600, attributedString.length - rangeIndex);
@@ -35,8 +35,8 @@
         CFRelease(frame);
         CFRelease(childFramesetter);
     } while (rangeIndex < attributedString.length && attributedString.length > 0);
-    //NSTimeInterval millionSecond = [[NSDate date] timeIntervalSinceDate:date];
-    //NSLog(@"耗时 %lf", millionSecond);
+    NSTimeInterval millionSecond = [[NSDate date] timeIntervalSinceDate:date];
+    NSLog(@"耗时 %lf", millionSecond);
     return resultRange;
 }
 @end

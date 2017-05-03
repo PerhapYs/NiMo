@@ -33,6 +33,7 @@
     NSError *error = nil;
     NSString *chapter_num = [NSString stringWithFormat:@"Chapter%d",(int)chapter];
     NSString *path1 = [[NSBundle mainBundle] pathForResource:chapter_num ofType:@"txt"];
+
     NSString *content = [NSString stringWithContentsOfFile:path1 encoding:NSUTF8StringEncoding error:&error];
 
     if (error) {
@@ -46,7 +47,7 @@
     NSError *errorAscall = nil;
     NSString *contentAscall = [NSString stringWithContentsOfFile:path1 encoding:-2147482062 error:&errorAscall];
     if (errorAscall) {
-        NSLog(@"ASCALL open book chapter error:%@",error);
+        NSLog(@"ASCALL open book chapter error:%@",errorAscall);
     }
     else{
         readerChapter.chapterContent = contentAscall;
