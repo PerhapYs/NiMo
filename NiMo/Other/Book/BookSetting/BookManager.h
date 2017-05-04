@@ -17,12 +17,13 @@
 
 +(NSInteger)BookTransitionStyle;
 
-+ (void)extractNovelWithContent:(NSString *)content
-                          async:(BOOL)isAsync
-          maintainEmptyCharcter:(BOOL)isNeedMaintainEmptyCharcter
-                         result:(void(^)(NSArray<BookChapter *> *models))result;
-
 + (NSArray<BookChapter *> *)analyseTxtWithContent:(NSString *)content
                             maintainEmptyCharcter:(BOOL)maintainEmptyCharcter;
+// 保存书签
++ (void)saveBookMarkWithBookId:(NSInteger)bookId Chapter:(BookChapter *)chapter curPage:(NSInteger)curPage;
+
++ (BOOL)existMarkWithBookId:(NSInteger)bookId Chapter:(BookChapter *)chapter curPage:(NSInteger)curPage;
+
++ (BOOL)removeBookMarkWithBookId:(NSInteger)bookId Chapter:(BookChapter *)chapter curPage:(NSInteger)curPage;
 @end
 

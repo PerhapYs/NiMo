@@ -25,6 +25,8 @@
     BOOL _isShowFont;
     
     BookChapter *_chapter;
+    
+    UIButton *_bookmarkBtn;  // 书签按钮
 }
 
 @property (nonatomic, strong) UIPageViewController * pageViewController;
@@ -172,6 +174,17 @@
                 make.size.mas_equalTo(CGSizeMake(SET_WIDTH_(40), SET_HEIGHT_(40)));
             }];
             
+            _bookmarkBtn = [UIButton buttonWithType:0];
+            [_bookmarkBtn setImage:[UIImage imageNamed:@"ico_bookmark"] forState:UIControlStateNormal];
+            [_bookmarkBtn setImage:[UIImage imageNamed:@"ico_bookmark_sel"] forState:UIControlStateSelected];
+            [_bookmarkBtn addTarget:self action:@selector(bookMarkSelectedEvent:) forControlEvents:UIControlEventTouchUpInside];
+            [view addSubview:_bookmarkBtn];
+            [_bookmarkBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.right.equalTo(view.mas_right).offset(-SET_WIDTH_(10));
+                make.centerY.equalTo(goBackBtn.mas_centerY);
+                make.size.mas_equalTo(CGSizeMake(SET_WIDTH_(40), SET_HEIGHT_(40)));
+            }];
+            
             UIView *belowLineView = [UIView new];
             belowLineView.backgroundColor = [UIColor blackColor];
             [view addSubview:belowLineView];
@@ -207,6 +220,9 @@
 // 显示
 -(void)showSettingBar{
     
+    BOOL haveMarkInCurPage = [BookManager existMarkWithBookId:_readBook.bookId Chapter:_chapter curPage:_curPage];
+    
+    _bookmarkBtn.selected = haveMarkInCurPage;
     [UIView animateWithDuration:0.2 animations:^{
         
         [self.topSettingView mas_updateConstraints:^(MASConstraintMaker *make) {
@@ -351,7 +367,24 @@
     
     [self.navigationController popViewControllerAnimated:YES];
 }
-
+-(void)bookMarkSelectedEvent:(UIButton *)btn{
+    
+    if (btn.isSelected) {
+        [self removeCurrentChapterPagerMark];
+    }else {
+        [self saveCurrentChapterPagerMark];
+    }
+    btn.selected = !btn.selected;
+}
+#pragma mark -- 书签
+- (void)removeCurrentChapterPagerMark
+{
+    [BookManager removeBookMarkWithBookId:_readBook.bookId Chapter:_chapter curPage:_curPage];
+}
+-(void)saveCurrentChapterPagerMark
+{
+    [BookManager saveBookMarkWithBookId:_readBook.bookId Chapter:_chapter curPage:_curPage];
+}
 #pragma mark  -- 获取章节
 
 // 获取章节

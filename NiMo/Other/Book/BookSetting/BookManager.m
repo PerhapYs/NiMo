@@ -9,9 +9,13 @@
 #import "BookManager.h"
 #import "BookChapter.h"
 #import "NSString+PerhapYs.h"
+#import "BookMark.h"
+
 #define FONT_SIZE_KEY @"FONT_SIZE"
 
 #define FONT_SIZE 16
+
+#define MARK_TEXT_LENGTH 120
 
 @implementation BookManager
 + (instancetype)shareBook{
@@ -142,34 +146,51 @@
         [chapterModels addObject:model];
     }
 }
-/**
- 提取章节信息
- 
- @param content 文本内容
- @param isAsync 是否是异步
- @param isNeedMaintainEmptyCharcter 是否需要提取空的章节
- @param result 返回ChapterModel数组
- */
-+ (void)extractNovelWithContent:(NSString *)content
-                          async:(BOOL)isAsync
-          maintainEmptyCharcter:(BOOL)isNeedMaintainEmptyCharcter
-                         result:(void(^)(NSArray<BookChapter *> *models))result {
+
++ (void)saveBookMarkWithBookId:(NSInteger)bookId Chapter:(BookChapter *)chapter curPage:(NSInteger)curPage
+{
+    BookMark *mark = [[BookMark alloc]init];
+    mark.bookId = bookId;
+    mark.chapterIndex = [NSString stringWithFormat:@"%ld",chapter.chapterIndex];
+    BookPage *pager = [chapter chapterPagerWithIndex:curPage];
+    mark.offset = pager.pageRange.location;
     
-    if (result == nil) {  return ;}
-    
-    if (isAsync) {
-        
-        dispatch_async(dispatch_get_global_queue(0,0), ^{
-            
-            NSArray *models = [self analyseTxtWithContent:content maintainEmptyCharcter:isNeedMaintainEmptyCharcter];
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                result(models);
-            });
-        });
-        
-    }else {
-        result([self analyseTxtWithContent:content maintainEmptyCharcter:isNeedMaintainEmptyCharcter]);
+    if ([mark existDbObjectsWhereRange:pager.pageRange]) {
+        NSLog(@"书签已经存在！");
+        return;
     }
+    
+    mark.content = [pager.attString attributedSubstringFromRange:NSMakeRange(0, MIN(MARK_TEXT_LENGTH,  pager.pageRange.length))].string;
+    mark.content = [mark.content stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    
+    [self saveBookMark:mark];
+}
+
++ (void)saveBookMark:(BookMark *)readerMark
+{
+//    // TODO
+    if ([readerMark insertToDb]) {
+        NSLog(@"加入书签成功！");
+    }
+}
+
++ (BOOL)existMarkWithBookId:(NSInteger)bookId Chapter:(BookChapter *)chapter curPage:(NSInteger)curPage
+{
+    BookMark *mark = [[BookMark alloc]init];
+    mark.bookId = bookId;
+    mark.chapterIndex = [NSString stringWithFormat:@"%ld",chapter.chapterIndex];
+    BookPage *pager = [chapter chapterPagerWithIndex:curPage];
+    
+    return [mark existDbObjectsWhereRange:pager.pageRange];
+}
+
++ (BOOL)removeBookMarkWithBookId:(NSInteger)bookId Chapter:(BookChapter *)chapter curPage:(NSInteger)curPage
+{
+    BookMark *mark = [[BookMark alloc]init];
+    mark.bookId = bookId;
+    mark.chapterIndex = [NSString stringWithFormat:@"%ld",chapter.chapterIndex];
+    BookPage *pager = [chapter chapterPagerWithIndex:curPage];
+    
+    return [mark removeDbObjectsWhereRange:pager.pageRange];
 }
 @end

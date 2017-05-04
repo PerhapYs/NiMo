@@ -111,7 +111,7 @@
     BookBasicViewController *basicVC = [[BookBasicViewController alloc] init];
     
     basicVC.readBook.bookPath = _dataSource[indexPath.row][@"novalPath"];
-    
+    basicVC.readBook.bookId = [_dataSource[indexPath.row][@"novalId"] integerValue];
     [self.navigationController pushViewController:basicVC animated:YES];
 }
 #pragma mark -- barButton Event

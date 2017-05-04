@@ -23,6 +23,11 @@
 		C09589401EB34476007515B5 /* BookModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C095893F1EB34476007515B5 /* BookModel.m */; };
 		C09589441EB34550007515B5 /* BookChapter.m in Sources */ = {isa = PBXBuildFile; fileRef = C09589431EB34550007515B5 /* BookChapter.m */; };
 		C09589481EB34827007515B5 /* BookPage.m in Sources */ = {isa = PBXBuildFile; fileRef = C09589471EB34827007515B5 /* BookPage.m */; };
+		C09B3A3C1EBACE9F00501B50 /* EDbHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = C09B3A391EBACE9F00501B50 /* EDbHandle.m */; };
+		C09B3A3D1EBACE9F00501B50 /* EDbObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C09B3A3B1EBACE9F00501B50 /* EDbObject.m */; };
+		C09B3A401EBACED300501B50 /* BookMark.m in Sources */ = {isa = PBXBuildFile; fileRef = C09B3A3F1EBACED300501B50 /* BookMark.m */; };
+		C09B3A441EBAD45B00501B50 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C09B3A431EBAD45B00501B50 /* libsqlite3.tbd */; };
+		C09B3A461EBAD46500501B50 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C09B3A451EBAD46500501B50 /* libicucore.tbd */; };
 		C0B6BCC31EAF304C00ACAD2F /* NSString+PerhapYs.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B6BCC21EAF304C00ACAD2F /* NSString+PerhapYs.m */; };
 		C0B6BCC71EAF33A300ACAD2F /* NSArray+PerhapYs.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B6BCC61EAF33A300ACAD2F /* NSArray+PerhapYs.m */; };
 		C0C5E3B01EB82B4F00F6B930 /* NSAttributedString+PerhapYs.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C5E3AF1EB82B4F00F6B930 /* NSAttributedString+PerhapYs.m */; };
@@ -89,6 +94,14 @@
 		C09589431EB34550007515B5 /* BookChapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookChapter.m; sourceTree = "<group>"; };
 		C09589461EB34827007515B5 /* BookPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookPage.h; sourceTree = "<group>"; };
 		C09589471EB34827007515B5 /* BookPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookPage.m; sourceTree = "<group>"; };
+		C09B3A381EBACE9F00501B50 /* EDbHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDbHandle.h; sourceTree = "<group>"; };
+		C09B3A391EBACE9F00501B50 /* EDbHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDbHandle.m; sourceTree = "<group>"; };
+		C09B3A3A1EBACE9F00501B50 /* EDbObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDbObject.h; sourceTree = "<group>"; };
+		C09B3A3B1EBACE9F00501B50 /* EDbObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDbObject.m; sourceTree = "<group>"; };
+		C09B3A3E1EBACED200501B50 /* BookMark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookMark.h; sourceTree = "<group>"; };
+		C09B3A3F1EBACED300501B50 /* BookMark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookMark.m; sourceTree = "<group>"; };
+		C09B3A431EBAD45B00501B50 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		C09B3A451EBAD46500501B50 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		C0B6BCC11EAF304C00ACAD2F /* NSString+PerhapYs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PerhapYs.h"; sourceTree = "<group>"; };
 		C0B6BCC21EAF304C00ACAD2F /* NSString+PerhapYs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+PerhapYs.m"; sourceTree = "<group>"; };
 		C0B6BCC51EAF33A300ACAD2F /* NSArray+PerhapYs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+PerhapYs.h"; sourceTree = "<group>"; };
@@ -115,6 +128,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C09B3A461EBAD46500501B50 /* libicucore.tbd in Frameworks */,
+				C09B3A441EBAD45B00501B50 /* libsqlite3.tbd in Frameworks */,
 				B1C2B6CA04D8A7BE45FD4B74 /* libPods-NiMo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -141,6 +156,8 @@
 		135BEFE02C58B64AF6A572D1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C09B3A451EBAD46500501B50 /* libicucore.tbd */,
+				C09B3A431EBAD45B00501B50 /* libsqlite3.tbd */,
 				494222C05E04905E1039ED68 /* libPods-NiMo.a */,
 				4A61828D8A39CD2C77A5766E /* libPods-NiMoTests.a */,
 				B88A6F0FE3BA313E486598E7 /* libPods-NiMoUITests.a */,
@@ -359,9 +376,31 @@
 			path = BookPage;
 			sourceTree = "<group>";
 		};
+		C09B3A361EBAC5EC00501B50 /* BookMark */ = {
+			isa = PBXGroup;
+			children = (
+				C09B3A3E1EBACED200501B50 /* BookMark.h */,
+				C09B3A3F1EBACED300501B50 /* BookMark.m */,
+			);
+			path = BookMark;
+			sourceTree = "<group>";
+		};
+		C09B3A371EBACE7600501B50 /* DbObject */ = {
+			isa = PBXGroup;
+			children = (
+				C09B3A381EBACE9F00501B50 /* EDbHandle.h */,
+				C09B3A391EBACE9F00501B50 /* EDbHandle.m */,
+				C09B3A3A1EBACE9F00501B50 /* EDbObject.h */,
+				C09B3A3B1EBACE9F00501B50 /* EDbObject.m */,
+			);
+			path = DbObject;
+			sourceTree = "<group>";
+		};
 		C0B6BCAF1EAEDF8F00ACAD2F /* ReadBook */ = {
 			isa = PBXGroup;
 			children = (
+				C09B3A371EBACE7600501B50 /* DbObject */,
+				C09B3A361EBAC5EC00501B50 /* BookMark */,
 				C09589451EB34803007515B5 /* BookPage */,
 				C09589411EB34518007515B5 /* BookChapter */,
 				C095893D1EB34435007515B5 /* BookModel */,
@@ -764,6 +803,7 @@
 				C046AA011EB1D46400376087 /* BookBasicViewController.m in Sources */,
 				C09589401EB34476007515B5 /* BookModel.m in Sources */,
 				C0D0824D1EB0394E00F314B7 /* BookManager.m in Sources */,
+				C09B3A3C1EBACE9F00501B50 /* EDbHandle.m in Sources */,
 				C00B1CD41EA9F6350033D9BA /* AppDelegate.m in Sources */,
 				C0B6BCC31EAF304C00ACAD2F /* NSString+PerhapYs.m in Sources */,
 				C00B1CD11EA9F6350033D9BA /* main.m in Sources */,
@@ -773,9 +813,11 @@
 				C0E900FF1EAD98C600816AEA /* UIImage+PerhapYs.m in Sources */,
 				C09589481EB34827007515B5 /* BookPage.m in Sources */,
 				C0B6BCC71EAF33A300ACAD2F /* NSArray+PerhapYs.m in Sources */,
+				C09B3A3D1EBACE9F00501B50 /* EDbObject.m in Sources */,
 				C0EE856E1EADFD6900B16C5B /* BooksCollectionViewCell.m in Sources */,
 				C00B1D0A1EA9F6DA0033D9BA /* TopRoute.m in Sources */,
 				C00B1D1E1EA9F9D10033D9BA /* RightViewController.m in Sources */,
+				C09B3A401EBACED300501B50 /* BookMark.m in Sources */,
 				C0D38BF01EAA0E7D002908A9 /* CenterNavigationViewController.m in Sources */,
 				C0D38BEC1EAA0E4C002908A9 /* CenterViewController.m in Sources */,
 			);

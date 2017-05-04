@@ -38,14 +38,17 @@
     NSArray *pathArr = [NSArray SearchLocalNovalPath];
     NSArray *titleArr = [NSArray getLocalTextTitle];
     
-    for (int i = 0; i < titleArr.count; i ++) {
-        if (i >= pathArr.count) {
+    for (int i = 0; i < pathArr.count; i ++) {
+        if (i >= titleArr.count) {
             break;
         }
         
         NSMutableDictionary *dic = [NSMutableDictionary new];
         [dic setObject:titleArr[i] forKey:@"novalTile"];
         [dic setObject:pathArr[i] forKey:@"novalPath"];
+        
+        int initializeBookId = 10000;
+        [dic setObject:@(initializeBookId + i) forKey:@"novalId"];
         
         [novalData addObject:dic];
     }
