@@ -110,6 +110,11 @@
 #pragma mark -- 初始化界面
 
 -(void)intializeInterface{
+    UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"readBook_backgroundImage"]];
+    [self.view addSubview:backgroundImageView];
+    [backgroundImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
     
     [self addChildViewController:self.pageViewController];
     [self.view addSubview:self.pageViewController.view];
@@ -272,7 +277,6 @@
 #pragma mark -- UIPageViewControllerDelegate
 - (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed
 {
-    NSLog(@"🌹");
     [self hidenSettingBar];
 }
 

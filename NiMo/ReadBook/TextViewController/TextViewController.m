@@ -26,7 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor clearColor];
     [self intializeInterface];
 }
 - (void)viewWillLayoutSubviews
@@ -35,6 +35,12 @@
 }
 
 -(void)intializeInterface{
+    
+    UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"readBook_backgroundImage"]];
+    [self.view addSubview:backgroundImageView];
+    [backgroundImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
     
     TYAttributedLabel *label = [[TYAttributedLabel alloc]init];
     label.backgroundColor = [UIColor clearColor];
