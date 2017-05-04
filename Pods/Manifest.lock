@@ -1,0 +1,47 @@
+PODS:
+  - DKNightVersion (2.4.2):
+    - DKNightVersion/Core (= 2.4.2)
+    - DKNightVersion/CoreAnimation (= 2.4.2)
+    - DKNightVersion/UIKit (= 2.4.2)
+  - DKNightVersion/Core (2.4.2):
+    - DKNightVersion/Core/DeallocBlockExecutor (= 2.4.2)
+    - DKNightVersion/Core/extobjc (= 2.4.2)
+  - DKNightVersion/Core/DeallocBlockExecutor (2.4.2)
+  - DKNightVersion/Core/extobjc (2.4.2)
+  - DKNightVersion/CoreAnimation (2.4.2):
+    - DKNightVersion/Core
+  - DKNightVersion/UIKit (2.4.2):
+    - DKNightVersion/Core
+  - Masonry (1.0.2)
+  - MMDrawerController (0.6.0):
+    - MMDrawerController/Core (= 0.6.0)
+    - MMDrawerController/MMDrawerBarButtonItem (= 0.6.0)
+    - MMDrawerController/MMDrawerVisualStates (= 0.6.0)
+    - MMDrawerController/Subclass (= 0.6.0)
+  - MMDrawerController/Core (0.6.0)
+  - MMDrawerController/MMDrawerBarButtonItem (0.6.0):
+    - MMDrawerController/Core
+  - MMDrawerController/MMDrawerVisualStates (0.6.0):
+    - MMDrawerController/Core
+  - MMDrawerController/Subclass (0.6.0):
+    - MMDrawerController/Core
+  - RegexKitLite (4.0)
+  - TYAttributedLabel (2.6.2)
+
+DEPENDENCIES:
+  - DKNightVersion (~> 2.4.2)
+  - Masonry (~> 1.0.2)
+  - MMDrawerController (~> 0.6.0)
+  - RegexKitLite (~> 4.0)
+  - TYAttributedLabel (~> 2.6.2)
+
+SPEC CHECKSUMS:
+  DKNightVersion: a211bacb8d6a9677722aaf93e292a4e5908490c1
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  MMDrawerController: e3a54a5570388463ad3b36975251575b50c4e1a0
+  RegexKitLite: c0e4c12e6e7de0769f3a3ed679f0f61604170661
+  TYAttributedLabel: 1c1f1e7604043ba584e005d4fd3aee8a1a7a2020
+
+PODFILE CHECKSUM: 7e7e8b0238997b3decfd08e65f7bd79bb3a7137a
+
+COCOAPODS: 1.1.1
