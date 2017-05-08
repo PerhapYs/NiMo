@@ -37,7 +37,15 @@
 -(void)initializeData{
     
     _dataSource = [[NSMutableArray alloc]initWithArray:[NSArray getNovalInformation]];
+    NSMutableDictionary *dic = [NSMutableDictionary new];
+    [dic setObject:@"哈哈" forKey:@"novalTile"];
+    [dic setObject:[[NSBundle mainBundle] pathForResource:@"全职高手" ofType:@"txt"] forKey:@"novalPath"];
     
+    int initializeBookId = 10000;
+    [dic setObject:@(initializeBookId) forKey:@"novalId"];
+    
+    
+    [_dataSource addObject:dic];
     [self.booksCV reloadData];
 }
 -(void)initializeInterface{

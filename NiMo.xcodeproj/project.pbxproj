@@ -18,8 +18,10 @@
 		C00B1D0A1EA9F6DA0033D9BA /* TopRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = C00B1D091EA9F6DA0033D9BA /* TopRoute.m */; };
 		C00B1D1A1EA9F9AD0033D9BA /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C00B1D191EA9F9AD0033D9BA /* LeftViewController.m */; };
 		C00B1D1E1EA9F9D10033D9BA /* RightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C00B1D1D1EA9F9D10033D9BA /* RightViewController.m */; };
+		C00E42281EC0551800B8B052 /* 全职高手.txt in Resources */ = {isa = PBXBuildFile; fileRef = C00E42271EC0551800B8B052 /* 全职高手.txt */; };
 		C046AA011EB1D46400376087 /* BookBasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C046AA001EB1D46400376087 /* BookBasicViewController.m */; };
 		C046AA0A1EB1DD3B00376087 /* TextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C046AA091EB1DD3B00376087 /* TextViewController.m */; };
+		C04C48451EC01CDC005F748B /* BookDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = C04C48441EC01CDC005F748B /* BookDefault.m */; };
 		C09589401EB34476007515B5 /* BookModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C095893F1EB34476007515B5 /* BookModel.m */; };
 		C09589441EB34550007515B5 /* BookChapter.m in Sources */ = {isa = PBXBuildFile; fileRef = C09589431EB34550007515B5 /* BookChapter.m */; };
 		C09589481EB34827007515B5 /* BookPage.m in Sources */ = {isa = PBXBuildFile; fileRef = C09589471EB34827007515B5 /* BookPage.m */; };
@@ -84,10 +86,13 @@
 		C00B1D191EA9F9AD0033D9BA /* LeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftViewController.m; sourceTree = "<group>"; };
 		C00B1D1C1EA9F9D10033D9BA /* RightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightViewController.h; sourceTree = "<group>"; };
 		C00B1D1D1EA9F9D10033D9BA /* RightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightViewController.m; sourceTree = "<group>"; };
+		C00E42271EC0551800B8B052 /* 全职高手.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "全职高手.txt"; sourceTree = "<group>"; };
 		C046A9FF1EB1D46400376087 /* BookBasicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookBasicViewController.h; sourceTree = "<group>"; };
 		C046AA001EB1D46400376087 /* BookBasicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookBasicViewController.m; sourceTree = "<group>"; };
 		C046AA081EB1DD3B00376087 /* TextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewController.h; sourceTree = "<group>"; };
 		C046AA091EB1DD3B00376087 /* TextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewController.m; sourceTree = "<group>"; };
+		C04C48431EC01CDC005F748B /* BookDefault.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookDefault.h; sourceTree = "<group>"; };
+		C04C48441EC01CDC005F748B /* BookDefault.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookDefault.m; sourceTree = "<group>"; };
 		C095893E1EB34476007515B5 /* BookModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookModel.h; sourceTree = "<group>"; };
 		C095893F1EB34476007515B5 /* BookModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookModel.m; sourceTree = "<group>"; };
 		C09589421EB34550007515B5 /* BookChapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookChapter.h; sourceTree = "<group>"; };
@@ -190,6 +195,7 @@
 		C00B1CCE1EA9F6350033D9BA /* NiMo */ = {
 			isa = PBXGroup;
 			children = (
+				C00E42271EC0551800B8B052 /* 全职高手.txt */,
 				C0B6BCAF1EAEDF8F00ACAD2F /* ReadBook */,
 				C00B1D101EA9F8CC0033D9BA /* Left */,
 				C00B1D0F1EA9F8B80033D9BA /* Center */,
@@ -349,6 +355,15 @@
 			path = TextViewController;
 			sourceTree = "<group>";
 		};
+		C04C48421EC01C23005F748B /* BookDefault */ = {
+			isa = PBXGroup;
+			children = (
+				C04C48431EC01CDC005F748B /* BookDefault.h */,
+				C04C48441EC01CDC005F748B /* BookDefault.m */,
+			);
+			path = BookDefault;
+			sourceTree = "<group>";
+		};
 		C095893D1EB34435007515B5 /* BookModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -399,6 +414,7 @@
 		C0B6BCAF1EAEDF8F00ACAD2F /* ReadBook */ = {
 			isa = PBXGroup;
 			children = (
+				C04C48421EC01C23005F748B /* BookDefault */,
 				C09B3A371EBACE7600501B50 /* DbObject */,
 				C09B3A361EBAC5EC00501B50 /* BookMark */,
 				C09589451EB34803007515B5 /* BookPage */,
@@ -636,6 +652,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C00B1CDC1EA9F6350033D9BA /* Assets.xcassets in Resources */,
+				C00E42281EC0551800B8B052 /* 全职高手.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -820,6 +837,7 @@
 				C09B3A401EBACED300501B50 /* BookMark.m in Sources */,
 				C0D38BF01EAA0E7D002908A9 /* CenterNavigationViewController.m in Sources */,
 				C0D38BEC1EAA0E4C002908A9 /* CenterViewController.m in Sources */,
+				C04C48451EC01CDC005F748B /* BookDefault.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

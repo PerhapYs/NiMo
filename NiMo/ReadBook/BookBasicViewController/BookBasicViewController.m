@@ -26,6 +26,8 @@
     
     BookChapter *_chapter;
     
+    BookDefault *_default;
+    
     UIButton *_bookmarkBtn;  // 书签按钮
 }
 
@@ -52,7 +54,9 @@
     [self initializeData];
     [self intializeInterface];
     [self addSingleTapGesture];
-    [self showBookWithPage:0];  // 默认显示第一页数据
+    
+    NSInteger page = [_chapter pageIndexWithChapterOffset:_default.offset];
+    [self showBookWithPage:page];  // 默认显示第一页数据
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -64,6 +68,7 @@
     [super viewWillDisappear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
+#pragma mark -- 设置手势 及事件
 - (void)addSingleTapGesture
 {
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapAction:)];
@@ -88,9 +93,10 @@
 #pragma mark - 初始化数据
 -(void)initializeData{
     
-    _isShowFont = NO;
-    _isShowSetting = NO;
-     _renderSize = [TextViewController renderSizeWithFrame:self.view.frame];
+    _isShowFont = NO;  // 默认隐藏字体设置
+    _isShowSetting = NO;  // 默认隐藏设置
+     _renderSize = [TextViewController renderSizeWithFrame:self.view.frame];  //文本显示大小
+    
     [self getBookContent];
 }
 -(BookModel *)readBook{
@@ -104,9 +110,15 @@
     }
     return _readBook;
 }
+// 获取文章内容
 -(void)getBookContent{
 
-   _chapter = [self getBookChapter:1];
+    _default = [BookDefault getDefaultWithBookId:_readBook.bookId];
+    
+    NSInteger chapterIndex = [_default.chapterIndex integerValue];
+    
+   _chapter = [self getBookChapter:chapterIndex];
+    
 }
 
 #pragma mark -- 初始化界面
@@ -259,12 +271,12 @@
 
 
 
-#pragma mark - 设置显示第几页
+#pragma mark - 设置显示章节第几页
 
 -(void)showBookWithPage:(NSUInteger)page{
     _curPage = page;
     TextViewController *textVC = [self readerControllerWithPage:page chapter:_chapter];
-    
+    [BookDefault updateBookDefaultWithBookId:_readBook.bookId Chapter:_chapter curPage:page];
     [self.pageViewController setViewControllers:@[textVC]
                                  direction:UIPageViewControllerNavigationDirectionForward
                                   animated:NO
@@ -273,7 +285,9 @@
 - (TextViewController *)readerControllerWithPage:(NSUInteger)page chapter:(BookChapter *)chapter
 {
     TextViewController *readerViewController = [[TextViewController alloc]init];
+    
     [self confogureReaderController:readerViewController page:page chapter:chapter];
+    
     return readerViewController;
 }
 
@@ -314,17 +328,19 @@
     TextViewController *readerVC = [[TextViewController alloc]init];
     if (currentPage > 0) {
         [self confogureReaderController:readerVC page:currentPage-1 chapter:chapter];
-        NSLog(@"总页码%ld 当前页码%ld",chapter.totalPage,_curPage+1);
+        [BookDefault updateBookDefaultWithBookId:_readBook.bookId Chapter:chapter curPage:_curPage];
+//        NSLog(@"总页码%ld 当前页码%ld",chapter.totalPage,_curPage+1);
         return readerVC;
     }else {
         if ([_readBook havePreChapter]) {
-            NSLog(@"--获取上一章");
+//            NSLog(@"--获取上一章");
             BookChapter *preChapter = [self getBookPreChapter];
             [self confogureReaderController:readerVC page:preChapter.totalPage-1 chapter:preChapter];
-            NSLog(@"总页码%ld 当前页码%ld",chapter.totalPage,_curPage+1);
+            [BookDefault updateBookDefaultWithBookId:_readBook.bookId Chapter:chapter curPage:_curPage];
+//            NSLog(@"总页码%ld 当前页码%ld",chapter.totalPage,_curPage+1);
             return readerVC;
         }else {
-            NSLog(@"已经是第一页了");
+//            NSLog(@"已经是第一页了");
             return nil;
         }
     }
@@ -346,27 +362,31 @@
     TextViewController *readerVC = [[TextViewController alloc]init];
     if (currentPage < chapter.totalPage - 1) {
         [self confogureReaderController:readerVC page:currentPage+1 chapter:chapter];
-        NSLog(@"总页码%ld 当前页码%ld",chapter.totalPage,_curPage+1);
+//        NSLog(@"总页码%ld 当前页码%ld",chapter.totalPage,_curPage+1);
+        [BookDefault updateBookDefaultWithBookId:_readBook.bookId Chapter:chapter curPage:_curPage];
         return readerVC;
     }else {
         if ([_readBook haveNextChapter]) {
-            NSLog(@"--获取下一章");
+//            NSLog(@"--获取下一章");
             BookChapter *nextChapter = [self getBookNextChapter];
             [self confogureReaderController:readerVC page:0 chapter:nextChapter];
-            NSLog(@"总页码%ld 当前页码%ld",chapter.totalPage,_curPage+1);
+//            NSLog(@"总页码%ld 当前页码%ld",chapter.totalPage,_curPage+1);
+            [BookDefault updateBookDefaultWithBookId:_readBook.bookId Chapter:chapter curPage:_curPage];
             return  readerVC;
         }else {
-            NSLog(@"已经是最后一页了");
+//            NSLog(@"已经是最后一页了");
             return nil;
         }
     }
     return readerVC;
 }
 #pragma mark -- btn selected event
+// 关闭书籍
 -(void)closeViewEvent{
     
     [self.navigationController popViewControllerAnimated:YES];
 }
+// 点击书签按钮
 -(void)bookMarkSelectedEvent:(UIButton *)btn{
     
     if (btn.isSelected) {
@@ -377,10 +397,13 @@
     btn.selected = !btn.selected;
 }
 #pragma mark -- 书签
+// 移除书签
 - (void)removeCurrentChapterPagerMark
 {
     [BookManager removeBookMarkWithBookId:_readBook.bookId Chapter:_chapter curPage:_curPage];
 }
+
+// 保存书签
 -(void)saveCurrentChapterPagerMark
 {
     [BookManager saveBookMarkWithBookId:_readBook.bookId Chapter:_chapter curPage:_curPage];
@@ -394,17 +417,26 @@
     [chapter parseChapterWithRenderSize:_renderSize];
     return chapter;
 }
+// 获取下一章
 - (BookChapter *)getBookNextChapter
 {
     BookChapter *chapter = [_readBook openBookNextChapter];
     [chapter parseChapterWithRenderSize:_renderSize];
     return chapter;
 }
+// 获取上一章
 - (BookChapter *)getBookPreChapter
 {
     BookChapter *chapter = [_readBook openBookPreChapter];
     [chapter parseChapterWithRenderSize:_renderSize];
     return chapter;
+}
+// 跳转章节
+- (void)turnToBookChapter:(NSInteger)chapterIndex chapterOffset:(NSInteger)chapterOffset
+{
+    _chapter = [self getBookChapter:chapterIndex];
+    NSInteger pageIndex = [_chapter pageIndexWithChapterOffset:chapterOffset];
+    [self showBookWithPage:pageIndex];
 }
 
 @end

@@ -8,6 +8,7 @@
 
 #import "TopViewController.h"
 #import "BookModel.h"
+#import "BookDefault.h"
 @interface BookBasicViewController : TopViewController
 
 @property (nonatomic , strong) BookModel *readBook;

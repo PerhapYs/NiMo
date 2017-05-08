@@ -32,9 +32,7 @@
     _curChpaterIndex = chapter;
     
     if (!self.chapterArray){
-//        NSString *chapter_num = self.bookName;
-        
-//        NSString *path = [NSString getBookPathWithName:chapter_num type:@"txt"];
+
         NSString *path = self.bookPath;
         
         NSString *bookContent = [NSString getNovelWithBookPath:path];
