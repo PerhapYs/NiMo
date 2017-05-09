@@ -23,6 +23,7 @@
 		C046AA011EB1D46400376087 /* BookBasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C046AA001EB1D46400376087 /* BookBasicViewController.m */; };
 		C046AA0A1EB1DD3B00376087 /* TextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C046AA091EB1DD3B00376087 /* TextViewController.m */; };
 		C04C48451EC01CDC005F748B /* BookDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = C04C48441EC01CDC005F748B /* BookDefault.m */; };
+		C05B1B941EC1C36900DD9DE3 /* BookMuLuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C05B1B931EC1C36900DD9DE3 /* BookMuLuViewController.m */; };
 		C09589401EB34476007515B5 /* BookModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C095893F1EB34476007515B5 /* BookModel.m */; };
 		C09589441EB34550007515B5 /* BookChapter.m in Sources */ = {isa = PBXBuildFile; fileRef = C09589431EB34550007515B5 /* BookChapter.m */; };
 		C09589481EB34827007515B5 /* BookPage.m in Sources */ = {isa = PBXBuildFile; fileRef = C09589471EB34827007515B5 /* BookPage.m */; };
@@ -96,6 +97,8 @@
 		C046AA091EB1DD3B00376087 /* TextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewController.m; sourceTree = "<group>"; };
 		C04C48431EC01CDC005F748B /* BookDefault.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookDefault.h; sourceTree = "<group>"; };
 		C04C48441EC01CDC005F748B /* BookDefault.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookDefault.m; sourceTree = "<group>"; };
+		C05B1B921EC1C36900DD9DE3 /* BookMuLuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookMuLuViewController.h; sourceTree = "<group>"; };
+		C05B1B931EC1C36900DD9DE3 /* BookMuLuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookMuLuViewController.m; sourceTree = "<group>"; };
 		C095893E1EB34476007515B5 /* BookModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookModel.h; sourceTree = "<group>"; };
 		C095893F1EB34476007515B5 /* BookModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookModel.m; sourceTree = "<group>"; };
 		C09589421EB34550007515B5 /* BookChapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookChapter.h; sourceTree = "<group>"; };
@@ -376,6 +379,15 @@
 			path = BookDefault;
 			sourceTree = "<group>";
 		};
+		C05B1B911EC1C33100DD9DE3 /* BookMuLuViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C05B1B921EC1C36900DD9DE3 /* BookMuLuViewController.h */,
+				C05B1B931EC1C36900DD9DE3 /* BookMuLuViewController.m */,
+			);
+			path = BookMuLuViewController;
+			sourceTree = "<group>";
+		};
 		C095893D1EB34435007515B5 /* BookModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -426,6 +438,7 @@
 		C0B6BCAF1EAEDF8F00ACAD2F /* ReadBook */ = {
 			isa = PBXGroup;
 			children = (
+				C05B1B911EC1C33100DD9DE3 /* BookMuLuViewController */,
 				C04C48421EC01C23005F748B /* BookDefault */,
 				C09B3A371EBACE7600501B50 /* DbObject */,
 				C09B3A361EBAC5EC00501B50 /* BookMark */,
@@ -842,6 +855,7 @@
 				C00B1D071EA9F6CD0033D9BA /* TopViewController.m in Sources */,
 				C09589441EB34550007515B5 /* BookChapter.m in Sources */,
 				C0E900FF1EAD98C600816AEA /* UIImage+PerhapYs.m in Sources */,
+				C05B1B941EC1C36900DD9DE3 /* BookMuLuViewController.m in Sources */,
 				C09589481EB34827007515B5 /* BookPage.m in Sources */,
 				C0B6BCC71EAF33A300ACAD2F /* NSArray+PerhapYs.m in Sources */,
 				C09B3A3D1EBACE9F00501B50 /* EDbObject.m in Sources */,

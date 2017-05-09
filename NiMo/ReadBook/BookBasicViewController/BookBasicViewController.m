@@ -42,6 +42,8 @@
 
 @property (nonatomic , strong) UIView *belowSettingView;
 
+@property (nonatomic , strong) UIView *belowFontView;
+
 @property (nonatomic , strong) UIView *showPageView;  // 展示当前页数(滑动进度条出现)
 
 @property (nonatomic, assign) CGSize renderSize;
@@ -63,7 +65,7 @@
     [self initializeData];
     [self intializeInterface];
     [self addSingleTapGesture];
-    [self showBookWithPage:_curPage];  // 默认显示第一页数据
+    [self showBookWithPage:_curPage];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -158,6 +160,13 @@
         make.bottom.equalTo(self.view.mas_bottom).offset(HEIGHT_BELOWSETTING);
     }];
     
+    [self.view addSubview:self.belowFontView];
+    [self.belowFontView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.and.right.equalTo(self.view);
+        make.height.mas_equalTo(HEIGHT_FONTSETTING);
+        make.bottom.equalTo(self.view.mas_bottom).offset(HEIGHT_FONTSETTING);
+    }];
+    
     [self.view addSubview:self.showPageView];
     [self.showPageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(self.belowSettingView.mas_top).offset(-SET_HEIGHT_(20));
@@ -213,10 +222,26 @@
 // 显示
 -(void)showFontBar{
     
+    [UIView animateWithDuration:0.2 animations:^{
+        
+        [self.belowFontView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.bottom.equalTo(self.view.mas_bottom);
+        }];
+        [self.view layoutIfNeeded];
+    }];
+    _isShowFont = YES;
 }
 
 -(void)hidenFontBar{
     
+    [UIView animateWithDuration:0.2 animations:^{
+       
+        [self.belowFontView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.bottom.equalTo(self.view.mas_bottom).offset(HEIGHT_FONTSETTING);
+        }];
+        [self.view layoutIfNeeded];
+    }];
+    _isShowFont = NO;
 }
 #pragma mark - 设置显示章节第几页
 
@@ -384,10 +409,19 @@
 -(void)belowToolSelectedEvent:(WordsImageButton *)settingBtn{
     
     if ([settingBtn.title isEqualToString:@"文字"]) {
-        
-        [self hidenSettingBar];
-        
+    [self hidenSettingBar];
         [self showFontBar];
+    }
+    else if ([settingBtn.title isEqualToString:@"目录"]){
+        [[BookManager shareBook].bookMMD toggleDrawerSide:MMDrawerSideLeft animated:YES completion:^(BOOL finished) {
+            
+        }];
+    }
+    else if ([settingBtn.title isEqualToString:@"书签"]){
+        
+    }
+    else{
+        return;
     }
 }
 #pragma mark -- 书签
@@ -616,7 +650,6 @@
         _pageViewController = ({
             
             NSInteger bookTransitionStyle = [BookManager BookTransitionStyle];
-            
             UIPageViewController *pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:bookTransitionStyle navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
             pageViewController.delegate = self;
             pageViewController.dataSource = self;
@@ -626,6 +659,18 @@
         });
     }
     return _pageViewController;
+}
+-(UIView *)belowFontView{
+    if (!_belowFontView) {
+        _belowFontView = ({
+            UIView *view = [UIView new];
+            
+            view.backgroundColor = [UIColor whiteColor];
+            
+            view;
+        });
+    }
+    return _belowFontView;
 }
 
 @end

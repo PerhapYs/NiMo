@@ -11,6 +11,8 @@
 
 @interface BookManager : NSObject
 
+@property (nonatomic , strong) MMDrawerController *bookMMD;
+
 + (instancetype)shareBook;
 
 + (NSUInteger)fontSize;

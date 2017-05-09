@@ -13,6 +13,9 @@
 
 #import "BookBasicViewController.h"
 #import "NSArray+PerhapYs.h"
+#import "BookManager.h"
+#import "NSString+PerhapYs.h"
+#import "BookMuLuViewController.h"
 
 @interface CenterViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
 
@@ -115,12 +118,27 @@
 #pragma mark - collectionView delegate
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    
+
     BookBasicViewController *basicVC = [[BookBasicViewController alloc] init];
-    
-    basicVC.readBook.bookPath = _dataSource[indexPath.row][@"novalPath"];
     basicVC.readBook.bookId = [_dataSource[indexPath.row][@"novalId"] integerValue];
-    [self.navigationController pushViewController:basicVC animated:YES];
+    
+    BookMuLuViewController *muluVC = [[BookMuLuViewController alloc] init];
+
+        NSString *path = _dataSource[indexPath.row][@"novalPath"];
+        
+        NSString *bookContent = [NSString getNovelWithBookPath:path];
+        
+        if (bookContent) {
+            NSArray *chapterArray = [BookManager analyseTxtWithContent:bookContent maintainEmptyCharcter:YES];
+            basicVC.readBook.chapterArray = [NSArray arrayWithArray:chapterArray];
+            basicVC.readBook.totalChapter = chapterArray.count;
+            muluVC.DataSource = [NSArray arrayWithArray:chapterArray];
+        }
+    MMDrawerController *mmVc = [[MMDrawerController alloc] initWithCenterViewController:basicVC leftDrawerViewController:muluVC rightDrawerViewController:nil];
+    mmVc.maximumLeftDrawerWidth = SET_WIDTH_(240); 
+    
+    [BookManager shareBook].bookMMD = mmVc;
+    [self.navigationController pushViewController:mmVc animated:YES];
 }
 #pragma mark -- barButton Event
 

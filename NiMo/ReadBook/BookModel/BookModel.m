@@ -30,19 +30,7 @@
     BookChapter *readerChapter = [[BookChapter alloc]init];
     readerChapter.chapterIndex = chapter;
     _curChpaterIndex = chapter;
-    
-    if (!self.chapterArray){
 
-        NSString *path = self.bookPath;
-        
-        NSString *bookContent = [NSString getNovelWithBookPath:path];
-        
-        if (bookContent) {
-            NSArray *chapterArray = [BookManager analyseTxtWithContent:bookContent maintainEmptyCharcter:YES];
-            self.chapterArray = [NSArray arrayWithArray:chapterArray];
-            self.totalChapter = chapterArray.count;
-        }
-    }
     // 防止取值超范围，（无内容，获取内容失败的情况）
     if (self.chapterArray.count > 0 && chapter < self.chapterArray.count) {
         BookChapter *newBook = (BookChapter *) self.chapterArray[chapter];
