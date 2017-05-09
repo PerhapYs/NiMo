@@ -19,6 +19,7 @@
 		C00B1D1A1EA9F9AD0033D9BA /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C00B1D191EA9F9AD0033D9BA /* LeftViewController.m */; };
 		C00B1D1E1EA9F9D10033D9BA /* RightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C00B1D1D1EA9F9D10033D9BA /* RightViewController.m */; };
 		C00E42281EC0551800B8B052 /* 全职高手.txt in Resources */ = {isa = PBXBuildFile; fileRef = C00E42271EC0551800B8B052 /* 全职高手.txt */; };
+		C00E422F1EC16B1200B8B052 /* WordsImageButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C00E422E1EC16B1200B8B052 /* WordsImageButton.m */; };
 		C046AA011EB1D46400376087 /* BookBasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C046AA001EB1D46400376087 /* BookBasicViewController.m */; };
 		C046AA0A1EB1DD3B00376087 /* TextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C046AA091EB1DD3B00376087 /* TextViewController.m */; };
 		C04C48451EC01CDC005F748B /* BookDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = C04C48441EC01CDC005F748B /* BookDefault.m */; };
@@ -87,6 +88,8 @@
 		C00B1D1C1EA9F9D10033D9BA /* RightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightViewController.h; sourceTree = "<group>"; };
 		C00B1D1D1EA9F9D10033D9BA /* RightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightViewController.m; sourceTree = "<group>"; };
 		C00E42271EC0551800B8B052 /* 全职高手.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "全职高手.txt"; sourceTree = "<group>"; };
+		C00E422D1EC16B1200B8B052 /* WordsImageButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordsImageButton.h; sourceTree = "<group>"; };
+		C00E422E1EC16B1200B8B052 /* WordsImageButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordsImageButton.m; sourceTree = "<group>"; };
 		C046A9FF1EB1D46400376087 /* BookBasicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookBasicViewController.h; sourceTree = "<group>"; };
 		C046AA001EB1D46400376087 /* BookBasicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookBasicViewController.m; sourceTree = "<group>"; };
 		C046AA081EB1DD3B00376087 /* TextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewController.h; sourceTree = "<group>"; };
@@ -337,6 +340,15 @@
 			path = CenterViewController;
 			sourceTree = "<group>";
 		};
+		C00E422C1EC16AEB00B8B052 /* UIButton+ */ = {
+			isa = PBXGroup;
+			children = (
+				C00E422D1EC16B1200B8B052 /* WordsImageButton.h */,
+				C00E422E1EC16B1200B8B052 /* WordsImageButton.m */,
+			);
+			path = "UIButton+";
+			sourceTree = "<group>";
+		};
 		C046A9FE1EB1D41D00376087 /* BookBasicViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -493,6 +505,7 @@
 		C0E900FA1EAD97EA00816AEA /* extension */ = {
 			isa = PBXGroup;
 			children = (
+				C00E422C1EC16AEB00B8B052 /* UIButton+ */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -818,6 +831,7 @@
 				C0C5E3B01EB82B4F00F6B930 /* NSAttributedString+PerhapYs.m in Sources */,
 				C046AA0A1EB1DD3B00376087 /* TextViewController.m in Sources */,
 				C046AA011EB1D46400376087 /* BookBasicViewController.m in Sources */,
+				C00E422F1EC16B1200B8B052 /* WordsImageButton.m in Sources */,
 				C09589401EB34476007515B5 /* BookModel.m in Sources */,
 				C0D0824D1EB0394E00F314B7 /* BookManager.m in Sources */,
 				C09B3A3C1EBACE9F00501B50 /* EDbHandle.m in Sources */,
