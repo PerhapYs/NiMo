@@ -9,7 +9,16 @@
 #import "TopViewController.h"
 #import "BookModel.h"
 #import "BookDefault.h"
+#import "BookChapter.h"
+@protocol CenterDelegate
+
+-(void)updateLeftViewControllerTableViewWithChapter:(BookChapter *)chapter;
+
+@end
+
 @interface BookBasicViewController : TopViewController
+
+@property (nonatomic , assign) id<CenterDelegate> leftDelegate;
 
 @property (nonatomic , strong) BookModel *readBook;
 

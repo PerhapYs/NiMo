@@ -11,6 +11,7 @@
 #import "TextViewController.h"
 #import "WordsImageButton.h"
 #import "BookChapter.h"
+#import "BookMuLuViewController.h"
 
 #define HEIGHT_TOPSETING SET_HEIGHT_(60)
 
@@ -19,7 +20,7 @@
 #define HEIGHT_FONTSETTING SET_HEIGHT_(100)
 
 
-@interface BookBasicViewController ()<UIPageViewControllerDelegate,UIPageViewControllerDataSource>{
+@interface BookBasicViewController ()<UIPageViewControllerDelegate,UIPageViewControllerDataSource,LeftDelegate>{
     
     BOOL _isShowSetting;
     BOOL _isShowFont;
@@ -408,12 +409,16 @@
 #pragma mark -- 底部设置
 -(void)belowToolSelectedEvent:(WordsImageButton *)settingBtn{
     
-    if ([settingBtn.title isEqualToString:@"文字"]) {
     [self hidenSettingBar];
+    if ([settingBtn.title isEqualToString:@"文字"]) {
+    
         [self showFontBar];
     }
     else if ([settingBtn.title isEqualToString:@"目录"]){
-        [[BookManager shareBook].bookMMD toggleDrawerSide:MMDrawerSideLeft animated:YES completion:^(BOOL finished) {
+        
+        [[BookManager shareBook].bookMMD openDrawerSide:MMDrawerSideLeft animated:YES completion:^(BOOL finished) {
+            
+            [self.leftDelegate updateLeftViewControllerTableViewWithChapter:_chapter];
             
         }];
     }
@@ -465,6 +470,13 @@
     _chapter = [self getBookChapter:chapterIndex];
     NSInteger pageIndex = [_chapter pageIndexWithChapterOffset:chapterOffset];
     [self showBookWithPage:pageIndex];
+}
+
+#pragma mark -- LeftDelegate
+
+-(void)updateBookChapterWithChapterIndex:(NSInteger)chapterIndex{
+    
+    [self turnToBookChapter:chapterIndex chapterOffset:0];
 }
 
 #pragma mark - view

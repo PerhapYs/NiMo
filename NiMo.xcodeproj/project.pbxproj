@@ -20,10 +20,11 @@
 		C00B1D1E1EA9F9D10033D9BA /* RightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C00B1D1D1EA9F9D10033D9BA /* RightViewController.m */; };
 		C00E42281EC0551800B8B052 /* 全职高手.txt in Resources */ = {isa = PBXBuildFile; fileRef = C00E42271EC0551800B8B052 /* 全职高手.txt */; };
 		C00E422F1EC16B1200B8B052 /* WordsImageButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C00E422E1EC16B1200B8B052 /* WordsImageButton.m */; };
+		C0454B2C1EC3118300581876 /* BookMuLuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0454B2B1EC3118300581876 /* BookMuLuViewController.m */; };
+		C0454B301EC311BB00581876 /* MuluTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0454B2F1EC311BB00581876 /* MuluTableViewCell.m */; };
 		C046AA011EB1D46400376087 /* BookBasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C046AA001EB1D46400376087 /* BookBasicViewController.m */; };
 		C046AA0A1EB1DD3B00376087 /* TextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C046AA091EB1DD3B00376087 /* TextViewController.m */; };
 		C04C48451EC01CDC005F748B /* BookDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = C04C48441EC01CDC005F748B /* BookDefault.m */; };
-		C05B1B941EC1C36900DD9DE3 /* BookMuLuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C05B1B931EC1C36900DD9DE3 /* BookMuLuViewController.m */; };
 		C09589401EB34476007515B5 /* BookModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C095893F1EB34476007515B5 /* BookModel.m */; };
 		C09589441EB34550007515B5 /* BookChapter.m in Sources */ = {isa = PBXBuildFile; fileRef = C09589431EB34550007515B5 /* BookChapter.m */; };
 		C09589481EB34827007515B5 /* BookPage.m in Sources */ = {isa = PBXBuildFile; fileRef = C09589471EB34827007515B5 /* BookPage.m */; };
@@ -91,14 +92,16 @@
 		C00E42271EC0551800B8B052 /* 全职高手.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "全职高手.txt"; sourceTree = "<group>"; };
 		C00E422D1EC16B1200B8B052 /* WordsImageButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordsImageButton.h; sourceTree = "<group>"; };
 		C00E422E1EC16B1200B8B052 /* WordsImageButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordsImageButton.m; sourceTree = "<group>"; };
+		C0454B2A1EC3118300581876 /* BookMuLuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookMuLuViewController.h; sourceTree = "<group>"; };
+		C0454B2B1EC3118300581876 /* BookMuLuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookMuLuViewController.m; sourceTree = "<group>"; };
+		C0454B2E1EC311BB00581876 /* MuluTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MuluTableViewCell.h; sourceTree = "<group>"; };
+		C0454B2F1EC311BB00581876 /* MuluTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MuluTableViewCell.m; sourceTree = "<group>"; };
 		C046A9FF1EB1D46400376087 /* BookBasicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookBasicViewController.h; sourceTree = "<group>"; };
 		C046AA001EB1D46400376087 /* BookBasicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookBasicViewController.m; sourceTree = "<group>"; };
 		C046AA081EB1DD3B00376087 /* TextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewController.h; sourceTree = "<group>"; };
 		C046AA091EB1DD3B00376087 /* TextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewController.m; sourceTree = "<group>"; };
 		C04C48431EC01CDC005F748B /* BookDefault.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookDefault.h; sourceTree = "<group>"; };
 		C04C48441EC01CDC005F748B /* BookDefault.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookDefault.m; sourceTree = "<group>"; };
-		C05B1B921EC1C36900DD9DE3 /* BookMuLuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookMuLuViewController.h; sourceTree = "<group>"; };
-		C05B1B931EC1C36900DD9DE3 /* BookMuLuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookMuLuViewController.m; sourceTree = "<group>"; };
 		C095893E1EB34476007515B5 /* BookModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookModel.h; sourceTree = "<group>"; };
 		C095893F1EB34476007515B5 /* BookModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookModel.m; sourceTree = "<group>"; };
 		C09589421EB34550007515B5 /* BookChapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookChapter.h; sourceTree = "<group>"; };
@@ -352,6 +355,24 @@
 			path = "UIButton+";
 			sourceTree = "<group>";
 		};
+		C0454B291EC3116000581876 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C0454B2A1EC3118300581876 /* BookMuLuViewController.h */,
+				C0454B2B1EC3118300581876 /* BookMuLuViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		C0454B2D1EC3118C00581876 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				C0454B2E1EC311BB00581876 /* MuluTableViewCell.h */,
+				C0454B2F1EC311BB00581876 /* MuluTableViewCell.m */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
 		C046A9FE1EB1D41D00376087 /* BookBasicViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -382,8 +403,8 @@
 		C05B1B911EC1C33100DD9DE3 /* BookMuLuViewController */ = {
 			isa = PBXGroup;
 			children = (
-				C05B1B921EC1C36900DD9DE3 /* BookMuLuViewController.h */,
-				C05B1B931EC1C36900DD9DE3 /* BookMuLuViewController.m */,
+				C0454B2D1EC3118C00581876 /* TableViewCell */,
+				C0454B291EC3116000581876 /* ViewController */,
 			);
 			path = BookMuLuViewController;
 			sourceTree = "<group>";
@@ -845,6 +866,7 @@
 				C046AA0A1EB1DD3B00376087 /* TextViewController.m in Sources */,
 				C046AA011EB1D46400376087 /* BookBasicViewController.m in Sources */,
 				C00E422F1EC16B1200B8B052 /* WordsImageButton.m in Sources */,
+				C0454B301EC311BB00581876 /* MuluTableViewCell.m in Sources */,
 				C09589401EB34476007515B5 /* BookModel.m in Sources */,
 				C0D0824D1EB0394E00F314B7 /* BookManager.m in Sources */,
 				C09B3A3C1EBACE9F00501B50 /* EDbHandle.m in Sources */,
@@ -855,7 +877,7 @@
 				C00B1D071EA9F6CD0033D9BA /* TopViewController.m in Sources */,
 				C09589441EB34550007515B5 /* BookChapter.m in Sources */,
 				C0E900FF1EAD98C600816AEA /* UIImage+PerhapYs.m in Sources */,
-				C05B1B941EC1C36900DD9DE3 /* BookMuLuViewController.m in Sources */,
+				C0454B2C1EC3118300581876 /* BookMuLuViewController.m in Sources */,
 				C09589481EB34827007515B5 /* BookPage.m in Sources */,
 				C0B6BCC71EAF33A300ACAD2F /* NSArray+PerhapYs.m in Sources */,
 				C09B3A3D1EBACE9F00501B50 /* EDbObject.m in Sources */,

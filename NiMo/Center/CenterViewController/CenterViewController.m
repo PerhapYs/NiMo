@@ -123,7 +123,10 @@
     basicVC.readBook.bookId = [_dataSource[indexPath.row][@"novalId"] integerValue];
     
     BookMuLuViewController *muluVC = [[BookMuLuViewController alloc] init];
-
+    
+    basicVC.leftDelegate = muluVC;
+    muluVC.centerDelegate = basicVC;
+    
         NSString *path = _dataSource[indexPath.row][@"novalPath"];
         
         NSString *bookContent = [NSString getNovelWithBookPath:path];
@@ -135,6 +138,7 @@
             muluVC.DataSource = [NSArray arrayWithArray:chapterArray];
         }
     MMDrawerController *mmVc = [[MMDrawerController alloc] initWithCenterViewController:basicVC leftDrawerViewController:muluVC rightDrawerViewController:nil];
+    mmVc.closeDrawerGestureModeMask = MMCloseDrawerGestureModeAll;
     mmVc.maximumLeftDrawerWidth = SET_WIDTH_(240); 
     
     [BookManager shareBook].bookMMD = mmVc;
