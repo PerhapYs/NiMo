@@ -11,7 +11,6 @@
 #import "TextViewController.h"
 #import "WordsImageButton.h"
 #import "BookChapter.h"
-#import "BookMuLuViewController.h"
 
 #define HEIGHT_TOPSETING SET_HEIGHT_(60)
 
@@ -20,7 +19,7 @@
 #define HEIGHT_FONTSETTING SET_HEIGHT_(100)
 
 
-@interface BookBasicViewController ()<UIPageViewControllerDelegate,UIPageViewControllerDataSource,LeftDelegate>{
+@interface BookBasicViewController ()<UIPageViewControllerDelegate,UIPageViewControllerDataSource>{
     
     BOOL _isShowSetting;
     BOOL _isShowFont;

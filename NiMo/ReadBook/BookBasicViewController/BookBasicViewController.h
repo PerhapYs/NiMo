@@ -10,15 +10,17 @@
 #import "BookModel.h"
 #import "BookDefault.h"
 #import "BookChapter.h"
-@protocol CenterDelegate
+#import "BookMuLuViewController.h"
+#import "PerhapYsProtocol.h"
+//@protocol CenterDelegate
+//
+//-(void)updateLeftViewControllerTableViewWithChapter:(BookChapter *)chapter;
+//
+//@end
 
--(void)updateLeftViewControllerTableViewWithChapter:(BookChapter *)chapter;
+@interface BookBasicViewController : TopViewController<LeftProtocol>
 
-@end
-
-@interface BookBasicViewController : TopViewController
-
-@property (nonatomic , assign) id<CenterDelegate> leftDelegate;
+@property (nonatomic , assign) id<CenterProtocol> leftDelegate;
 
 @property (nonatomic , strong) BookModel *readBook;
 

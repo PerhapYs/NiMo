@@ -116,6 +116,7 @@
 		C09B3A3F1EBACED300501B50 /* BookMark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookMark.m; sourceTree = "<group>"; };
 		C09B3A431EBAD45B00501B50 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		C09B3A451EBAD46500501B50 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		C0A15BE61EC31B0000D8EDA1 /* PerhapYsProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PerhapYsProtocol.h; sourceTree = "<group>"; };
 		C0B6BCC11EAF304C00ACAD2F /* NSString+PerhapYs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PerhapYs.h"; sourceTree = "<group>"; };
 		C0B6BCC21EAF304C00ACAD2F /* NSString+PerhapYs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+PerhapYs.m"; sourceTree = "<group>"; };
 		C0B6BCC51EAF33A300ACAD2F /* NSArray+PerhapYs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+PerhapYs.h"; sourceTree = "<group>"; };
@@ -547,6 +548,7 @@
 		C0E900FB1EAD97FF00816AEA /* protocol */ = {
 			isa = PBXGroup;
 			children = (
+				C0A15BE61EC31B0000D8EDA1 /* PerhapYsProtocol.h */,
 			);
 			path = protocol;
 			sourceTree = "<group>";

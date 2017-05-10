@@ -8,17 +8,19 @@
 
 #import "TopViewController.h"
 #import "BookBasicViewController.h"
+#import "BookBasicViewController.h"
+#import "PerhapYsProtocol.h"
+//@protocol LeftDelegate <NSObject>
+//
+//-(void)updateBookChapterWithChapterIndex:(NSInteger)chapterIndex;
+//
+//@end
 
-@protocol LeftDelegate
-
--(void)updateBookChapterWithChapterIndex:(NSInteger)chapterIndex;
-
-@end
-@interface BookMuLuViewController : TopViewController<CenterDelegate>
+@interface BookMuLuViewController : TopViewController<CenterProtocol>
 
 @property (nonatomic , strong) NSArray *DataSource;
 
-@property (nonatomic , assign) id<LeftDelegate> centerDelegate;
+@property (nonatomic , assign) id<LeftProtocol> centerDelegate;
 
 
 @end
