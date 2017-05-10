@@ -108,8 +108,6 @@
     _isShowSetting = NO;  // 默认隐藏设置
      _renderSize = [TextViewController renderSizeWithFrame:self.view.frame];  //文本显示大小
     
-    _curPage = [_chapter pageIndexWithChapterOffset:_default.offset];
-    
     [self getBookContent];
 }
 -(BookModel *)readBook{
@@ -125,13 +123,14 @@
 }
 // 获取文章内容
 -(void)getBookContent{
-
+    
     _default = [BookDefault getDefaultWithBookId:_readBook.bookId];
     
     NSInteger chapterIndex = [_default.chapterIndex integerValue];
     
    _chapter = [self getBookChapter:chapterIndex];
     
+    _curPage = [_chapter pageIndexWithChapterOffset:_default.offset];
 }
 
 #pragma mark -- 初始化界面
@@ -249,6 +248,7 @@
     _curPage = page;
     TextViewController *textVC = [self readerControllerWithPage:page chapter:_chapter];
     [BookDefault updateBookDefaultWithBookId:_readBook.bookId Chapter:_chapter curPage:page];
+    
     [self.pageViewController setViewControllers:@[textVC]
                                  direction:UIPageViewControllerNavigationDirectionForward
                                   animated:NO
@@ -301,19 +301,19 @@
     TextViewController *readerVC = [[TextViewController alloc]init];
     if (currentPage > 0) {
         [self confogureReaderController:readerVC page:currentPage-1 chapter:chapter];
-        [BookDefault updateBookDefaultWithBookId:_readBook.bookId Chapter:chapter curPage:_curPage];
-//        NSLog(@"总页码%ld 当前页码%ld",chapter.totalPage,_curPage+1);
+        [BookDefault updateBookDefaultWithBookId:_readBook.bookId Chapter:chapter curPage:currentPage-1];
+       
         return readerVC;
     }else {
         if ([_readBook havePreChapter]) {
-//            NSLog(@"--获取上一章");
+            
             BookChapter *preChapter = [self getBookPreChapter];
             [self confogureReaderController:readerVC page:preChapter.totalPage-1 chapter:preChapter];
-            [BookDefault updateBookDefaultWithBookId:_readBook.bookId Chapter:chapter curPage:_curPage];
-//            NSLog(@"总页码%ld 当前页码%ld",chapter.totalPage,_curPage+1);
+            [BookDefault updateBookDefaultWithBookId:_readBook.bookId Chapter:preChapter curPage:preChapter.totalPage-1];
+            
             return readerVC;
         }else {
-//            NSLog(@"已经是第一页了");
+            
             return nil;
         }
     }
@@ -335,19 +335,19 @@
     TextViewController *readerVC = [[TextViewController alloc]init];
     if (currentPage < chapter.totalPage - 1) {
         [self confogureReaderController:readerVC page:currentPage+1 chapter:chapter];
-//        NSLog(@"总页码%ld 当前页码%ld",chapter.totalPage,_curPage+1);
-        [BookDefault updateBookDefaultWithBookId:_readBook.bookId Chapter:chapter curPage:_curPage];
+        
+        [BookDefault updateBookDefaultWithBookId:_readBook.bookId Chapter:chapter curPage:currentPage+1];
         return readerVC;
     }else {
         if ([_readBook haveNextChapter]) {
-//            NSLog(@"--获取下一章");
+           
             BookChapter *nextChapter = [self getBookNextChapter];
             [self confogureReaderController:readerVC page:0 chapter:nextChapter];
-//            NSLog(@"总页码%ld 当前页码%ld",chapter.totalPage,_curPage+1);
-            [BookDefault updateBookDefaultWithBookId:_readBook.bookId Chapter:chapter curPage:_curPage];
+            
+            [BookDefault updateBookDefaultWithBookId:_readBook.bookId Chapter:nextChapter curPage:0];
             return  readerVC;
         }else {
-//            NSLog(@"已经是最后一页了");
+           
             return nil;
         }
     }

@@ -66,6 +66,7 @@
     
     // 以上是 test data  ，应该按照你的方式解析文本 然后生成_attString 就可以了
     _attString = [textContainer createAttributedString];
+
     _pageRangeArray = [_attString pageRangeArrayWithConstrainedToSize:_renderSize];
 }
 
@@ -98,11 +99,15 @@
 
 - (NSInteger)pageIndexWithChapterOffset:(NSInteger)offset
 {
+    
     NSInteger pageIndex = 0;
+   
     for (NSValue *rangeValue in _pageRangeArray) {
+        
         NSRange range = [rangeValue rangeValue];
         
         if (NSLocationInRange(offset, range)) {
+            
             return pageIndex;
         }
         ++ pageIndex;

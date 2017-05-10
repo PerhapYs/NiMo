@@ -34,7 +34,7 @@
 }
 
 +(void)updateBookDefaultWithBookId:(NSInteger)bookId Chapter:(BookChapter *)chapter curPage:(NSInteger)curPage{
-    
+
     BOOL isExsit = [self exsitBookWithBookId:bookId];
     
     BookDefault *bookSetting = [[BookDefault alloc] init];
@@ -44,11 +44,12 @@
     bookSetting.offset = pager.pageRange.location;
     if (isExsit) {
         
-        [bookSetting updateBookSettingWithBookId:bookId];
+       [bookSetting updateBookSettingWithBookId:bookId];
         return;
     }
 
     [bookSetting insertToDb];
+    
 }
 +(BookDefault *)getDefaultWithBookId:(NSInteger)bookId{
     
