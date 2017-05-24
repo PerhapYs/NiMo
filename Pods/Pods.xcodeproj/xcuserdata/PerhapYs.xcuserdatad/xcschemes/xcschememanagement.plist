@@ -4,11 +4,6 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>DKNightVersion.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>MMDrawerController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,12 +42,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>20F16735ECE8E3480FE450C4AB201F67</key>
+		<key>1CFC0AEDC29F47379A8DD8FEE5EFFADC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6BC370C0EB1F9F86F656891ED448CFF2</key>
+		<key>71B1939E40AC25AFBA20025A9814E416</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -72,17 +67,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B46184DE6B3A8503498C74F1E3D2C1A4</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B56C30992623842FA8C8C6B79996186D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>CF05EFE92AE6BA3D7E31F7F80F603CEA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F4B4BAA4E6A0E481D1EDDF3E184D5ACE</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -18,8 +18,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-//    self.view.backgroundColor = [UIColor greenColor];
-    self.view.dk_backgroundColorPicker = DKColorPickerWithKey(BAR);
+    self.view.backgroundColor = [UIColor greenColor];
 
 }
 

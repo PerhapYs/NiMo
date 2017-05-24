@@ -5,7 +5,6 @@ target 'NiMo' do
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
   # use_frameworks!
 pod 'MMDrawerController', '~> 0.6.0'
-pod 'DKNightVersion', '~> 2.4.2'
 pod 'Masonry', '~> 1.0.2'
 pod 'TYAttributedLabel', '~> 2.6.2'
 pod 'RegexKitLite', '~> 4.0'

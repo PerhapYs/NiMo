@@ -32,7 +32,7 @@
     // Do any additional setup after loading the view.
     
     self.title = @"霓墨";
-     self.view.dk_backgroundColorPicker = DKColorPickerWithKey(BAR);
+    self.view.backgroundColor = [UIColor whiteColor];
     [self initializeData];
     [self initializeInterface];
 }

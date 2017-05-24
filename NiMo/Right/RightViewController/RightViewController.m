@@ -18,8 +18,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-//    self.view.backgroundColor = [UIColor redColor];
-    self.view.dk_backgroundColorPicker = DKColorPickerWithKey(BAR);
+    self.view.backgroundColor = [UIColor whiteColor];
     
     [self intializeInterface];
 }
@@ -56,12 +55,6 @@
 }
 -(void)changeBGColorEvent:(UISwitch *)btn{
     
-    if (btn.on) {
-        [[DKNightVersionManager sharedManager] setThemeVersion:DKThemeVersionNight];
-    }
-    else{
-        [[DKNightVersionManager sharedManager] setThemeVersion:DKThemeVersionNormal];
-    }
 }
 
     
