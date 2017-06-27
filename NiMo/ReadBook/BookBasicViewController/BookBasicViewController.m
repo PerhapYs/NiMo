@@ -31,6 +31,8 @@
     
     UIButton *_bookmarkBtn;  // 书签按钮
     
+    UILabel *_chapterTitleLabel;  // 章节标题
+    
     UISlider *_bookSlider;  // 读书进度
     
     UILabel *_showProcessTitleLabel; // 显示滑动标题
@@ -254,6 +256,8 @@
                                  direction:UIPageViewControllerNavigationDirectionForward
                                   animated:NO
                                 completion:nil];
+    
+    _chapterTitleLabel.text = _chapter.chapterTitle;  // 设置章节标题
 }
 - (TextViewController *)readerControllerWithPage:(NSUInteger)page chapter:(BookChapter *)chapter
 {
@@ -285,7 +289,7 @@
 }
 
 #pragma mark -- UIPageViewControllerDataSource
-
+// 回翻书籍
 - (nullable UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController{
     
     TextViewController *curReaderVC = (TextViewController *)viewController;
@@ -309,6 +313,7 @@
         if ([_readBook havePreChapter]) {
             
             BookChapter *preChapter = [self getBookPreChapter];
+            _chapterTitleLabel.text = preChapter.chapterTitle;
             [self confogureReaderController:readerVC page:preChapter.totalPage-1 chapter:preChapter];
             [BookDefault updateBookDefaultWithBookId:_readBook.bookId Chapter:preChapter curPage:preChapter.totalPage-1];
             
@@ -320,6 +325,7 @@
     }
     return readerVC;
 }
+// 下翻书籍
 - (nullable UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController{
     
     TextViewController *curReaderVC = (TextViewController *)viewController;
@@ -343,6 +349,7 @@
         if ([_readBook haveNextChapter]) {
            
             BookChapter *nextChapter = [self getBookNextChapter];
+            _chapterTitleLabel.text = nextChapter.chapterTitle;
             [self confogureReaderController:readerVC page:0 chapter:nextChapter];
             
             [BookDefault updateBookDefaultWithBookId:_readBook.bookId Chapter:nextChapter curPage:0];
@@ -440,7 +447,8 @@
 #pragma mark -- 书签
 -(void)lookOverBookmark{
     
-    BookBookmarkViewController *bookmarkVC = [[BookBookmarkViewController alloc] init];
+    BookBookmarkViewController *bookmarkVC = [BookBookmarkViewController shareBookmark];
+    
     [self.navigationController pushViewController:bookmarkVC animated:YES];
 }
 // 移除书签
@@ -544,7 +552,7 @@
             view.backgroundColor = [UIColor whiteColor];
             
             UIView *upLineView = [UIView new];
-            upLineView.backgroundColor = [UIColor blackColor];
+            upLineView.backgroundColor = [UIColor lightGrayColor];
             [view addSubview:upLineView];
             [upLineView mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.left.and.right.and.top.equalTo(view);
@@ -656,8 +664,21 @@
                 make.size.mas_equalTo(CGSizeMake(SET_WIDTH_(40), SET_HEIGHT_(40)));
             }];
             
+            _chapterTitleLabel = [UILabel new];
+            _chapterTitleLabel.textColor = [UIColor blackColor];
+            _chapterTitleLabel.font = [UIFont systemFontOfSize:14];
+            _chapterTitleLabel.textAlignment = NSTextAlignmentCenter;
+            [view addSubview:_chapterTitleLabel];
+            [_chapterTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.centerX.equalTo(view.mas_centerX);
+                make.centerY.equalTo(goBackBtn.mas_centerY);
+                make.left.equalTo(goBackBtn.mas_right).offset(SET_WIDTH_(40));
+                make.right.equalTo(_bookmarkBtn.mas_left).offset(-SET_WIDTH_(40));
+                make.height.mas_equalTo(SET_HEIGHT_(60));
+            }];
+            
             UIView *belowLineView = [UIView new];
-            belowLineView.backgroundColor = [UIColor blackColor];
+            belowLineView.backgroundColor = [UIColor lightGrayColor];
             [view addSubview:belowLineView];
             [belowLineView mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.left.and.right.and.bottom.equalTo(view);
@@ -691,6 +712,14 @@
             UIView *view = [UIView new];
             
             view.backgroundColor = [UIColor whiteColor];
+            
+            UIView *upLineView = [UIView new];
+            upLineView.backgroundColor = [UIColor lightGrayColor];
+            [view addSubview:upLineView];
+            [upLineView mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.left.and.right.and.top.equalTo(view);
+                make.height.mas_equalTo(SET_HEIGHT_(1));
+            }];
             
             view;
         });

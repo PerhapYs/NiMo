@@ -18,6 +18,8 @@ static NSString * const muluCellIdentifier = @"cellForMuluTableViewCell";
     NSInteger _lastIndexPathRow;
 }
 
+@property (nonatomic , strong) UIView *titleView;
+
 @property (nonatomic , strong) UITableView *muluTableView;
 
 @end
@@ -35,9 +37,17 @@ static NSString * const muluCellIdentifier = @"cellForMuluTableViewCell";
 
 -(void)initializeInterface{
     
+    [self.view addSubview:self.titleView];
+    [self.titleView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.and.right.and.top.equalTo(self.view);
+        make.height.mas_equalTo(SET_HEIGHT_(50));
+    }];
+    
     [self.view addSubview:self.muluTableView];
     [self.muluTableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view);
+        make.top.equalTo(self.titleView.mas_bottom).offset(SET_HEIGHT_(5));
+        make.left.and.right.equalTo(self.view);
+        make.bottom.equalTo(self.view.mas_bottom).offset(-SET_HEIGHT_(10));
     }];
 }
 #pragma mark ---  tableView DataSouce
@@ -55,7 +65,6 @@ static NSString * const muluCellIdentifier = @"cellForMuluTableViewCell";
 
     [cell placeSuviewWithDataSource:chapter];
     if (indexPath.row == _lastIndexPathRow) {
-        cell.chapterTitleLabel.font = [UIFont boldSystemFontOfSize:15];
         cell.chapterTitleLabel.textColor = [UIColor redColor];
     }
    
@@ -76,18 +85,44 @@ static NSString * const muluCellIdentifier = @"cellForMuluTableViewCell";
     
     [self.muluTableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionMiddle animated:NO];
     if (_lastSelectedCell) {
-        _lastSelectedCell.chapterTitleLabel.font = [UIFont systemFontOfSize:14];
         _lastSelectedCell.chapterTitleLabel.textColor = [UIColor blackColor];
     }
     MuluTableViewCell *chapterCell = (MuluTableViewCell *)[self.muluTableView cellForRowAtIndexPath:indexPath];
-    chapterCell.chapterTitleLabel.font = [UIFont boldSystemFontOfSize:15];
     chapterCell.chapterTitleLabel.textColor = [UIColor redColor];
     _lastSelectedCell = chapterCell;
     _lastIndexPathRow = chapter.chapterIndex;
 }
 
 #pragma mark -- view
-
+-(UIView *)titleView{
+    if (!_titleView) {
+        _titleView = ({
+            UIView *view = [UIView new];
+            
+            UILabel *titleLabel = [UILabel new];
+            titleLabel.text = @"目录";
+            titleLabel.textColor = [UIColor blackColor];
+            titleLabel.font = [UIFont systemFontOfSize:14];
+            [view addSubview:titleLabel];
+            [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.left.equalTo(view.mas_left).offset(SET_WIDTH_(20));
+                make.bottom.equalTo(view.mas_bottom);
+                make.size.mas_equalTo(CGSizeMake(SET_WIDTH_(100), SET_HEIGHT_(30)));
+            }];
+            
+            UIView *belowLineView = [UIView new];
+            belowLineView.backgroundColor = [UIColor lightGrayColor];
+            [view addSubview:belowLineView];
+            [belowLineView mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.left.and.right.and.bottom.equalTo(view);
+                make.height.mas_equalTo(SET_HEIGHT_(1));
+            }];
+            
+            view;
+        });
+    }
+    return _titleView;
+}
 -(UITableView *)muluTableView{
     
     if (!_muluTableView) {
@@ -95,6 +130,7 @@ static NSString * const muluCellIdentifier = @"cellForMuluTableViewCell";
             UITableView *view = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 0, 0) style:UITableViewStylePlain];
             view.dataSource = self;
             view.delegate = self;
+            view.separatorStyle = UITableViewCellSeparatorStyleNone;
             
             [view registerClass:[MuluTableViewCell class] forCellReuseIdentifier:muluCellIdentifier];
             

@@ -14,12 +14,22 @@
 
 @implementation BookBookmarkViewController
 
++ (instancetype)shareBookmark{
+    static dispatch_once_t onceToken;
+    static id shareId = nil;
+    @synchronized(self) {
+        dispatch_once(&onceToken, ^{
+            shareId = [[[self class] alloc] init];
+        });
+        return shareId;
+    }
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     
-    
+    self.title = @"书签";
 }
 
 

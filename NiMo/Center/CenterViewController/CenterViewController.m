@@ -139,8 +139,8 @@
         }
     MMDrawerController *mmVc = [[MMDrawerController alloc] initWithCenterViewController:basicVC leftDrawerViewController:muluVC rightDrawerViewController:nil];
     mmVc.closeDrawerGestureModeMask = MMCloseDrawerGestureModeAll;
-    mmVc.maximumLeftDrawerWidth = SET_WIDTH_(240); 
-    
+    mmVc.maximumLeftDrawerWidth = SET_WIDTH_(300);
+   
     [BookManager shareBook].bookMMD = mmVc;
     [self.navigationController pushViewController:mmVc animated:YES];
 }

@@ -10,4 +10,6 @@
 
 @interface BookBookmarkViewController : TopViewController
 
++ (instancetype)shareBookmark;
+
 @end
