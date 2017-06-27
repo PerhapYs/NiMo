@@ -448,7 +448,7 @@
 -(void)lookOverBookmark{
     
     BookBookmarkViewController *bookmarkVC = [BookBookmarkViewController shareBookmark];
-    
+    bookmarkVC.bookId = _readBook.bookId;
     [self.navigationController pushViewController:bookmarkVC animated:YES];
 }
 // 移除书签

@@ -7,8 +7,15 @@
 //
 
 #import "BookBookmarkViewController.h"
+#import "BookmarkTableViewCell.h"
 
-@interface BookBookmarkViewController ()
+static NSString * const bookmarkCellIdentifier = @"cellForBookmarkTableViewCell";
+
+@interface BookBookmarkViewController ()<UITableViewDelegate,UITableViewDataSource>
+
+@property (nonatomic , strong) UITableView *bookmarkTableView;
+
+@property (nonatomic , strong) NSMutableArray *dataSource;
 
 @end
 
@@ -26,11 +33,57 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor whiteColor];
     
     self.title = @"书签";
+    self.view.backgroundColor = [UIColor whiteColor];
+    [self initializeData];
+    [self initializeInterface];
 }
 
+-(void)initializeData{
+    
+    NSLog(@"🌹%ld",_bookId);
+    
+    _dataSource = [[NSMutableArray alloc] init];
+}
+-(void)initializeInterface{
+    
+    [self.view addSubview:self.bookmarkTableView];
+    [self.bookmarkTableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
+}
 
+#pragma mark ---  tableView DataSouce
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+    return _dataSource.count;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    BookmarkTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:bookmarkCellIdentifier];
+    
+    [cell placeSubViewWithData:_dataSource[indexPath.row]];
+    
+    return cell;
+}
+#pragma mark - getter
+
+-(UITableView *)bookmarkTableView{
+    if (!_bookmarkTableView) {
+        _bookmarkTableView = ({
+            UITableView *view = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 0, 0) style:UITableViewStylePlain];
+            
+            view.delegate = self;
+            view.dataSource = self;
+            view.separatorStyle = UITableViewCellSeparatorStyleNone;
+            [view registerClass:[BookmarkTableViewCell class] forCellReuseIdentifier:bookmarkCellIdentifier];
+            
+            view;
+        });
+    }
+    return _bookmarkTableView;
+}
 @end

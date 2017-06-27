@@ -20,6 +20,7 @@
 		C00B1D1E1EA9F9D10033D9BA /* RightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C00B1D1D1EA9F9D10033D9BA /* RightViewController.m */; };
 		C00E42281EC0551800B8B052 /* 全职高手.txt in Resources */ = {isa = PBXBuildFile; fileRef = C00E42271EC0551800B8B052 /* 全职高手.txt */; };
 		C00E422F1EC16B1200B8B052 /* WordsImageButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C00E422E1EC16B1200B8B052 /* WordsImageButton.m */; };
+		C04000961F0260C500F5347E /* BookmarkTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C04000951F0260C500F5347E /* BookmarkTableViewCell.m */; };
 		C0454B2C1EC3118300581876 /* BookMuLuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0454B2B1EC3118300581876 /* BookMuLuViewController.m */; };
 		C0454B301EC311BB00581876 /* MuluTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0454B2F1EC311BB00581876 /* MuluTableViewCell.m */; };
 		C046AA011EB1D46400376087 /* BookBasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C046AA001EB1D46400376087 /* BookBasicViewController.m */; };
@@ -95,6 +96,8 @@
 		C00E42271EC0551800B8B052 /* 全职高手.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "全职高手.txt"; sourceTree = "<group>"; };
 		C00E422D1EC16B1200B8B052 /* WordsImageButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordsImageButton.h; sourceTree = "<group>"; };
 		C00E422E1EC16B1200B8B052 /* WordsImageButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordsImageButton.m; sourceTree = "<group>"; };
+		C04000941F0260C500F5347E /* BookmarkTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookmarkTableViewCell.h; sourceTree = "<group>"; };
+		C04000951F0260C500F5347E /* BookmarkTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookmarkTableViewCell.m; sourceTree = "<group>"; };
 		C0454B2A1EC3118300581876 /* BookMuLuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookMuLuViewController.h; sourceTree = "<group>"; };
 		C0454B2B1EC3118300581876 /* BookMuLuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookMuLuViewController.m; sourceTree = "<group>"; };
 		C0454B2E1EC311BB00581876 /* MuluTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MuluTableViewCell.h; sourceTree = "<group>"; };
@@ -597,6 +600,8 @@
 			children = (
 				C0EDC0D31F00B6D7003DE76E /* BookBookmarkViewController.h */,
 				C0EDC0D41F00B6D7003DE76E /* BookBookmarkViewController.m */,
+				C04000941F0260C500F5347E /* BookmarkTableViewCell.h */,
+				C04000951F0260C500F5347E /* BookmarkTableViewCell.m */,
 			);
 			path = BookBookmarkViewController;
 			sourceTree = "<group>";
@@ -918,6 +923,7 @@
 				C00B1CD11EA9F6350033D9BA /* main.m in Sources */,
 				C00B1D1A1EA9F9AD0033D9BA /* LeftViewController.m in Sources */,
 				C00B1D071EA9F6CD0033D9BA /* TopViewController.m in Sources */,
+				C04000961F0260C500F5347E /* BookmarkTableViewCell.m in Sources */,
 				C09589441EB34550007515B5 /* BookChapter.m in Sources */,
 				C0E900FF1EAD98C600816AEA /* UIImage+PerhapYs.m in Sources */,
 				C0454B2C1EC3118300581876 /* BookMuLuViewController.m in Sources */,

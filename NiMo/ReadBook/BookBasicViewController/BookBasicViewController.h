@@ -12,11 +12,7 @@
 #import "BookChapter.h"
 #import "BookMuLuViewController.h"
 #import "PerhapYsProtocol.h"
-//@protocol CenterDelegate
-//
-//-(void)updateLeftViewControllerTableViewWithChapter:(BookChapter *)chapter;
-//
-//@end
+
 
 @interface BookBasicViewController : TopViewController<LeftProtocol>
 

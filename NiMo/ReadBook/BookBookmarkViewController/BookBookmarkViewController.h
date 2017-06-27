@@ -10,6 +10,8 @@
 
 @interface BookBookmarkViewController : TopViewController
 
+@property (nonatomic , assign) NSInteger bookId;
+
 + (instancetype)shareBookmark;
 
 @end

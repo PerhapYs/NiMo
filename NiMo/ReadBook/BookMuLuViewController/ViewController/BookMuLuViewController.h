@@ -10,11 +10,6 @@
 #import "BookBasicViewController.h"
 #import "BookBasicViewController.h"
 #import "PerhapYsProtocol.h"
-//@protocol LeftDelegate <NSObject>
-//
-//-(void)updateBookChapterWithChapterIndex:(NSInteger)chapterIndex;
-//
-//@end
 
 @interface BookMuLuViewController : TopViewController<CenterProtocol>
 
