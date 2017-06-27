@@ -12,7 +12,10 @@
 #import "MuluTableViewCell.h"
 
 static NSString * const muluCellIdentifier = @"cellForMuluTableViewCell";
-@interface BookMuLuViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface BookMuLuViewController ()<UITableViewDataSource,UITableViewDelegate>{
+    
+    MuluTableViewCell *_lastSelectedCell;  // 记录上一次的目录cell
+}
 
 @property (nonatomic , strong) UITableView *muluTableView;
 
@@ -67,7 +70,14 @@ static NSString * const muluCellIdentifier = @"cellForMuluTableViewCell";
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:chapter.chapterIndex inSection:0];
     
     [self.muluTableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionMiddle animated:NO];
-    
+    if (_lastSelectedCell) {
+        _lastSelectedCell.chapterTitleLabel.font = [UIFont systemFontOfSize:14];
+        _lastSelectedCell.chapterTitleLabel.textColor = [UIColor blackColor];
+    }
+    MuluTableViewCell *chapterCell = (MuluTableViewCell *)[self.muluTableView cellForRowAtIndexPath:indexPath];
+    chapterCell.chapterTitleLabel.font = [UIFont boldSystemFontOfSize:15];
+    chapterCell.chapterTitleLabel.textColor = [UIColor redColor];
+    _lastSelectedCell = chapterCell;
 }
 
 #pragma mark -- view

@@ -40,6 +40,7 @@
 		C0D38BEC1EAA0E4C002908A9 /* CenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D38BEB1EAA0E4C002908A9 /* CenterViewController.m */; };
 		C0D38BF01EAA0E7D002908A9 /* CenterNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D38BEF1EAA0E7D002908A9 /* CenterNavigationViewController.m */; };
 		C0E900FF1EAD98C600816AEA /* UIImage+PerhapYs.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E900FE1EAD98C600816AEA /* UIImage+PerhapYs.m */; };
+		C0EDC0D51F00B6D7003DE76E /* BookBookmarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0EDC0D41F00B6D7003DE76E /* BookBookmarkViewController.m */; };
 		C0EE856E1EADFD6900B16C5B /* BooksCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0EE856D1EADFD6900B16C5B /* BooksCollectionViewCell.m */; };
 		EADB6561A5CD4F04B1057F82 /* libPods-NiMoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A61828D8A39CD2C77A5766E /* libPods-NiMoTests.a */; };
 /* End PBXBuildFile section */
@@ -131,6 +132,8 @@
 		C0D38BEF1EAA0E7D002908A9 /* CenterNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CenterNavigationViewController.m; sourceTree = "<group>"; };
 		C0E900FD1EAD98C600816AEA /* UIImage+PerhapYs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+PerhapYs.h"; sourceTree = "<group>"; };
 		C0E900FE1EAD98C600816AEA /* UIImage+PerhapYs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+PerhapYs.m"; sourceTree = "<group>"; };
+		C0EDC0D31F00B6D7003DE76E /* BookBookmarkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookBookmarkViewController.h; sourceTree = "<group>"; };
+		C0EDC0D41F00B6D7003DE76E /* BookBookmarkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookBookmarkViewController.m; sourceTree = "<group>"; };
 		C0EE856C1EADFD6900B16C5B /* BooksCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BooksCollectionViewCell.h; sourceTree = "<group>"; };
 		C0EE856D1EADFD6900B16C5B /* BooksCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BooksCollectionViewCell.m; sourceTree = "<group>"; };
 		CA710FE7514CC04EBF2E622E /* Pods-NiMoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NiMoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NiMoTests/Pods-NiMoTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -460,6 +463,7 @@
 		C0B6BCAF1EAEDF8F00ACAD2F /* ReadBook */ = {
 			isa = PBXGroup;
 			children = (
+				C0EDC0D21F00B667003DE76E /* BookBookmarkViewController */,
 				C05B1B911EC1C33100DD9DE3 /* BookMuLuViewController */,
 				C04C48421EC01C23005F748B /* BookDefault */,
 				C09B3A371EBACE7600501B50 /* DbObject */,
@@ -560,6 +564,15 @@
 				C0E900FE1EAD98C600816AEA /* UIImage+PerhapYs.m */,
 			);
 			path = "UIImage+";
+			sourceTree = "<group>";
+		};
+		C0EDC0D21F00B667003DE76E /* BookBookmarkViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C0EDC0D31F00B6D7003DE76E /* BookBookmarkViewController.h */,
+				C0EDC0D41F00B6D7003DE76E /* BookBookmarkViewController.m */,
+			);
+			path = BookBookmarkViewController;
 			sourceTree = "<group>";
 		};
 		C0EE856B1EADFD3700B16C5B /* BooksCollectionViewCell */ = {
@@ -868,6 +881,7 @@
 				C046AA0A1EB1DD3B00376087 /* TextViewController.m in Sources */,
 				C046AA011EB1D46400376087 /* BookBasicViewController.m in Sources */,
 				C00E422F1EC16B1200B8B052 /* WordsImageButton.m in Sources */,
+				C0EDC0D51F00B6D7003DE76E /* BookBookmarkViewController.m in Sources */,
 				C0454B301EC311BB00581876 /* MuluTableViewCell.m in Sources */,
 				C09589401EB34476007515B5 /* BookModel.m in Sources */,
 				C0D0824D1EB0394E00F314B7 /* BookManager.m in Sources */,
@@ -1025,6 +1039,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.perhapys.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				WARNING_CFLAGS = "";
 			};
 			name = Debug;
 		};
@@ -1040,6 +1055,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.perhapys.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				WARNING_CFLAGS = "";
 			};
 			name = Release;
 		};

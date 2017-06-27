@@ -11,6 +11,7 @@
 #import "TextViewController.h"
 #import "WordsImageButton.h"
 #import "BookChapter.h"
+#import "BookBookmarkViewController.h"
 
 #define HEIGHT_TOPSETING SET_HEIGHT_(60)
 
@@ -415,20 +416,33 @@
     }
     else if ([settingBtn.title isEqualToString:@"目录"]){
         
-        [[BookManager shareBook].bookMMD openDrawerSide:MMDrawerSideLeft animated:YES completion:^(BOOL finished) {
-            
-            [self.leftDelegate updateLeftViewControllerTableViewWithChapter:_chapter];
-            
-        }];
+        [self openMulu];
     }
     else if ([settingBtn.title isEqualToString:@"书签"]){
         
+        [self lookOverBookmark];
     }
     else{
         return;
     }
 }
+
+#pragma mark - 目录
+
+-(void)openMulu{
+    
+    [[BookManager shareBook].bookMMD openDrawerSide:MMDrawerSideLeft animated:YES completion:^(BOOL finished) {
+        
+        [self.leftDelegate updateLeftViewControllerTableViewWithChapter:_chapter];
+        
+    }];
+}
 #pragma mark -- 书签
+-(void)lookOverBookmark{
+    
+    BookBookmarkViewController *bookmarkVC = [[BookBookmarkViewController alloc] init];
+    [self.navigationController pushViewController:bookmarkVC animated:YES];
+}
 // 移除书签
 - (void)removeCurrentChapterPagerMark
 {

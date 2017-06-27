@@ -22,22 +22,27 @@
 -(void)placeSubView{
     
     _chapterTitleLabel = [UILabel new];
+    _chapterTitleLabel.lineBreakMode = NSLineBreakByClipping;
     _chapterTitleLabel.textColor = [UIColor blackColor];
     _chapterTitleLabel.font = [UIFont systemFontOfSize:14];
     [self.contentView addSubview:_chapterTitleLabel];
     [_chapterTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.contentView);
+        make.left.equalTo(self.contentView.mas_left).offset(10);
+        make.top.and.bottom.and.right.equalTo(self.contentView);
     }];
 }
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
 
-    // Configure the view for the selected state
-}
 
 -(void)placeSuviewWithDataSource:(BookChapter *)chapter{
     
         _chapterTitleLabel.text = chapter.chapterTitle;
 }
 
+-(void)prepareForReuse{
+    
+    [super prepareForReuse];
+    
+    _chapterTitleLabel.textColor = [UIColor blackColor];
+    _chapterTitleLabel.font = [UIFont systemFontOfSize:14];
+}
 @end
