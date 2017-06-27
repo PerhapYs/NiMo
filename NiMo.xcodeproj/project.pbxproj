@@ -36,6 +36,7 @@
 		C0B6BCC31EAF304C00ACAD2F /* NSString+PerhapYs.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B6BCC21EAF304C00ACAD2F /* NSString+PerhapYs.m */; };
 		C0B6BCC71EAF33A300ACAD2F /* NSArray+PerhapYs.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B6BCC61EAF33A300ACAD2F /* NSArray+PerhapYs.m */; };
 		C0C5E3B01EB82B4F00F6B930 /* NSAttributedString+PerhapYs.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C5E3AF1EB82B4F00F6B930 /* NSAttributedString+PerhapYs.m */; };
+		C0CB95B21F0201D100CF4AF2 /* PyAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = C0CB95B11F0201D100CF4AF2 /* PyAlertView.m */; };
 		C0D0824D1EB0394E00F314B7 /* BookManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D0824C1EB0394E00F314B7 /* BookManager.m */; };
 		C0D38BEC1EAA0E4C002908A9 /* CenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D38BEB1EAA0E4C002908A9 /* CenterViewController.m */; };
 		C0D38BF01EAA0E7D002908A9 /* CenterNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D38BEF1EAA0E7D002908A9 /* CenterNavigationViewController.m */; };
@@ -124,6 +125,8 @@
 		C0B6BCC61EAF33A300ACAD2F /* NSArray+PerhapYs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+PerhapYs.m"; sourceTree = "<group>"; };
 		C0C5E3AE1EB82B4F00F6B930 /* NSAttributedString+PerhapYs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+PerhapYs.h"; sourceTree = "<group>"; };
 		C0C5E3AF1EB82B4F00F6B930 /* NSAttributedString+PerhapYs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+PerhapYs.m"; sourceTree = "<group>"; };
+		C0CB95B01F0201D100CF4AF2 /* PyAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PyAlertView.h; sourceTree = "<group>"; };
+		C0CB95B11F0201D100CF4AF2 /* PyAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PyAlertView.m; sourceTree = "<group>"; };
 		C0D0824B1EB0394E00F314B7 /* BookManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookManager.h; sourceTree = "<group>"; };
 		C0D0824C1EB0394E00F314B7 /* BookManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookManager.m; sourceTree = "<group>"; };
 		C0D38BEA1EAA0E4C002908A9 /* CenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CenterViewController.h; sourceTree = "<group>"; };
@@ -280,6 +283,7 @@
 		C00B1D0B1EA9F72E0033D9BA /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				C0CB95AF1F02013700CF4AF2 /* Alert */,
 				C0B6BCB71EAEFC4900ACAD2F /* Book */,
 				C0E900FB1EAD97FF00816AEA /* protocol */,
 				C0E900FA1EAD97EA00816AEA /* extension */,
@@ -510,6 +514,15 @@
 				C0C5E3AF1EB82B4F00F6B930 /* NSAttributedString+PerhapYs.m */,
 			);
 			path = "AttributeSting+";
+			sourceTree = "<group>";
+		};
+		C0CB95AF1F02013700CF4AF2 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				C0CB95B01F0201D100CF4AF2 /* PyAlertView.h */,
+				C0CB95B11F0201D100CF4AF2 /* PyAlertView.m */,
+			);
+			path = Alert;
 			sourceTree = "<group>";
 		};
 		C0D0824A1EB0390700F314B7 /* BookSetting */ = {
@@ -885,6 +898,7 @@
 				C0454B301EC311BB00581876 /* MuluTableViewCell.m in Sources */,
 				C09589401EB34476007515B5 /* BookModel.m in Sources */,
 				C0D0824D1EB0394E00F314B7 /* BookManager.m in Sources */,
+				C0CB95B21F0201D100CF4AF2 /* PyAlertView.m in Sources */,
 				C09B3A3C1EBACE9F00501B50 /* EDbHandle.m in Sources */,
 				C00B1CD41EA9F6350033D9BA /* AppDelegate.m in Sources */,
 				C0B6BCC31EAF304C00ACAD2F /* NSString+PerhapYs.m in Sources */,

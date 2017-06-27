@@ -41,7 +41,11 @@
         if (NSLocationInRange(mark.offset, range)) {
             NSString *contion = [NSString stringWithFormat:@"bookId = '%ld' and chapterIndex = '%@' and offset = '%ld'",_bookId,_chapterIndex,mark.offset];
             isRemove = [BookMark removeDbObjectsWhere:contion];
-            NSLog(@"删除书签 %d",isRemove);
+            if (isRemove) {
+                PyAlertView *alertView = [PyAlertView defaultStyle];
+                alertView.titleLabel.text = @"删除书签成功";
+                [alertView show];
+            }
         }
     }
     return isRemove;

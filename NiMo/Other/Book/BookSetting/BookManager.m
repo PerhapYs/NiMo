@@ -170,7 +170,9 @@
 {
 //    // TODO
     if ([readerMark insertToDb]) {
-        NSLog(@"加入书签成功！");
+        PyAlertView *alertView = [PyAlertView defaultStyle];
+        alertView.titleLabel.text = @"加入书签成功";
+        [alertView show];
     }
 }
 
