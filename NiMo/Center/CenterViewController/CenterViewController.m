@@ -44,7 +44,7 @@
     [dic setObject:@"哈哈" forKey:@"novalTile"];
     [dic setObject:[[NSBundle mainBundle] pathForResource:@"全职高手" ofType:@"txt"] forKey:@"novalPath"];
     
-    int initializeBookId = 10001;
+    int initializeBookId = 100000;
     [dic setObject:@(initializeBookId) forKey:@"novalId"];
     
     
@@ -118,27 +118,21 @@
 #pragma mark - collectionView delegate
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-
+    
+    NSInteger bookId = [_dataSource[indexPath.row][@"novalId"] integerValue];
+    NSString *path = _dataSource[indexPath.row][@"novalPath"];
+    
+    CurrentBook *current = [CurrentBook shareCurrentBook];
+    current.bookId = bookId;
+    current.bookPath = path;
+    
     BookBasicViewController *basicVC = [[BookBasicViewController alloc] init];
-//    basicVC.readBook.bookId = [_dataSource[indexPath.row][@"novalId"] integerValue];
     
     BookMuLuViewController *muluVC = [[BookMuLuViewController alloc] init];
     
     basicVC.leftDelegate = muluVC;
     muluVC.centerDelegate = basicVC;
-    
-        NSString *path = _dataSource[indexPath.row][@"novalPath"];
-    
-    
-    
-//        NSString *bookContent = [NSString getNovelWithBookPath:path];
-//        
-//        if (bookContent) {
-//            NSArray *chapterArray = [BookManager analyseTxtWithContent:bookContent maintainEmptyCharcter:YES];
-//            basicVC.readBook.chapterArray = [NSArray arrayWithArray:chapterArray];
-//            basicVC.readBook.totalChapter = chapterArray.count;
-//            muluVC.DataSource = [NSArray arrayWithArray:chapterArray];
-//        }
+
     MMDrawerController *mmVc = [[MMDrawerController alloc] initWithCenterViewController:basicVC leftDrawerViewController:muluVC rightDrawerViewController:nil];
     mmVc.closeDrawerGestureModeMask = MMCloseDrawerGestureModeAll;
     mmVc.maximumLeftDrawerWidth = SET_WIDTH_(300);

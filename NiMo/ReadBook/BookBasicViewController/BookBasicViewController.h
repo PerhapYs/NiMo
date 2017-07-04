@@ -18,6 +18,4 @@
 
 @property (nonatomic , assign) id<CenterProtocol> leftDelegate;
 
-@property (nonatomic , strong) BookModel *readBook;
-
 @end

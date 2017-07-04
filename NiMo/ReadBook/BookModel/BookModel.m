@@ -50,4 +50,51 @@
 {
     return [self openBookWithChapter:_curChpaterIndex-1];
 }
+
+#pragma mark -- save
+
++ (NSArray *)dbObjectsWithBookId:(NSInteger)bookId
+{
+    NSString *contion = [NSString stringWithFormat:@"bookId = '%ld'",bookId];
+    return [self dbObjectsWhere:contion orderby:nil];
+}
+
++(BOOL)exsitBookWithBookId:(NSInteger)bookId{
+    
+    NSArray *arr = [self dbObjectsWithBookId:bookId];
+    
+    if (arr && arr.count > 0) {
+        
+        return YES;
+    }
+    
+    return NO;
+}
+
++(BookModel *)getBookModelWithBookId:(NSInteger)bookId{
+    
+    BOOL isExsit = [self exsitBookWithBookId:bookId];
+    
+    if (isExsit) {
+        NSArray *defaultArray = [BookModel dbObjectsWithBookId:bookId];
+            
+        BookModel *bookSetting = defaultArray[0];
+        
+        return bookSetting;
+    }
+    else{
+        BookModel *readBook = [[BookModel alloc] init];
+        
+        NSString *bookContent = [NSString getNovelWithBookPath:[CurrentBook shareCurrentBook].bookPath];
+        
+        if (bookContent) {
+            NSArray *chapterArray = [BookManager analyseTxtWithContent:bookContent maintainEmptyCharcter:YES];
+            readBook.chapterArray = [NSArray arrayWithArray:chapterArray];
+            readBook.totalChapter = chapterArray.count;
+        }
+        
+        return readBook;
+    }
+}
+
 @end

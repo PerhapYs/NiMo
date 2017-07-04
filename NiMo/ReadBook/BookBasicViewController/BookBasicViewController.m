@@ -27,8 +27,6 @@
     
     BookChapter *_chapter;
     
-    BookDefault *_default;
-    
     UIButton *_bookmarkBtn;  // 书签按钮
     
     UILabel *_chapterTitleLabel;  // 章节标题
@@ -37,6 +35,8 @@
     
     UILabel *_showProcessTitleLabel; // 显示滑动标题
     UILabel *_showProcessPageLabel; // 显示滑动进度
+    
+    NSInteger _bookId;
 }
 
 @property (nonatomic, strong) UIPageViewController * pageViewController;
@@ -55,6 +55,10 @@
 
 @property (nonatomic, assign) NSInteger readOffset; // 当前页在本章节位移
 
+@property (nonatomic , strong) BookModel *readBook;
+
+@property (nonatomic , strong) BookDefault *defaultBook;
+
 
 @end
 
@@ -65,10 +69,10 @@
    
     self.view.backgroundColor = [UIColor whiteColor];
     
-//    [self initializeData];
-//    [self intializeInterface];
-//    [self addSingleTapGesture];
-//    [self showBookWithPage:_curPage];
+    [self initializeData];
+    [self intializeInterface];
+    [self addSingleTapGesture];
+    [self showBookWithPage:_curPage];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -107,6 +111,7 @@
 #pragma mark - 初始化数据
 -(void)initializeData{
     
+    _bookId = [CurrentBook shareCurrentBook].bookId;
     _isShowFont = NO;  // 默认隐藏字体设置
     _isShowSetting = NO;  // 默认隐藏设置
      _renderSize = [TextViewController renderSizeWithFrame:self.view.frame];  //文本显示大小
@@ -127,13 +132,17 @@
 // 获取文章内容
 -(void)getBookContent{
     
-    _default = [BookDefault getDefaultWithBookId:_readBook.bookId];
+    _defaultBook = [BookDefault getDefaultWithBookId:_bookId];
     
-    NSInteger chapterIndex = [_default.chapterIndex integerValue];
+    BookModel *readBook = [BookModel getBookModelWithBookId:_bookId];
+    
+    self.readBook = readBook;
+    
+    NSInteger chapterIndex = [_defaultBook.chapterIndex integerValue];
     
    _chapter = [self getBookChapter:chapterIndex];
     
-    _curPage = [_chapter pageIndexWithChapterOffset:_default.offset];
+    _curPage = [_chapter pageIndexWithChapterOffset:_defaultBook.offset];
 }
 
 #pragma mark -- 初始化界面
@@ -181,7 +190,7 @@
 // 显示
 -(void)showSettingBar{
     
-    BOOL haveMarkInCurPage = [BookManager existMarkWithBookId:_readBook.bookId Chapter:_chapter curPage:_curPage];
+    BOOL haveMarkInCurPage = [BookManager existMarkWithBookId:_bookId Chapter:_chapter curPage:_curPage];
     
     _bookmarkBtn.selected = haveMarkInCurPage;
     [_bookSlider setValue:_readBook.curChpaterIndex animated:YES];
@@ -250,7 +259,7 @@
 -(void)showBookWithPage:(NSUInteger)page{
     _curPage = page;
     TextViewController *textVC = [self readerControllerWithPage:page chapter:_chapter];
-    [BookDefault updateBookDefaultWithBookId:_readBook.bookId Chapter:_chapter curPage:page];
+    [BookDefault updateBookDefaultWithBookId:_bookId Chapter:_chapter curPage:page];
     
     [self.pageViewController setViewControllers:@[textVC]
                                  direction:UIPageViewControllerNavigationDirectionForward
@@ -306,7 +315,7 @@
     TextViewController *readerVC = [[TextViewController alloc]init];
     if (currentPage > 0) {
         [self confogureReaderController:readerVC page:currentPage-1 chapter:chapter];
-        [BookDefault updateBookDefaultWithBookId:_readBook.bookId Chapter:chapter curPage:currentPage-1];
+        [BookDefault updateBookDefaultWithBookId:_bookId Chapter:chapter curPage:currentPage-1];
        
         return readerVC;
     }else {
@@ -315,7 +324,7 @@
             BookChapter *preChapter = [self getBookPreChapter];
             _chapterTitleLabel.text = preChapter.chapterTitle;
             [self confogureReaderController:readerVC page:preChapter.totalPage-1 chapter:preChapter];
-            [BookDefault updateBookDefaultWithBookId:_readBook.bookId Chapter:preChapter curPage:preChapter.totalPage-1];
+            [BookDefault updateBookDefaultWithBookId:_bookId Chapter:preChapter curPage:preChapter.totalPage-1];
             
             return readerVC;
         }else {
@@ -343,7 +352,7 @@
     if (currentPage < chapter.totalPage - 1) {
         [self confogureReaderController:readerVC page:currentPage+1 chapter:chapter];
         
-        [BookDefault updateBookDefaultWithBookId:_readBook.bookId Chapter:chapter curPage:currentPage+1];
+        [BookDefault updateBookDefaultWithBookId:_bookId Chapter:chapter curPage:currentPage+1];
         return readerVC;
     }else {
         if ([_readBook haveNextChapter]) {
@@ -352,7 +361,7 @@
             _chapterTitleLabel.text = nextChapter.chapterTitle;
             [self confogureReaderController:readerVC page:0 chapter:nextChapter];
             
-            [BookDefault updateBookDefaultWithBookId:_readBook.bookId Chapter:nextChapter curPage:0];
+            [BookDefault updateBookDefaultWithBookId:_bookId Chapter:nextChapter curPage:0];
             return  readerVC;
         }else {
            
@@ -448,19 +457,19 @@
 -(void)lookOverBookmark{
     
     BookBookmarkViewController *bookmarkVC = [[BookBookmarkViewController alloc] init];
-    bookmarkVC.bookId = _readBook.bookId;
+    bookmarkVC.bookId = _bookId;
     [self.navigationController pushViewController:bookmarkVC animated:YES];
 }
 // 移除书签
 - (void)removeCurrentChapterPagerMark
 {
-    [BookManager removeBookMarkWithBookId:_readBook.bookId Chapter:_chapter curPage:_curPage];
+    [BookManager removeBookMarkWithBookId:_bookId Chapter:_chapter curPage:_curPage];
 }
 
 // 保存书签
 -(void)saveCurrentChapterPagerMark
 {
-    [BookManager saveBookMarkWithBookId:_readBook.bookId Chapter:_chapter curPage:_curPage];
+    [BookManager saveBookMarkWithBookId:_bookId Chapter:_chapter curPage:_curPage];
 }
 #pragma mark  -- 获取章节
 

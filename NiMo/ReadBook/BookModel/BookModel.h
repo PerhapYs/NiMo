@@ -6,10 +6,10 @@
 //  Copyright © 2017年 PerhapYs. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "EDbObject.h"
 #import "BookChapter.h"
 
-@interface BookModel : NSObject
+@interface BookModel : EDbObject
 
 @property (nonatomic, assign) NSInteger bookId;     // 书本id
 @property (nonatomic, strong) NSString *bookName;   // 书本名
@@ -35,6 +35,13 @@
 - (BookChapter *)openBookNextChapter;
 
 - (BookChapter *)openBookPreChapter;
+
+
+
+
+#pragma main
+
++(BookModel *)getBookModelWithBookId:(NSInteger)bookId;
 
 
 @end

@@ -13,8 +13,6 @@
 
 @interface BookMuLuViewController : TopViewController<CenterProtocol>
 
-@property (nonatomic , strong) NSArray *DataSource;
-
 @property (nonatomic , assign) id<LeftProtocol> centerDelegate;
 
 

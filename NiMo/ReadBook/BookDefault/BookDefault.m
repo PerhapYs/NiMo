@@ -8,8 +8,16 @@
 
 #import "BookDefault.h"
 #import "BookPage.h"
-@implementation BookDefault
+#import "NSString+PerhapYs.h"
+#import "BookManager.h"
 
+@interface BookDefault ()
+
+
+
+@end
+
+@implementation BookDefault
 
 + (NSArray *)dbObjectsWithBookId:(NSInteger)bookId
 {
@@ -27,7 +35,7 @@
     
     NSArray *arr = [self dbObjectsWithBookId:bookId];
     
-    if (arr) {
+    if (arr && arr.count > 0) {
        
         return YES;
     }
@@ -40,21 +48,28 @@
     BOOL isExsit = [self exsitBookWithBookId:bookId];
     
     BookDefault *bookSetting = [BookDefault getDefaultWithBookId:bookId];
-    bookSetting.bookId = bookId;
     bookSetting.chapterIndex = [NSString stringWithFormat:@"%ld",chapter.chapterIndex];
     BookPage *pager = [chapter chapterPagerWithIndex:curPage];
     bookSetting.offset = pager.pageRange.location;
-    if (isExsit) {
+    
+    if (isExsit) {  // 书籍默认信息存在
         
         if ([bookSetting updateBookSettingWithBookId:bookId]) {
             NSLog(@"更新默认成功");
         }
+        else{
+            NSLog(@"更新失败");
+        }
         return;
     }
-
-    if ([bookSetting insertToDb]) {
-     
-        NSLog(@"初始化默认");
+    else{
+        
+        if ([bookSetting insertToDb]) { // 不存在，则重新插入一次.
+            NSLog(@"更新插入成功");
+        }
+        else{
+            NSLog(@"更新插入失败");
+        }
     }
 }
 +(BookDefault *)getDefaultWithBookId:(NSInteger)bookId{
@@ -72,9 +87,15 @@
         BookDefault *bookSetting = [[BookDefault alloc] init];
         bookSetting.chapterIndex = @"0";
         bookSetting.offset = 0;
-    
+        
+        if ([bookSetting insertToDb]) {
+            NSLog(@"初始化插入成功");
+        }
+        else{
+            NSLog(@"初始化插入失败");
+        }
+        
         return bookSetting;
     }
 }
-
 @end

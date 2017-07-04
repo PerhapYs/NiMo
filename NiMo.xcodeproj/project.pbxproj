@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		38807376C3F5C00B566E8530 /* libPods-NiMoUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B88A6F0FE3BA313E486598E7 /* libPods-NiMoUITests.a */; };
 		B1C2B6CA04D8A7BE45FD4B74 /* libPods-NiMo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 494222C05E04905E1039ED68 /* libPods-NiMo.a */; };
+		C006C57D1F0B8F55004A5BA5 /* CurrentBook.m in Sources */ = {isa = PBXBuildFile; fileRef = C006C57C1F0B8F55004A5BA5 /* CurrentBook.m */; };
 		C00B1CD11EA9F6350033D9BA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C00B1CD01EA9F6350033D9BA /* main.m */; };
 		C00B1CD41EA9F6350033D9BA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C00B1CD31EA9F6350033D9BA /* AppDelegate.m */; };
 		C00B1CDC1EA9F6350033D9BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C00B1CDB1EA9F6350033D9BA /* Assets.xcassets */; };
@@ -72,6 +73,8 @@
 		494222C05E04905E1039ED68 /* libPods-NiMo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NiMo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A61828D8A39CD2C77A5766E /* libPods-NiMoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NiMoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B88A6F0FE3BA313E486598E7 /* libPods-NiMoUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NiMoUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C006C57B1F0B8F55004A5BA5 /* CurrentBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentBook.h; sourceTree = "<group>"; };
+		C006C57C1F0B8F55004A5BA5 /* CurrentBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentBook.m; sourceTree = "<group>"; };
 		C00B1CCC1EA9F6350033D9BA /* NiMo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NiMo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C00B1CD01EA9F6350033D9BA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C00B1CD21EA9F6350033D9BA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -190,6 +193,15 @@
 				B88A6F0FE3BA313E486598E7 /* libPods-NiMoUITests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C006C57A1F0B8F30004A5BA5 /* CurrentBook */ = {
+			isa = PBXGroup;
+			children = (
+				C006C57B1F0B8F55004A5BA5 /* CurrentBook.h */,
+				C006C57C1F0B8F55004A5BA5 /* CurrentBook.m */,
+			);
+			path = CurrentBook;
 			sourceTree = "<group>";
 		};
 		C00B1CC31EA9F6350033D9BA = {
@@ -482,6 +494,7 @@
 		C0B6BCAF1EAEDF8F00ACAD2F /* ReadBook */ = {
 			isa = PBXGroup;
 			children = (
+				C006C57A1F0B8F30004A5BA5 /* CurrentBook */,
 				C0EDC0D21F00B667003DE76E /* BookBookmarkViewController */,
 				C05B1B911EC1C33100DD9DE3 /* BookMuLuViewController */,
 				C04C48421EC01C23005F748B /* BookDefault */,
@@ -909,6 +922,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0C5E3B01EB82B4F00F6B930 /* NSAttributedString+PerhapYs.m in Sources */,
+				C006C57D1F0B8F55004A5BA5 /* CurrentBook.m in Sources */,
 				C046AA0A1EB1DD3B00376087 /* TextViewController.m in Sources */,
 				C046AA011EB1D46400376087 /* BookBasicViewController.m in Sources */,
 				C00E422F1EC16B1200B8B052 /* WordsImageButton.m in Sources */,
@@ -1071,7 +1085,7 @@
 				INFOPLIST_FILE = NiMo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = perhapys;
+				PRODUCT_BUNDLE_IDENTIFIER = com.perhapys.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WARNING_CFLAGS = "";
 			};
@@ -1087,7 +1101,7 @@
 				INFOPLIST_FILE = NiMo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = perhapys;
+				PRODUCT_BUNDLE_IDENTIFIER = com.perhapys.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WARNING_CFLAGS = "";
 			};

@@ -13,10 +13,6 @@
 #import "BookModel.h"
 @interface BookDefault : EDbObject
 
-@property (nonatomic , strong) BookModel *readBook;
-
-@property (nonatomic, assign) NSInteger bookId;
-
 @property (nonatomic, strong) NSString *chapterIndex; // 章节下标
 
 @property (nonatomic, assign) NSInteger offset;       // 章节位移

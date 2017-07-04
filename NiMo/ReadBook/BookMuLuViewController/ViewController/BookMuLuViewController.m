@@ -20,6 +20,8 @@ static NSString * const muluCellIdentifier = @"cellForMuluTableViewCell";
 
 @property (nonatomic , strong) UIView *titleView;
 
+@property (nonatomic , strong) NSMutableArray *DataSource;
+
 @property (nonatomic , strong) UITableView *muluTableView;
 
 @end
@@ -31,10 +33,19 @@ static NSString * const muluCellIdentifier = @"cellForMuluTableViewCell";
     // Do any additional setup after loading the view.
     
     self.view.backgroundColor = [UIColor whiteColor];
-    
+    [self initializeData];
     [self initializeInterface];
 }
+-(void)initializeData{
+    
+    _DataSource = [[NSMutableArray alloc] init];
 
+    BookModel *readBook = [BookModel getBookModelWithBookId:[CurrentBook shareCurrentBook].bookId];
+    
+    [_DataSource addObjectsFromArray:readBook.chapterArray];
+    
+    [self.muluTableView reloadData];
+}
 -(void)initializeInterface{
     
     [self.view addSubview:self.titleView];
