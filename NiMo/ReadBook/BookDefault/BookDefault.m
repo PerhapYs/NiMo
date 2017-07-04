@@ -26,10 +26,12 @@
 +(BOOL)exsitBookWithBookId:(NSInteger)bookId{
     
     NSArray *arr = [self dbObjectsWithBookId:bookId];
-
+    
     if (arr) {
+       
         return YES;
     }
+    
     return NO;
 }
 
@@ -37,19 +39,23 @@
 
     BOOL isExsit = [self exsitBookWithBookId:bookId];
     
-    BookDefault *bookSetting = [[BookDefault alloc] init];
+    BookDefault *bookSetting = [BookDefault getDefaultWithBookId:bookId];
     bookSetting.bookId = bookId;
     bookSetting.chapterIndex = [NSString stringWithFormat:@"%ld",chapter.chapterIndex];
     BookPage *pager = [chapter chapterPagerWithIndex:curPage];
     bookSetting.offset = pager.pageRange.location;
     if (isExsit) {
         
-       [bookSetting updateBookSettingWithBookId:bookId];
+        if ([bookSetting updateBookSettingWithBookId:bookId]) {
+            NSLog(@"更新默认成功");
+        }
         return;
     }
 
-    [bookSetting insertToDb];
-    
+    if ([bookSetting insertToDb]) {
+     
+        NSLog(@"初始化默认");
+    }
 }
 +(BookDefault *)getDefaultWithBookId:(NSInteger)bookId{
     

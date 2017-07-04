@@ -9,7 +9,11 @@
 #import "EDbObject.h"
 #import "BookChapter.h"
 #import "BookPage.h"
+
+#import "BookModel.h"
 @interface BookDefault : EDbObject
+
+@property (nonatomic , strong) BookModel *readBook;
 
 @property (nonatomic, assign) NSInteger bookId;
 

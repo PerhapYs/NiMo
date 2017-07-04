@@ -8,6 +8,7 @@
 
 #import "BookBookmarkViewController.h"
 #import "BookmarkTableViewCell.h"
+#import "BookMark.h"
 
 static NSString * const bookmarkCellIdentifier = @"cellForBookmarkTableViewCell";
 
@@ -21,30 +22,31 @@ static NSString * const bookmarkCellIdentifier = @"cellForBookmarkTableViewCell"
 
 @implementation BookBookmarkViewController
 
-+ (instancetype)shareBookmark{
-    static dispatch_once_t onceToken;
-    static id shareId = nil;
-    @synchronized(self) {
-        dispatch_once(&onceToken, ^{
-            shareId = [[[self class] alloc] init];
-        });
-        return shareId;
-    }
-}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.title = @"书签";
     self.view.backgroundColor = [UIColor whiteColor];
+    
     [self initializeData];
     [self initializeInterface];
 }
 
 -(void)initializeData{
     
-    NSLog(@"🌹%ld",_bookId);
-    
     _dataSource = [[NSMutableArray alloc] init];
+    
+    dispatch_async(dispatch_queue_create("com.tany.searchMarkDb", DISPATCH_QUEUE_SERIAL), ^{
+        // 异步操作
+        NSMutableArray *selectedArray = [BookMark dbObjectsWithBookId:_bookId];
+    
+        dispatch_async(dispatch_get_main_queue(), ^{
+            // 主线程更新
+            _dataSource = selectedArray;
+            [self.bookmarkTableView reloadData];
+        });
+    });
+    
 }
 -(void)initializeInterface{
     
@@ -64,7 +66,6 @@ static NSString * const bookmarkCellIdentifier = @"cellForBookmarkTableViewCell"
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     BookmarkTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:bookmarkCellIdentifier];
-    
     [cell placeSubViewWithData:_dataSource[indexPath.row]];
     
     return cell;
@@ -78,7 +79,8 @@ static NSString * const bookmarkCellIdentifier = @"cellForBookmarkTableViewCell"
             
             view.delegate = self;
             view.dataSource = self;
-            view.separatorStyle = UITableViewCellSeparatorStyleNone;
+            view.rowHeight = SET_HEIGHT_(50);
+//            view.separatorStyle = UITableViewCellSeparatorStyleNone;
             [view registerClass:[BookmarkTableViewCell class] forCellReuseIdentifier:bookmarkCellIdentifier];
             
             view;

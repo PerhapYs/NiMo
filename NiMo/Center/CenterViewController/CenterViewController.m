@@ -44,7 +44,7 @@
     [dic setObject:@"哈哈" forKey:@"novalTile"];
     [dic setObject:[[NSBundle mainBundle] pathForResource:@"全职高手" ofType:@"txt"] forKey:@"novalPath"];
     
-    int initializeBookId = 10000;
+    int initializeBookId = 10001;
     [dic setObject:@(initializeBookId) forKey:@"novalId"];
     
     
@@ -120,7 +120,7 @@
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
 
     BookBasicViewController *basicVC = [[BookBasicViewController alloc] init];
-    basicVC.readBook.bookId = [_dataSource[indexPath.row][@"novalId"] integerValue];
+//    basicVC.readBook.bookId = [_dataSource[indexPath.row][@"novalId"] integerValue];
     
     BookMuLuViewController *muluVC = [[BookMuLuViewController alloc] init];
     
@@ -128,15 +128,17 @@
     muluVC.centerDelegate = basicVC;
     
         NSString *path = _dataSource[indexPath.row][@"novalPath"];
-        
-        NSString *bookContent = [NSString getNovelWithBookPath:path];
-        
-        if (bookContent) {
-            NSArray *chapterArray = [BookManager analyseTxtWithContent:bookContent maintainEmptyCharcter:YES];
-            basicVC.readBook.chapterArray = [NSArray arrayWithArray:chapterArray];
-            basicVC.readBook.totalChapter = chapterArray.count;
-            muluVC.DataSource = [NSArray arrayWithArray:chapterArray];
-        }
+    
+    
+    
+//        NSString *bookContent = [NSString getNovelWithBookPath:path];
+//        
+//        if (bookContent) {
+//            NSArray *chapterArray = [BookManager analyseTxtWithContent:bookContent maintainEmptyCharcter:YES];
+//            basicVC.readBook.chapterArray = [NSArray arrayWithArray:chapterArray];
+//            basicVC.readBook.totalChapter = chapterArray.count;
+//            muluVC.DataSource = [NSArray arrayWithArray:chapterArray];
+//        }
     MMDrawerController *mmVc = [[MMDrawerController alloc] initWithCenterViewController:basicVC leftDrawerViewController:muluVC rightDrawerViewController:nil];
     mmVc.closeDrawerGestureModeMask = MMCloseDrawerGestureModeAll;
     mmVc.maximumLeftDrawerWidth = SET_WIDTH_(300);

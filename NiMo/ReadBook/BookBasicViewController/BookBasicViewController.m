@@ -65,10 +65,10 @@
    
     self.view.backgroundColor = [UIColor whiteColor];
     
-    [self initializeData];
-    [self intializeInterface];
-    [self addSingleTapGesture];
-    [self showBookWithPage:_curPage];
+//    [self initializeData];
+//    [self intializeInterface];
+//    [self addSingleTapGesture];
+//    [self showBookWithPage:_curPage];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -447,7 +447,7 @@
 #pragma mark -- 书签
 -(void)lookOverBookmark{
     
-    BookBookmarkViewController *bookmarkVC = [BookBookmarkViewController shareBookmark];
+    BookBookmarkViewController *bookmarkVC = [[BookBookmarkViewController alloc] init];
     bookmarkVC.bookId = _readBook.bookId;
     [self.navigationController pushViewController:bookmarkVC animated:YES];
 }

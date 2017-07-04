@@ -12,8 +12,6 @@
 
 @property (nonatomic , strong) UILabel *titleLabel;
 
-@property (nonatomic , strong) UILabel *contentLabel;
-
 @end
 
 @implementation BookmarkTableViewCell
@@ -31,9 +29,19 @@
 }
 -(void)placeSubView{
     
+    _titleLabel = [UILabel new];
+    _titleLabel.textColor = [UIColor redColor];
+    _titleLabel.font = [UIFont systemFontOfSize:12];
+    [self.contentView addSubview:_titleLabel];
+    [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.contentView.mas_left);
+        make.top.equalTo(self.contentView.mas_top);
+        make.right.equalTo(self.contentView.mas_right);
+        make.bottom.equalTo(self.contentView.mas_bottom);
+    }];
 }
--(void)placeSubViewWithData:(NSDictionary *)data{
+-(void)placeSubViewWithData:(BookMark *)data{
     
-    
+    _titleLabel.text = data.content;
 }
 @end

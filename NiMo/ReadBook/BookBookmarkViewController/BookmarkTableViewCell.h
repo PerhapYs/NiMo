@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "BookMark.h"
 @interface BookmarkTableViewCell : UITableViewCell
 
--(void)placeSubViewWithData:(NSDictionary *)data;
+-(void)placeSubViewWithData:(BookMark *)data;
 
 @end
