@@ -54,30 +54,21 @@
     
     if (isExsit) {  // 书籍默认信息存在
         
-        if ([bookSetting updateBookSettingWithBookId:bookId]) {
-            NSLog(@"更新默认成功");
-        }
-        else{
-            NSLog(@"更新失败");
-        }
+        [bookSetting updateBookSettingWithBookId:bookId];
         return;
     }
     else{
         
-        if ([bookSetting insertToDb]) { // 不存在，则重新插入一次.
-            NSLog(@"更新插入成功");
-        }
-        else{
-            NSLog(@"更新插入失败");
-        }
+        [bookSetting insertToDb];
     }
 }
 +(BookDefault *)getDefaultWithBookId:(NSInteger)bookId{
     
-    NSArray *defaultArray = [BookDefault dbObjectsWithBookId:bookId];
+    BOOL isExsit = [self exsitBookWithBookId:bookId];
     
-    if (defaultArray && defaultArray.count > 0) {
+    if (isExsit) {
         
+        NSArray *defaultArray = [BookDefault dbObjectsWithBookId:bookId];
         BookDefault *bookSetting = defaultArray[0];
         
         return bookSetting;
@@ -88,12 +79,7 @@
         bookSetting.chapterIndex = @"0";
         bookSetting.offset = 0;
         
-        if ([bookSetting insertToDb]) {
-            NSLog(@"初始化插入成功");
-        }
-        else{
-            NSLog(@"初始化插入失败");
-        }
+        [bookSetting insertToDb];
         
         return bookSetting;
     }

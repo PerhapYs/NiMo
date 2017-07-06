@@ -44,7 +44,7 @@
     [dic setObject:@"哈哈" forKey:@"novalTile"];
     [dic setObject:[[NSBundle mainBundle] pathForResource:@"全职高手" ofType:@"txt"] forKey:@"novalPath"];
     
-    int initializeBookId = 100000;
+    int initializeBookId = 10000;
     [dic setObject:@(initializeBookId) forKey:@"novalId"];
     
     
